@@ -1,0 +1,30 @@
+{
+  "name": "com.caseydecoder.unityclock",
+  "version": "0.1.0-pre",
+  "displayName": "Unity Clock",
+  "description": "A simple time system for regulating time-of-day in Unity.",
+  "unity": "2022.2",
+  "keywords": [
+    "unity",
+    "time",
+    "clock",
+    "anim",
+    "temporal",
+    "day",
+    "lapse",
+    "volume",
+    "system",
+    "span"
+  ],
+  "author": {
+    "name": "CaseyDeCoder",
+    "email": "hofland.casey@gmail.com",
+    "url": "https://casey-says-hello.surge.sh/"
+  },
+  "hideInEditor": false,
+  "type": "library",
+  "dependencies": {
+    "com.unity.render-pipelines.core": "14.0.4",
+    "com.unity.modules.animation": "1.0.0"
+  }
+}

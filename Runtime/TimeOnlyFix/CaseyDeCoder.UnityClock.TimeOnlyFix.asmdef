@@ -1,0 +1,16 @@
+{
+    "name": "CaseyDeCoder.UnityClock.TimeOnlyFix",
+    "rootNamespace": "",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "!NET6_0_OR_GREATER"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

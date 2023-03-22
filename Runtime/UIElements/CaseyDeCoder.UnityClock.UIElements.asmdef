@@ -1,0 +1,17 @@
+{
+    "name": "CaseyDeCoder.UnityClock.UIElements",
+    "rootNamespace": "UnityClock.UIElements",
+    "references": [
+        "GUID:cf6fffcdede3a194aa429de8f8a0d207",
+        "GUID:1c5a6e682be2cf64b9749af182c5c2fa"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
