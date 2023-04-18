@@ -6,28 +6,28 @@ namespace UnityClock
     [Serializable]
     public struct TimeRange : ISerializationCallbackReceiver
     {
-        [SerializeField] private SerializableTimeOnly _start;
-        [SerializeField] private SerializableTimeOnly _end;
+        [SerializeField, TimeOnly(true, true, true, true, true)] private long _start;
+        [SerializeField, TimeOnly(true, true, true, true, true)] private long _end;
 
         public TimeOnly start;
         public TimeOnly end;
 
         void ISerializationCallbackReceiver.OnBeforeSerialize()
         {
-            _start = start;
-            _end = end;
+            _start = start.Ticks;
+            _end = end.Ticks;
         }
 
         void ISerializationCallbackReceiver.OnAfterDeserialize()
         {
-            start = _start;
-            end = _end;
+            start = new(_start);
+            end = new(_end);
         }
 
-        public TimeRange(TimeOnly from, TimeOnly till)
+        public TimeRange(TimeOnly start, TimeOnly end)
         {
-            this.start = this._start = from;
-            this.end = this._end = till;
+            _start = (this.start = start).Ticks;
+            _end = (this.end = end).Ticks;
         }
 
         public float Interpolant() => Clock.InverseLerp(start, end);

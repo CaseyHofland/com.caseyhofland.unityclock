@@ -5,8 +5,8 @@ using UnityEngine;
 
 namespace UnityClock.Editor
 {
-    [CustomPropertyDrawer(typeof(TimeOnlyAttribute), true)]
-    public class TimeOnlyDrawer : PropertyDrawer
+    [CustomPropertyDrawer(typeof(TimeSpanAttribute), true)]
+    public class TimeSpanDrawer : PropertyDrawer
     {
         public const string timeFormat = "g";
 
@@ -18,8 +18,8 @@ namespace UnityClock.Editor
             }
 
             using var _ = new EditorGUI.PropertyScope(position, label, property);
-            var timeOnly = new TimeOnly(property.longValue);
-            var timeOnlyAttribute = (TimeOnlyAttribute)attribute;
+            var timeSpan = new TimeSpan(property.longValue);
+            var timeSpanAttribute = (TimeSpanAttribute)attribute;
 
             position.height = EditorGUIUtility.singleLineHeight;
             // Draw foldout and text field.
@@ -29,14 +29,14 @@ namespace UnityClock.Editor
                 textFieldPosition.x += EditorGUIUtility.labelWidth - EditorGUI.indentLevel * 18f;
                 textFieldPosition.width = position.width - EditorGUIUtility.labelWidth + EditorGUI.indentLevel * 18f;
                 EditorGUI.BeginChangeCheck();
-                var timeString = EditorGUI.DelayedTextField(textFieldPosition, timeOnly.ToString(timeFormat));
+                var timeString = EditorGUI.DelayedTextField(textFieldPosition, timeSpan.ToString(timeFormat));
                 if (!timeString.Contains(":"))
                 {
                     timeString += ":0";
                 }
                 if (EditorGUI.EndChangeCheck() && TimeSpan.TryParse(timeString, out var result))
                 {
-                    timeOnly = TimeOnly.MinValue.Add(result);
+                    timeSpan = result;
                 }
 
                 property.isExpanded = EditorGUI.Foldout(position, property.isExpanded, foldoutLabel, true);
@@ -47,80 +47,72 @@ namespace UnityClock.Editor
             {
                 EditorGUI.indentLevel++;
 
-                // Draw hour, minute, second and millisecond.
+                // Draw days, hours, minutes, seconds and milliseconds.
                 {
                     EditorGUI.BeginChangeCheck();
 
-                    timeOnly.Deconstruct(out int hour, out int minute, out int second, out int millisecond);
-                    if (timeOnlyAttribute.showHour)
+                    int days = timeSpan.Days, hours = timeSpan.Hours, minutes = timeSpan.Minutes, seconds = timeSpan.Seconds, milliseconds = timeSpan.Milliseconds;
+                    if (timeSpanAttribute.showDays)
                     {
                         position.y += EditorGUIUtility.singleLineHeight + 2f;
-                        hour = EditorGUI.IntSlider(position, nameof(timeOnly.Hour), hour, 0, 23);
+                        days = EditorGUI.IntField(position, nameof(TimeSpan.Days), days);
                     }
-                    if (timeOnlyAttribute.showMinute)
+                    if (timeSpanAttribute.showHours)
                     {
                         position.y += EditorGUIUtility.singleLineHeight + 2f;
-                        minute = EditorGUI.IntSlider(position, nameof(timeOnly.Minute), minute, 0, 59);
+                        hours = EditorGUI.IntSlider(position, nameof(timeSpan.Hours), hours, 0, 23);
                     }
-                    if (timeOnlyAttribute.showSecond)
+                    if (timeSpanAttribute.showMinutes)
                     {
                         position.y += EditorGUIUtility.singleLineHeight + 2f;
-                        second = EditorGUI.IntSlider(position, nameof(timeOnly.Second), second, 0, 59);
+                        minutes = EditorGUI.IntSlider(position, nameof(timeSpan.Minutes), minutes, 0, 59);
                     }
-                    if (timeOnlyAttribute.showMillisecond)
+                    if (timeSpanAttribute.showSeconds)
                     {
                         position.y += EditorGUIUtility.singleLineHeight + 2f;
-                        millisecond = EditorGUI.IntSlider(position, nameof(timeOnly.Millisecond), millisecond, 0, 999);
+                        seconds = EditorGUI.IntSlider(position, nameof(timeSpan.Seconds), seconds, 0, 59);
+                    }
+                    if (timeSpanAttribute.showMilliseconds)
+                    {
+                        position.y += EditorGUIUtility.singleLineHeight + 2f;
+                        milliseconds = EditorGUI.IntSlider(position, nameof(timeSpan.Milliseconds), milliseconds, 0, 999);
                     }
                     if (EditorGUI.EndChangeCheck())
                     {
-                        timeOnly = new TimeOnly(hour, minute, second, millisecond);
-                    }
-                }
-
-                // Draw interpolant
-                if (timeOnlyAttribute.showInterpolant) 
-                {
-                    EditorGUI.BeginChangeCheck();
-                    position.y += EditorGUIUtility.singleLineHeight + 2f;
-                    var interpolant = Clock.InverseLerp(TimeOnly.MinValue, TimeOnly.MaxValue, timeOnly);
-                    interpolant = EditorGUI.Slider(position, "Interpolant", interpolant, 0f, 1f);
-                    if (EditorGUI.EndChangeCheck())
-                    {
-                        timeOnly = TimeOnly.FromTimeSpan(TimeSpan.FromTicks(TimeOnly.MaxValue.Ticks) * interpolant);
+                        timeSpan = new TimeSpan(days, hours, minutes, seconds, milliseconds);
                     }
                 }
 
                 EditorGUI.indentLevel--;
             }
 
-            property.longValue = timeOnly.Ticks;
+            property.longValue = timeSpan.Ticks;
         }
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            var timeOnlyAttribute = (TimeOnlyAttribute)attribute;
+            var timeSpanAttribute = (TimeSpanAttribute)attribute;
 
             var height = EditorGUI.GetPropertyHeight(property, label, true);
             if (property.isExpanded)
             {
-                if (timeOnlyAttribute.showHour)
+                if (timeSpanAttribute.showDays)
                 {
                     height += EditorGUIUtility.singleLineHeight + 2f;
                 }
-                if (timeOnlyAttribute.showMinute)
+                if (timeSpanAttribute.showHours)
                 {
                     height += EditorGUIUtility.singleLineHeight + 2f;
                 }
-                if (timeOnlyAttribute.showSecond)
+                if (timeSpanAttribute.showMinutes)
                 {
                     height += EditorGUIUtility.singleLineHeight + 2f;
                 }
-                if (timeOnlyAttribute.showMillisecond)
+                if (timeSpanAttribute.showSeconds)
                 {
                     height += EditorGUIUtility.singleLineHeight + 2f;
                 }
-                if (timeOnlyAttribute.showInterpolant)
+                if (timeSpanAttribute.showMilliseconds)
                 {
                     height += EditorGUIUtility.singleLineHeight + 2f;
                 }
