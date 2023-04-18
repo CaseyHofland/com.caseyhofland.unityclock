@@ -1,6 +1,7 @@
 #nullable enable
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace UnityClock
@@ -10,7 +11,7 @@ namespace UnityClock
     public class TemporalMaterialLerper : ScriptableObject, ISerializationCallbackReceiver
     {
         [SerializeField] private Shader shader;
-        [SerializeField] private List<SerializableTimeOnly> _keys = new();
+        [SerializeField, TimeOnly(true, true, true, true, true)] private List<long> _keys = new();
         [SerializeField] private List<Material> _values = new();
 
         public SortedList<TimeOnly, Material> materialsByTime = new();
@@ -83,7 +84,7 @@ namespace UnityClock
 
         void ISerializationCallbackReceiver.OnBeforeSerialize()
         {
-            //_keys = materialsByTime.Keys.ToList().ConvertAll(time => (SerializableTimeOnly)time);
+            //_keys = materialsByTime.Keys.ToList().ConvertAll(time => time.Ticks);
             //_values = materialsByTime.Values.ToList();
         }
 
@@ -93,7 +94,7 @@ namespace UnityClock
 
             for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
             {
-                materialsByTime.Add(_keys[i], _values[i]);
+                materialsByTime.Add(new(_keys[i]), _values[i]);
             }
         }
     }
