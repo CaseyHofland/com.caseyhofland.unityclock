@@ -1,10 +1,15 @@
 #nullable enable
-
 using System;
+using UnityEngine;
 
 namespace UnityClock
 {
-    public interface ITemporal<T>
+    public interface ITemporal
+    {
+        void Evaluate(TimeOnly time);
+    }
+
+    [Obsolete] public interface ITemporalOld<T>
     {
         T lastValue { get; set; }
 
@@ -23,14 +28,9 @@ namespace UnityClock
         }
     }
 
-    public interface ITemporal2
+    [Obsolete] public interface ITemporal<out T> : ITemporal
     {
-        void Evaluate(TimeOnly time);
-    }
-
-    public interface ITemporal2<out T> : ITemporal2
-    {
-        void ITemporal2.Evaluate(TimeOnly time) => Evaluate(time);
+        void ITemporal.Evaluate(TimeOnly time) => Evaluate(time);
         new T Evaluate(TimeOnly time);
     }
 }

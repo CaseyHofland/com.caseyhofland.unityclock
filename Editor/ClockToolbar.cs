@@ -66,16 +66,17 @@ namespace UnityClock.Editor
 
             AnimationMode.BeginSampling();
 
-            var temporalClipSources = UnityEngine.Object.FindObjectsOfType<MonoBehaviour>().OfType<ITemporalClipSource>();
+            var temporalClipSources = UnityEngine.Object.FindObjectsOfType<MonoBehaviour>().OfType<ITemporal>().OfType<IAnimationClipSource>();
             var clips = new List<AnimationClip>(1);
             var sampleTime = time.Ticks * Clock.dayMultiplier;
             foreach (var clipSource in temporalClipSources)
             {
+                var gameObject = ((MonoBehaviour)clipSource).gameObject;
                 clipSource.GetAnimationClips(clips);
 
                 foreach (var clip in clips)
                 {
-                    AnimationMode.SampleAnimationClip(clipSource.gameObject, clip, sampleTime * clip.length);
+                    AnimationMode.SampleAnimationClip(gameObject, clip, sampleTime * clip.length);
                 }
             }
 

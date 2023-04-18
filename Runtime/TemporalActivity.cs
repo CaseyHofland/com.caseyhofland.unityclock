@@ -6,22 +6,22 @@ using UnityEngine.Events;
 namespace UnityClock
 {
     [ExecuteAlways]
-    public class TemporalActivity : MonoBehaviour, ITemporal<bool>
+    public class TemporalActivity : MonoBehaviour, ITemporalOld<bool>
     {
         [field: SerializeField] public TimeRange activeHours { get; set; }
         [field: SerializeField] public UnityEvent<bool> activityChanged { get; set; } = new();
 
-        [field: SerializeField, HideInInspector] bool ITemporal<bool>.lastValue { get; set; }
+        [field: SerializeField, HideInInspector] bool ITemporalOld<bool>.lastValue { get; set; }
 
         private void OnEnable()
         {
-            Clock.timeChanged += ((ITemporal<bool>)this).TryChange;
+            Clock.timeChanged += ((ITemporalOld<bool>)this).TryChange;
             ForceChange(Evaluate(Clock.time));
         }
 
         private void OnDisable()
         {
-            Clock.timeChanged -= ((ITemporal<bool>)this).TryChange;
+            Clock.timeChanged -= ((ITemporalOld<bool>)this).TryChange;
         }
 
         public bool Evaluate(TimeOnly time) => activeHours.IsBetween(time);

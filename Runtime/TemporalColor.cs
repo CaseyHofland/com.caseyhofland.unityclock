@@ -7,7 +7,7 @@ using UnityEngine.Events;
 namespace UnityClock
 {
     [ExecuteAlways]
-    public class TemporalColor : MonoBehaviour, ITemporal<Color>
+    public class TemporalColor : MonoBehaviour, ITemporalOld<Color>
     {
 //#if UNITY_EDITOR
 //        private static readonly FieldInfo _focusChangedField = typeof(UnityEditor.EditorApplication).GetField("focusChanged", BindingFlags.Static | BindingFlags.NonPublic);
@@ -51,16 +51,16 @@ namespace UnityClock
         [field: SerializeField] public string colorName { get; set; } = string.Empty;
         [field: SerializeField] public UnityEvent<int, Color> materialChanged { get; set; } = new();
 
-        [field: SerializeField, HideInInspector] Color ITemporal<Color>.lastValue { get; set; }
+        [field: SerializeField, HideInInspector] Color ITemporalOld<Color>.lastValue { get; set; }
 
         private void OnEnable()
         {
-            Clock.timeChanged += ((ITemporal<Color>)this).TryChange;
+            Clock.timeChanged += ((ITemporalOld<Color>)this).TryChange;
         }
 
         private void OnDisable()
         {
-            Clock.timeChanged -= ((ITemporal<Color>)this).TryChange;
+            Clock.timeChanged -= ((ITemporalOld<Color>)this).TryChange;
         }
 
         public Color Evaluate(TimeOnly time)

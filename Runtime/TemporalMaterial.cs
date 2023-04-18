@@ -6,7 +6,7 @@ using UnityEngine;
 namespace UnityClock
 {
     [CreateAssetMenu(menuName = "Temporal Material", order = 302)]
-    public class TemporalMaterial : ScriptableObject, ITemporal2
+    public class TemporalMaterial : ScriptableObject, ITemporal
     {
         [field: SerializeField] public Material? targetMaterial { get; set; }
 
