@@ -26,7 +26,7 @@ namespace UnityClock
         /// <param name="overrideState">The initial override state for the parameter.</param>
         public TimeOnlyParameter(TimeOnly value, bool overrideState = false) : base(value, overrideState) { }
 
-        public override void Interp(TimeOnly from, TimeOnly to, float t) => m_Value = from.Add((to - from) * t).Ticks;
+        public override void Interp(TimeOnly from, TimeOnly to, float t) => m_Value = Clock.LerpUnclamped(from, to, t).Ticks;
     }
 
     /// <summary>
@@ -50,6 +50,6 @@ namespace UnityClock
         /// <param name="overrideState">The initial override state for the parameter.</param>
         public TimeSpanParameter(TimeSpan value, bool overrideState = false) : base(value, overrideState) { }
 
-        public override void Interp(TimeSpan from, TimeSpan to, float t) => m_Value = (from + (to - from) * t).Ticks;
+        public override void Interp(TimeSpan from, TimeSpan to, float t) => m_Value = Clock.LerpUnclamped(from, to, t).Ticks;
     }
 }

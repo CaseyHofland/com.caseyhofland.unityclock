@@ -50,6 +50,12 @@ namespace UnityClock
         /// </summary>
         public static event Action<TimeOnly>? timeChanged;
 
+        public static TimeOnly Lerp(TimeOnly start, TimeOnly end, float t) => LerpUnclamped(start, end, Mathf.Clamp01(t));
+        public static TimeOnly LerpUnclamped(TimeOnly start, TimeOnly end, float t) => start.Add((end - start) * t);
+
+        public static TimeSpan Lerp(TimeSpan start, TimeSpan end, float t) => LerpUnclamped(start, end, Mathf.Clamp01(t));
+        public static TimeSpan LerpUnclamped(TimeSpan start, TimeSpan end, float t) => start + (end - start) * t;
+
         /// <summary>
         /// Determines where time falls between start and end.
         /// </summary>
@@ -64,8 +70,12 @@ namespace UnityClock
         {
             var startTicks = start.Ticks;
             var endTicks = end.Ticks;
-            var timeTicks = time.Ticks;
+            if (startTicks == endTicks)
+            {
+                return 0f;
+            }
 
+            var timeTicks = time.Ticks;
             if (startTicks > endTicks)
             {
                 endTicks += TimeSpan.TicksPerDay;
@@ -78,11 +88,12 @@ namespace UnityClock
             return Mathf.InverseLerp(startTicks, endTicks, timeTicks);
         }
 
+        public static float InverseLerp(TimeSpan start, TimeSpan end, TimeSpan span) => Mathf.InverseLerp(start.Ticks, end.Ticks, span.Ticks);
+
         /// <summary>
         /// Returns a value between 1 and 0 where 1 is midday and 0 is midnight.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)] public static float PingPong(TimeOnly time) => PingPong(time.Ticks);
-
         [MethodImpl(MethodImplOptions.AggressiveInlining)] internal static float PingPong(long ticks) => 1f - Mathf.Abs(ticks * pingPongMultiplier - 1f);
     }
 }
