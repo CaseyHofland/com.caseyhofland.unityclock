@@ -5,6 +5,7 @@ namespace UnityClock
 {
     [ExecuteAlways]
     [AddComponentMenu(nameof(Clock) + "/" + nameof(Orbit))]
+    [Obsolete]
     public class Orbit : MonoBehaviour
     {
         [field: SerializeField]

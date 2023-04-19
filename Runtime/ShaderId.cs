@@ -5,6 +5,7 @@ using UnityEngine;
 namespace UnityClock
 {
     [Serializable]
+    [Obsolete]
     public struct ShaderId : ISerializationCallbackReceiver, IEquatable<ShaderId>
     {
         [SerializeField] private string? _name;

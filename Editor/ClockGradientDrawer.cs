@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 
 namespace UnityClock.Editor
 {
+    [System.Obsolete]
     [CustomPropertyDrawer(typeof(ClockGradient))]
     public class ClockGradientDrawer : PropertyDrawer
     {

@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 
 namespace UnityClock.Editor
 {
+    [System.Obsolete]
     [CustomPropertyDrawer(typeof(ShaderId))]
     public class ShaderIdDrawer : PropertyDrawer
     {

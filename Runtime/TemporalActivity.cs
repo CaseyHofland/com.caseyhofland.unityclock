@@ -6,6 +6,7 @@ using UnityEngine.Events;
 namespace UnityClock
 {
     [ExecuteAlways]
+    [Obsolete]
     public class TemporalActivity : MonoBehaviour, ITemporalOld<bool>
     {
         [field: SerializeField] public TimeRange activeHours { get; set; }

@@ -5,6 +5,7 @@ using UnityEngine;
 namespace UnityClock
 {
     [Serializable]
+    [Obsolete]
     public class ClockGradient : ITemporal<Color>
     {
         [field: SerializeField] public Gradient zeroToTwelve { get; set; } = new()

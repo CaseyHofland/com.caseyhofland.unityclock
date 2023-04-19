@@ -22,7 +22,8 @@ namespace UnityClock
 #if UNITY_EDITOR
             if (!Application.IsPlaying(this) && !gameObject.GetComponent<Animation>())
             {
-                UnityEditor.Undo.AddComponent<Animation>(gameObject);
+                var animation = UnityEditor.Undo.AddComponent<Animation>(gameObject);
+                UnityEditorInternal.InternalEditorUtility.SetIsInspectorExpanded(animation, false);
             }
 #endif   
         }

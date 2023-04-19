@@ -7,6 +7,7 @@ using UnityEngine.Events;
 namespace UnityClock
 {
     [ExecuteAlways]
+    [Obsolete]
     public class TemporalColor : MonoBehaviour, ITemporalOld<Color>
     {
 //#if UNITY_EDITOR
