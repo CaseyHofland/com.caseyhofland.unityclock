@@ -1,12 +1,10 @@
-#nullable enable
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEditor;
 using UnityEditor.Overlays;
 using UnityEditor.Toolbars;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Object = UnityEngine.Object;
 
 namespace UnityClock.Editor
 {
@@ -14,95 +12,208 @@ namespace UnityClock.Editor
     [Icon("UnityEditor.AnimationWindow")]
     public class ClockToolbar : ToolbarOverlay
     {
-        public ClockToolbar() : base(nameof(AnimateTimeElement), nameof(PreviewTimeElement), nameof(PreviewTimeLapseElement)) { }
+        public readonly ClockPreviewControl clockPreviewControl = new()
+        {
+            time = new(12, 0)
+        };
+
+        public override void OnCreated()
+        {
+            clockPreviewControl.OnCreate();
+        }
+
+        public override void OnWillBeDestroyed()
+        {
+            clockPreviewControl.previewing = false;
+            clockPreviewControl.OnDestroy();
+        }
+
+        public ClockToolbar() : base(nameof(PreviewTimeElement), nameof(PreviewTimeLapseElement)) { }
     }
 
-    [EditorToolbarElement(nameof(AnimateTimeElement), typeof(SceneView))]
-    public class AnimateTimeElement : EditorToolbarToggle
+    [EditorToolbarElement(nameof(PreviewTimeElement), typeof(SceneView))]
+    public class PreviewTimeElement : EditorToolbarDropdownToggle, IAccessContainerWindow
     {
-        [SerializeField] private AnimationModeDriver driver = ScriptableObject.CreateInstance<AnimationModeDriver>();
-
-        private static readonly string savedValueKey = typeof(SceneView).AssemblyQualifiedName + typeof(AnimateTimeElement).AssemblyQualifiedName;
-        private static bool savedValue
+        private class Dummy : ScriptableObject
         {
-            get => EditorPrefs.GetBool(savedValueKey);
-            set => EditorPrefs.SetBool(savedValueKey, value);
+            [TimeOnly] public long ticks = TimeSpan.TicksPerDay / 2;
         }
 
-        public AnimateTimeElement()
+        public EditorWindow containerWindow { get; set; }
+        public SceneView sceneView => (SceneView)containerWindow;
+        public ClockToolbar clockToolbar => (sceneView.TryGetOverlay(nameof(ClockToolbar), out var overlay) ? (ClockToolbar)overlay : null)!;
+        public ClockPreviewControl clockPreviewControl => clockToolbar.clockPreviewControl;
+
+        public PreviewTimeElement()
         {
-            name = "Animate Time";
-            tooltip = "Toggle time-based view.";
+            // Set display values.
+            name = "Preview Time";
+            text = "Preview";
             icon = (Texture2D)EditorGUIUtility.IconContent("UnityEditor.AnimationWindow").image;
+            tooltip = "Specify a time to preview in the scene view.";
 
-            this.RegisterValueChangedCallback(evt => SetActive(savedValue = evt.newValue));
-            value = savedValue;
+            // Add the DropdownClicked event.
+            dropdownClicked += () =>
+            {
+                var dummy = ScriptableObject.CreateInstance<Dummy>();
+                var so = new SerializedObject(dummy);
+                var timeProperty = so.FindProperty(nameof(Dummy.ticks));
 
-            RegisterCallback<AttachToPanelEvent>(_ => SetActive(value));
-            RegisterCallback<DetachFromPanelEvent>(_ => SetActive(false));
+                LongPopup longPopup = null;
+                longPopup = new LongPopup(timeProperty
+                    , ticks => clockPreviewControl.time = new(ticks)
+                    , () => EditorApplication.update += UpdateTimeProperty
+                    , () =>
+                    {
+                        EditorApplication.update -= UpdateTimeProperty;
+                        Object.DestroyImmediate(dummy);
+                    });
+                UpdateTimeProperty();
+                UnityEditor.PopupWindow.Show(worldBound, longPopup);
+
+                void UpdateTimeProperty()
+                {
+                    timeProperty.longValue = clockPreviewControl.time.Ticks;
+                    if (longPopup != null && longPopup.editorWindow != null)
+                    {
+                        EditorUtility.SetDirty(longPopup.editorWindow);
+                        longPopup.editorWindow.Repaint();
+                    }
+                }
+            };
+
+            // Add callbacks.
+            SceneView.duringSceneGui += DrawEnabledIfNotInAnimationMode;
+            this.RegisterValueChangedCallback(evt => clockPreviewControl.previewing = evt.newValue);
         }
 
-        public void SetActive(bool value)
+        private void DrawEnabledIfNotInAnimationMode(SceneView sceneView)
         {
-            if (value && !AnimationMode.InAnimationMode(driver))
-            {
-                AnimationMode.StartAnimationMode(driver);
-                Clock.timeChanged += AnimateTime;
-                AnimateTime(Clock.time);
-            }
-            else if (!value && AnimationMode.InAnimationMode(driver))
-            {
-                Clock.timeChanged -= AnimateTime;
-                AnimationMode.StopAnimationMode(driver);
-            }
-        }
-
-        public void AnimateTime(TimeOnly time)
-        {
-            if (EditorApplication.isPlaying || !AnimationMode.InAnimationMode(driver))
+            if (sceneView != containerWindow)
             {
                 return;
             }
 
-            AnimationMode.BeginSampling();
-
-            var temporalClipSources = UnityEngine.Object.FindObjectsOfType<MonoBehaviour>().OfType<ITemporal>().OfType<IAnimationClipSource>();
-            var clips = new List<AnimationClip>(1);
-            var sampleTime = time.Ticks * Clock.dayMultiplier;
-            foreach (var clipSource in temporalClipSources)
-            {
-                var gameObject = ((MonoBehaviour)clipSource).gameObject;
-                clipSource.GetAnimationClips(clips);
-
-                foreach (var clip in clips)
-                {
-                    AnimationMode.SampleAnimationClip(gameObject, clip, sampleTime * clip.length);
-                }
-            }
-
-            AnimationMode.EndSampling();
-        }
-    }
-
-    [EditorToolbarElement(nameof(PreviewTimeElement), typeof(SceneView))]
-    public class PreviewTimeElement : EditorToolbarDropdownToggle
-    {
-        public PreviewTimeElement()
-        {
-            name = "Preview Time";
-            text = "Preview";
-            tooltip = "Specify a time to preview in the scene view.";
+            //SetEnabled(clockPreviewControl.canPreview);
+            this.Q<Button>().SetEnabled(clockPreviewControl.canPreview);
+            SetValueWithoutNotify(clockPreviewControl.previewing);
         }
     }
 
     [EditorToolbarElement(nameof(PreviewTimeLapseElement), typeof(SceneView))]
-    public class PreviewTimeLapseElement : EditorToolbarDropdownToggle
+    public class PreviewTimeLapseElement : EditorToolbarDropdownToggle, IAccessContainerWindow
     {
+        private class Dummy : ScriptableObject
+        {
+            [TimeSpan] public long ticks = TimeSpan.TicksPerSecond * 24;
+        }
+
+        public EditorWindow containerWindow { get; set; }
+        public SceneView sceneView => (SceneView)containerWindow;
+        public ClockToolbar clockToolbar => (sceneView.TryGetOverlay(nameof(ClockToolbar), out var overlay) ? (ClockToolbar)overlay : null)!;
+        public ClockPreviewControl clockPreviewControl => clockToolbar.clockPreviewControl;
+
+        private double realtimeAtAnimStart;
+        private TimeSpan daySpan = new(0, 0, 24);
+
         public PreviewTimeLapseElement()
         {
+            // Set display values.
             name = "Preview Time Lapse";
             tooltip = "Specify a time lapse to preview in the scene view.";
             icon = (Texture2D)EditorGUIUtility.IconContent("Animation.Play").image;
+
+            // Add the DropdownClicked event.
+            dropdownClicked += () =>
+            {
+                var dummy = ScriptableObject.CreateInstance<Dummy>();
+                var so = new SerializedObject(dummy);
+                var timeLapseProperty = so.FindProperty(nameof(Dummy.ticks));
+                timeLapseProperty.longValue = daySpan.Ticks;
+
+                var longPopup = new LongPopup(timeLapseProperty, ticks => daySpan = new(ticks), onClose: () => Object.DestroyImmediate(dummy));
+                UnityEditor.PopupWindow.Show(worldBound, longPopup);
+            };
+
+            // Add callbacks.
+            SceneView.duringSceneGui += DrawEnabledIfNotInAnimationMode;
+            this.RegisterValueChangedCallback(evt => Animate(evt.newValue));
+        }
+
+        private void Animate(bool value)
+        {
+            EditorApplication.update -= UpdateTime;
+
+            if (value)
+            {
+                realtimeAtAnimStart = Time.realtimeSinceStartupAsDouble;
+                EditorApplication.update += UpdateTime;
+            }
+        }
+
+        private void UpdateTime()
+        {
+            if (!clockPreviewControl.previewing)
+            {
+                EditorApplication.update -= UpdateTime;
+                return;
+            }
+
+            var timeAsDouble = Time.realtimeSinceStartupAsDouble - realtimeAtAnimStart;
+            var elapsedTime = daySpan == TimeSpan.Zero ? TimeSpan.Zero : TimeSpan.FromSeconds(timeAsDouble / daySpan.TotalDays);
+            clockPreviewControl.time = clockPreviewControl.time.Add(elapsedTime);
+            realtimeAtAnimStart = Time.realtimeSinceStartupAsDouble;
+        }
+
+        private void DrawEnabledIfNotInAnimationMode(SceneView view)
+        {
+            if (view != containerWindow)
+            {
+                return;
+            }
+
+            this.Q<Button>().SetEnabled(clockPreviewControl.canPreview);
+        }
+    }
+
+    internal class LongPopup : PopupWindowContent
+    {
+        public readonly SerializedProperty property;
+        public readonly Action<long> onChanged;
+        public readonly Action onOpen;
+        public readonly Action onClose;
+
+        public LongPopup(SerializedProperty property, Action<long> onChanged, Action onOpen = null, Action onClose = null)
+        {
+            this.property = property;
+            this.onChanged = onChanged;
+            this.onOpen = onOpen;
+            this.onClose = onClose;
+        }
+
+        public override Vector2 GetWindowSize() => new(280f, EditorGUI.GetPropertyHeight(property, true));
+
+        public override void OnGUI(Rect rect)
+        {
+            EditorGUIUtility.labelWidth = 100f;
+            EditorGUI.BeginChangeCheck();
+            EditorGUI.PropertyField(rect, property, true);
+            if (EditorGUI.EndChangeCheck())
+            {
+                onChanged.Invoke(property.longValue);
+            }
+        }
+
+        public override void OnOpen()
+        {
+            base.OnOpen();
+            onOpen?.Invoke();
+        }
+
+        public override void OnClose()
+        {
+            base.OnClose();
+            onClose?.Invoke();
         }
     }
 }

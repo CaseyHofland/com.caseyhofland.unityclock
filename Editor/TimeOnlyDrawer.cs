@@ -8,8 +8,6 @@ namespace UnityClock.Editor
     [CustomPropertyDrawer(typeof(TimeOnlyAttribute), true)]
     public class TimeOnlyDrawer : PropertyDrawer
     {
-        public const string timeFormat = "g";
-
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             if (property.numericType != SerializedPropertyNumericType.Int64)
@@ -29,7 +27,7 @@ namespace UnityClock.Editor
                 textFieldPosition.x += EditorGUIUtility.labelWidth - EditorGUI.indentLevel * 18f;
                 textFieldPosition.width = position.width - EditorGUIUtility.labelWidth + EditorGUI.indentLevel * 18f;
                 EditorGUI.BeginChangeCheck();
-                var timeString = EditorGUI.DelayedTextField(textFieldPosition, timeOnly.ToString(timeFormat));
+                var timeString = EditorGUI.DelayedTextField(textFieldPosition, timeOnly.ToString(timeOnlyAttribute.timeFormat));
                 if (!timeString.Contains(":"))
                 {
                     timeString += ":0";
@@ -39,7 +37,10 @@ namespace UnityClock.Editor
                     timeOnly = TimeOnly.MinValue.Add(result);
                 }
 
-                property.isExpanded = EditorGUI.Foldout(position, property.isExpanded, foldoutLabel, true);
+                if (timeOnlyAttribute.showHour || timeOnlyAttribute.showMinute || timeOnlyAttribute.showSecond || timeOnlyAttribute.showMillisecond || timeOnlyAttribute.showInterpolant)
+                {
+                    property.isExpanded = EditorGUI.Foldout(position, property.isExpanded, foldoutLabel, true);
+                }
             }
 
             // Draw sliders.
@@ -84,7 +85,7 @@ namespace UnityClock.Editor
                     EditorGUI.BeginChangeCheck();
                     position.y += EditorGUIUtility.singleLineHeight + 2f;
                     var interpolant = Clock.InverseLerp(TimeOnly.MinValue, TimeOnly.MaxValue, timeOnly);
-                    interpolant = EditorGUI.Slider(position, "Interpolant", interpolant, 0f, 1f);
+                    interpolant = EditorGUI.Slider(position, ObjectNames.NicifyVariableName(nameof(interpolant)), interpolant, 0f, 1f);
                     if (EditorGUI.EndChangeCheck())
                     {
                         timeOnly = TimeOnly.FromTimeSpan(TimeSpan.FromTicks(TimeOnly.MaxValue.Ticks) * interpolant);

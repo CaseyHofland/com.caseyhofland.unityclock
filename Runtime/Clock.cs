@@ -10,10 +10,10 @@ namespace UnityClock
         private static TimeOnly _time;
 
         public const float dayMultiplier = 1f / TimeSpan.TicksPerDay;
-        internal const float pingPongMultiplier = dayMultiplier * 2f;
-        private static readonly int _UnityClock_Clock_Time = Shader.PropertyToID(nameof(_UnityClock_Clock_Time));
-        private static readonly int _UnityClock_Clock_Interpolant = Shader.PropertyToID(nameof(_UnityClock_Clock_Interpolant));
-        private static readonly int _UnityClock_Clock_PingPong = Shader.PropertyToID(nameof(_UnityClock_Clock_PingPong));
+        private const float pingPongMultiplier = dayMultiplier * 2f;
+        private static readonly int _UnityClock_Time = Shader.PropertyToID(nameof(_UnityClock_Time));
+        private static readonly int _UnityClock_Interpolant = Shader.PropertyToID(nameof(_UnityClock_Interpolant));
+        private static readonly int _UnityClock_PingPong = Shader.PropertyToID(nameof(_UnityClock_PingPong));
 
         /// <summary>
         /// The elapsed time for a day span since the start of the game.
@@ -31,16 +31,13 @@ namespace UnityClock
             get => _time;
             set
             {
-                if (value == _time)
-                {
-                    return;
-                }
-
                 _time = value;
                 var ticks = value.Ticks;
-                Shader.SetGlobalVector(_UnityClock_Clock_Time, new Vector4(value.Hour, value.Minute, value.Second, value.Millisecond));
-                Shader.SetGlobalFloat(_UnityClock_Clock_Interpolant, ticks * dayMultiplier);
-                Shader.SetGlobalFloat(_UnityClock_Clock_PingPong, PingPong(ticks));
+                {
+                    Shader.SetGlobalVector(_UnityClock_Time, new Vector4(value.Hour, value.Minute, value.Second, value.Millisecond));
+                    Shader.SetGlobalFloat(_UnityClock_Interpolant, ticks * dayMultiplier);
+                    Shader.SetGlobalFloat(_UnityClock_PingPong, PingPong(ticks));
+                }
                 timeChanged?.Invoke(value);
             }
         }
@@ -48,7 +45,7 @@ namespace UnityClock
         /// <summary>
         /// Invoked whenever the time changes.
         /// </summary>
-        public static event Action<TimeOnly>? timeChanged;
+        [Obsolete] public static event Action<TimeOnly>? timeChanged;
 
         public static TimeOnly Lerp(TimeOnly start, TimeOnly end, float t) => LerpUnclamped(start, end, Mathf.Clamp01(t));
         public static TimeOnly LerpUnclamped(TimeOnly start, TimeOnly end, float t) => start.Add((end - start) * t);

@@ -8,8 +8,6 @@ namespace UnityClock.Editor
     [CustomPropertyDrawer(typeof(TimeSpanAttribute), true)]
     public class TimeSpanDrawer : PropertyDrawer
     {
-        public const string timeFormat = "g";
-
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             if (property.numericType != SerializedPropertyNumericType.Int64)
@@ -29,7 +27,7 @@ namespace UnityClock.Editor
                 textFieldPosition.x += EditorGUIUtility.labelWidth - EditorGUI.indentLevel * 18f;
                 textFieldPosition.width = position.width - EditorGUIUtility.labelWidth + EditorGUI.indentLevel * 18f;
                 EditorGUI.BeginChangeCheck();
-                var timeString = EditorGUI.DelayedTextField(textFieldPosition, timeSpan.ToString(timeFormat));
+                var timeString = EditorGUI.DelayedTextField(textFieldPosition, timeSpan.ToString(timeSpanAttribute.timeFormat));
                 if (!timeString.Contains(":"))
                 {
                     timeString += ":0";
@@ -39,7 +37,10 @@ namespace UnityClock.Editor
                     timeSpan = result;
                 }
 
-                property.isExpanded = EditorGUI.Foldout(position, property.isExpanded, foldoutLabel, true);
+                if (timeSpanAttribute.showDays || timeSpanAttribute.showHours || timeSpanAttribute.showMinutes || timeSpanAttribute.showSeconds || timeSpanAttribute.showMilliseconds)
+                {
+                    property.isExpanded = EditorGUI.Foldout(position, property.isExpanded, foldoutLabel, true);
+                }
             }
 
             // Draw sliders.
@@ -51,7 +52,13 @@ namespace UnityClock.Editor
                 {
                     EditorGUI.BeginChangeCheck();
 
-                    int days = timeSpan.Days, hours = timeSpan.Hours, minutes = timeSpan.Minutes, seconds = timeSpan.Seconds, milliseconds = timeSpan.Milliseconds;
+                    bool minus = timeSpan.Ticks < 0;
+                    int days = Math.Abs(timeSpan.Days), hours = Math.Abs(timeSpan.Hours), minutes = Math.Abs(timeSpan.Minutes), seconds = Math.Abs(timeSpan.Seconds), milliseconds = Math.Abs(timeSpan.Milliseconds);
+                    if (timeSpanAttribute.showMinus)
+                    {
+                        position.y += EditorGUIUtility.singleLineHeight + 2f;
+                        minus = EditorGUI.Toggle(position, ObjectNames.NicifyVariableName("minusThing"), minus);
+                    }
                     if (timeSpanAttribute.showDays)
                     {
                         position.y += EditorGUIUtility.singleLineHeight + 2f;
@@ -80,6 +87,10 @@ namespace UnityClock.Editor
                     if (EditorGUI.EndChangeCheck())
                     {
                         timeSpan = new TimeSpan(days, hours, minutes, seconds, milliseconds);
+                        if (minus)
+                        {
+                            timeSpan = -timeSpan;
+                        }
                     }
                 }
 
@@ -96,6 +107,10 @@ namespace UnityClock.Editor
             var height = EditorGUI.GetPropertyHeight(property, label, true);
             if (property.isExpanded)
             {
+                if (timeSpanAttribute.showMinus)
+                {
+                    height += EditorGUIUtility.singleLineHeight + 2f;
+                }
                 if (timeSpanAttribute.showDays)
                 {
                     height += EditorGUIUtility.singleLineHeight + 2f;
