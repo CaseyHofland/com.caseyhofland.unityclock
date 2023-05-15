@@ -12,12 +12,9 @@ namespace UnityClock.Editor
     [Serializable]
     public class ClockPreviewControl
     {
+        private static readonly ProfilerMarker _resampleAnimationMarker = new($"{nameof(ClockPreviewControl)}.{nameof(ResampleAnimation)}");
+
         [SerializeField] private AnimationModeDriver? _driver;
-
-        private static readonly ProfilerMarker _resampleAnimationMarker = new("ClockPreviewControl.ResampleAnimation");
-
-        private Lookup<GameObject, AnimationClip>? _graph;
-
         private AnimationModeDriver driver
         {
             get
@@ -50,16 +47,14 @@ namespace UnityClock.Editor
             }
         }
 
-        [SerializeField] private Vector4 a;
-        [SerializeField] private float b;
-        [SerializeField] private float c;
-
         [SerializeField] private TimeOnly _time;
         public TimeOnly time
         {
             get => _time;
             set => ResampleAnimation(_time = value);
         }
+
+        private Lookup<GameObject, AnimationClip>? _graph;
 
         public void OnCreate()
         {

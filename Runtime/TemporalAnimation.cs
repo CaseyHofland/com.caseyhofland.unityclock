@@ -6,6 +6,7 @@ using UnityEngine;
 namespace UnityClock
 {
     [AddComponentMenu("Unity Time/Temporal Animation")]
+    [DisallowMultipleComponent]
     public class TemporalAnimation : MonoBehaviour, IAnimationClipSource, ITemporal
     {
         [field: SerializeField, Tooltip("The clips used to animate the object. Clips are sampled based on time so that the start and end of the clip correspond to 0:00 on the clock.")] 
