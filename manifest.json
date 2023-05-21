@@ -276,30 +276,6 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "index.md",
-      "output": {
-        ".html": {
-          "relative_path": "index.html",
-          "hash": "lRVfCBYc0SrgE+pOMoQrkjLMc93FdzClkL4ZuqWFh1U="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "manual/Main.md",
-      "output": {
-        ".html": {
-          "relative_path": "manual/Main.html",
-          "hash": "RQ9DE+BzcUlYNn209ZFefRl0koWbRwpiwb3lZATUqL0="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "manual/etiam.md",
       "output": {
         ".html": {
@@ -311,12 +287,24 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "manual/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/index.html",
+          "hash": "zv1PyPipY+9iMjlPfPEMkYetTkfwNLtfroD5owjLeD8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "manual/toc.yml",
       "output": {
         ".html": {
           "relative_path": "manual/toc.html",
-          "hash": "+YKg0yetYGbEwLNRaKec3KvTUrhOlGW58HfCdAuVlhI="
+          "hash": "Rkk77/x5AmFDdpbI+qPhECeaofvOhQ19ulQexNhYHWM="
         }
       },
       "is_incremental": false,
@@ -350,7 +338,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "bPvxhAX3/1oEMXaKrfLaW9+Of2FnWRbGCA54eX6Qaa8="
+          "hash": "+9jKss0j5QzY143s1OUyfQg/lJNTaiQjnTQGtdf2HUE="
         }
       },
       "is_incremental": false,
@@ -371,7 +359,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 3,
+          "total_file_count": 2,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
