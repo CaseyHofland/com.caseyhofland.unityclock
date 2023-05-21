@@ -5,21 +5,19 @@
                 {
                     "src": "..",
                     "files": [
-                        "Assets/**/*.cs"
-                    ],
-                    "exclude": [
-                        "Assets/Plugins/**"
+                        "**/*.cs"
                     ]
                 }
             ],
             "globalNamespaceId": "Global",
+            "filter": "filterConfig.yml",
             "dest": "api"
         }
     ],
     "build": {
         "globalMetadata": {
             "_appTitle": "Unity Clock",
-            "_appFooter": "Example Unity documentation",
+            "_appFooter": "Unity Clock",
             "_enableSearch": true
         },
         "content": [
@@ -61,7 +59,7 @@
             }
         ],
         "sitemap": {
-            "baseUrl": "https://normanderwan.github.io/DocFxForUnity",
+            "baseUrl": "https://casey-hofland.github.io/UnityClock/",
             "changefreq": "weekly",
             "fileOptions": {
                 "api/*": {
