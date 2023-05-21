@@ -7,10 +7,10 @@
       }
     },
     "baseUrl": "https://casey-hofland.github.io/UnityClock/",
-    "changefreq": "weekly"
+    "changefreq": "daily"
   },
   "homepages": [],
-  "source_base_path": "D:/a/UnityClock/UnityClock/Documentation",
+  "source_base_path": "D:/a/UnityClock/UnityClock/Documentation~",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -280,7 +280,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "490AbVPuo5wDcDJi8fjE6Hql7i7KaKsRaKiC0O0AWEw="
+          "hash": "lRVfCBYc0SrgE+pOMoQrkjLMc93FdzClkL4ZuqWFh1U="
         }
       },
       "is_incremental": false,
@@ -292,7 +292,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/Main.html",
-          "hash": "GKiRzPanh7BV147WsIzdyOJc/cwyyegfDqEl6VfTuP4="
+          "hash": "RQ9DE+BzcUlYNn209ZFefRl0koWbRwpiwb3lZATUqL0="
         }
       },
       "is_incremental": false,
@@ -304,7 +304,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/etiam.html",
-          "hash": "j+Ve68mHcReauzs7/V9MzkR7tlDzR8Hp3cPDWSeQI5I="
+          "hash": "KDjNcR5o0GeRWkJWo8SiTvHz8lLBze+b1BYnCS6RfK0="
         }
       },
       "is_incremental": false,
