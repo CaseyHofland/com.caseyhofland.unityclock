@@ -10,7 +10,6 @@
                 }
             ],
             "globalNamespaceId": "Global",
-            "filter": "filterConfig.yml",
             "dest": "api"
         }
     ],
@@ -43,14 +42,6 @@
                 "dest": "manual"
             }
         ],
-        "overwrite": [
-            {
-                "src": "..",
-                "files": [
-                    "Assets/Scripts/**/*.md"
-                ]
-            }
-        ],
         "resource": [
             {
                 "files": [
@@ -60,7 +51,7 @@
         ],
         "sitemap": {
             "baseUrl": "https://casey-hofland.github.io/UnityClock/",
-            "changefreq": "weekly",
+            "changefreq": "daily",
             "fileOptions": {
                 "api/*": {
                     "changefreq": "daily"

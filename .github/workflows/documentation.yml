@@ -1,4 +1,4 @@
-name: Example documentation
+name: Generate DocFX Documentation
 
 on:
   push:
@@ -19,10 +19,10 @@ jobs:
         run: choco install -y docfx
 
       - name: Use README.md as index.md
-        run: cp README.md Documentation/index.md
+        run: cp README.md Documentation~/index.md
 
       - name: Build
-        run: docfx Documentation/docfx.json
+        run: docfx Documentation~/docfx.json
 
       # Upload the generated documentation
       - name: Upload site artifact
