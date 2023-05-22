@@ -276,6 +276,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "/iMtq3SkrWeMSa33n2DVAsPtVkFuqryuFrmLOwUZulk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "manual/etiam.md",
       "output": {
         ".html": {
@@ -287,24 +299,12 @@
       "version": ""
     },
     {
-      "type": "Conceptual",
-      "source_relative_path": "manual/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "manual/index.html",
-          "hash": "zv1PyPipY+9iMjlPfPEMkYetTkfwNLtfroD5owjLeD8="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
       "type": "Toc",
       "source_relative_path": "manual/toc.yml",
       "output": {
         ".html": {
           "relative_path": "manual/toc.html",
-          "hash": "Rkk77/x5AmFDdpbI+qPhECeaofvOhQ19ulQexNhYHWM="
+          "hash": "uzB7xfBXIoSIBGbS6sskhJ5Kzp0PjOdxDEBLji3hF6c="
         }
       },
       "is_incremental": false,
@@ -338,7 +338,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "+9jKss0j5QzY143s1OUyfQg/lJNTaiQjnTQGtdf2HUE="
+          "hash": "O4QAQjDs6nS/AfPnXCtYisue3qWlHLNe2vaa7vlHfvs="
         }
       },
       "is_incremental": false,
