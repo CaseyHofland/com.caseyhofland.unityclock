@@ -29,6 +29,7 @@
             {
                 "src": "license",
                 "files": [
+                    "toc.yml",
                     "*.md"
                 ],
                 "dest": "license"
@@ -36,6 +37,7 @@
             {
                 "src": "changelog",
                 "files": [
+                    "toc.yml",
                     "*.md"
                 ],
                 "dest": "changelog"
