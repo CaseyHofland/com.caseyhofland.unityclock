@@ -27,6 +27,20 @@
                 ]
             },
             {
+                "src": "license",
+                "files": [
+                    "*.md"
+                ],
+                "dest": "license"
+            },
+            {
+                "src": "changelog",
+                "files": [
+                    "*.md"
+                ],
+                "dest": "changelog"
+            },
+            {
                 "src": "api",
                 "files": [
                     "*.yml"

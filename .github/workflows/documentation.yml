@@ -18,6 +18,12 @@ jobs:
       - name: Install DocFX
         run: choco install -y docfx
 
+      - name: Generate Changelog Page
+        run: cp CHANGELOG.md Documentation~/changelog/changelog.md
+
+      - name: Generate License Page
+        run: cp LICENSE.md Documentation~/license/license.md
+
       - name: Build
         run: docfx Documentation~/docfx.json
 
