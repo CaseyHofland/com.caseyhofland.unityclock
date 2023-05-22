@@ -27,14 +27,16 @@
                 ]
             },
             {
+                "src": "license",
                 "files": [
-                    "license.md"
+                    "*.md"
                 ],
                 "dest": "license"
             },
             {
+                "src": "changelog",
                 "files": [
-                    "changelog.md"
+                    "*.md"
                 ],
                 "dest": "changelog"
             },
