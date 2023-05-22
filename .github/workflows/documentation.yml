@@ -19,9 +19,11 @@ jobs:
         run: choco install -y docfx
 
       - name: Generate Changelog Page
+        run: mkdir Documentation~/changelog
         run: cp CHANGELOG.md Documentation~/changelog/changelog.md
 
       - name: Generate License Page
+        run: mkdir Documentation~/license
         run: cp LICENSE.md Documentation~/license/license.md
 
       - name: Build
