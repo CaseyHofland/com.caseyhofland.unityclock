@@ -276,11 +276,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "changelog.md",
+      "source_relative_path": "changelog/changelog.md",
       "output": {
         ".html": {
           "relative_path": "changelog/changelog.html",
-          "hash": "KwYqKdyxjKV/BWH4F+1KbRryjMcSCCVynexorWTBUcg="
+          "hash": "E3qPXkbpXIUF5TERaQRo3jgNFV7+rzQhsXlI1SZgr9c="
         }
       },
       "is_incremental": false,
@@ -300,11 +300,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "license.md",
+      "source_relative_path": "license/license.md",
       "output": {
         ".html": {
           "relative_path": "license/license.html",
-          "hash": "bsxOnfQ2IPgyCBQ/1+QW4U38iCiF/BPxyiN74ZuHN3Q="
+          "hash": "9SgRXupNXu1X849zuBQtYqKswNt2Fee55puzivNQuvY="
         }
       },
       "is_incremental": false,
