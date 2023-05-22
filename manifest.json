@@ -280,7 +280,19 @@
       "output": {
         ".html": {
           "relative_path": "changelog/changelog.html",
-          "hash": "E3qPXkbpXIUF5TERaQRo3jgNFV7+rzQhsXlI1SZgr9c="
+          "hash": "+kpZDGO+mVG29prZaujxflLWbX1eeJtm+XQHJALNNqk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "changelog/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "changelog/toc.html",
+          "hash": "xrJ4pPJ+5IgqsSdnSGZBjwmmXDzhUNrWywCzObJvf/k="
         }
       },
       "is_incremental": false,
@@ -304,7 +316,19 @@
       "output": {
         ".html": {
           "relative_path": "license/license.html",
-          "hash": "9SgRXupNXu1X849zuBQtYqKswNt2Fee55puzivNQuvY="
+          "hash": "uOJWM8XJ8u1igePurJ3MUho0ATpeHLyONe4HzVCRZ28="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "license/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "license/toc.html",
+          "hash": "/wllSXD6DDqmAuONGESo4pFLFwPqcTQGF3jbJE/wMOs="
         }
       },
       "is_incremental": false,
@@ -362,7 +386,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "m7OyIcaROP7Gh8q/34q8ddXzVKDLUk66ZjVYZJv/E9Y="
+          "hash": "V6sVok4pgId+s/PEh6STNU+9aN7owC19Xz6Vm+icbek="
         }
       },
       "is_incremental": false,
