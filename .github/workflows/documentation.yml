@@ -18,14 +18,8 @@ jobs:
       - name: Install DocFX
         run: choco install -y docfx
 
-      - name: Create changelog Folder
-        run: mkdir -p Documentation~/changelog
-
       - name: Generate Changelog Page
         run: cp CHANGELOG.md Documentation~/changelog/changelog.md
-
-      - name: Create license Folder
-        run: mkdir -p Documentation~/license
 
       - name: Generate License Page
         run: cp LICENSE.md Documentation~/license/license.md
