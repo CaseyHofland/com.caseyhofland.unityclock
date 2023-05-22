@@ -276,11 +276,35 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "changelog.md",
+      "output": {
+        ".html": {
+          "relative_path": "changelog/changelog.html",
+          "hash": "KwYqKdyxjKV/BWH4F+1KbRryjMcSCCVynexorWTBUcg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
           "relative_path": "index.html",
           "hash": "/iMtq3SkrWeMSa33n2DVAsPtVkFuqryuFrmLOwUZulk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "license.md",
+      "output": {
+        ".html": {
+          "relative_path": "license/license.html",
+          "hash": "bsxOnfQ2IPgyCBQ/1+QW4U38iCiF/BPxyiN74ZuHN3Q="
         }
       },
       "is_incremental": false,
@@ -338,7 +362,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "O4QAQjDs6nS/AfPnXCtYisue3qWlHLNe2vaa7vlHfvs="
+          "hash": "m7OyIcaROP7Gh8q/34q8ddXzVKDLUk66ZjVYZJv/E9Y="
         }
       },
       "is_incremental": false,
@@ -359,7 +383,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 2,
+          "total_file_count": 4,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
