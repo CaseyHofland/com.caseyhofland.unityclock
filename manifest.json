@@ -276,11 +276,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "changelog/changelog.md",
+      "source_relative_path": "changelog/CHANGELOG.md",
       "output": {
         ".html": {
-          "relative_path": "changelog/changelog.html",
-          "hash": "+kpZDGO+mVG29prZaujxflLWbX1eeJtm+XQHJALNNqk="
+          "relative_path": "changelog/CHANGELOG.html",
+          "hash": "Hv4RdXVdqP0TV75RnRIpdC68CvyQZPH9S/3I+Ja46yQ="
         }
       },
       "is_incremental": false,
@@ -292,7 +292,7 @@
       "output": {
         ".html": {
           "relative_path": "changelog/toc.html",
-          "hash": "xrJ4pPJ+5IgqsSdnSGZBjwmmXDzhUNrWywCzObJvf/k="
+          "hash": "j/R7VsgfMrRj2PSFCxNuNW5i4MM9bx8I75x/hK6u+GE="
         }
       },
       "is_incremental": false,
@@ -312,11 +312,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "license/license.md",
+      "source_relative_path": "license/LICENSE.md",
       "output": {
         ".html": {
-          "relative_path": "license/license.html",
-          "hash": "uOJWM8XJ8u1igePurJ3MUho0ATpeHLyONe4HzVCRZ28="
+          "relative_path": "license/LICENSE.html",
+          "hash": "ezzSp45Op9jIuGOOud0Tnx+2oM7SvXRNuX9krlFM1LI="
         }
       },
       "is_incremental": false,
@@ -328,7 +328,7 @@
       "output": {
         ".html": {
           "relative_path": "license/toc.html",
-          "hash": "/wllSXD6DDqmAuONGESo4pFLFwPqcTQGF3jbJE/wMOs="
+          "hash": "3sfv6RkkqWekrwnt0enkRH5g52dpC0R/dIdaGtX1p4M="
         }
       },
       "is_incremental": false,
@@ -386,7 +386,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "V6sVok4pgId+s/PEh6STNU+9aN7owC19Xz6Vm+icbek="
+          "hash": "aK6zWhW1ehuLOVcqtMhkDUEnVNXuB3u8ab6X7c3ZGFo="
         }
       },
       "is_incremental": false,
