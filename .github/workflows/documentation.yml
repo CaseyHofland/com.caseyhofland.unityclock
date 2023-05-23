@@ -66,7 +66,7 @@ jobs:
       - name: Add api index
         run: |
           mkdir -p Documentation~\api
-          if [ -f Documentation~\api_index.md ]; then
+          if [ $(find "$Documentation~" -name "$api_index.md") ]; then
             cp Documentation~\api_index.md Documentation~\api\index.md
           else
             echo `This is the documentation for the Scripting APIs of this package.` > Documentation~\api\index.md
