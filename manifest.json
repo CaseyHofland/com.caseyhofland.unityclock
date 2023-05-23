@@ -256,6 +256,18 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "WsPb7IQjhIO2sgvdIxuIKVUfA7tLXTEqukEsZ5P9Dto="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
@@ -385,15 +397,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Toc",
       "source_relative_path": "toc.md",
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "BQA3/Ro0FpU4HDbQbhcXLMhFVvfIZIN+sr3lAY8slVQ="
+          "hash": "6KbKtl7OCfmznU8OEMHLgIajPDDSczSpo0Kz/prRtfI="
         }
       },
       "is_incremental": false,
@@ -414,7 +423,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 4,
+          "total_file_count": 5,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
