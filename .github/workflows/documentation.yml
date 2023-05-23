@@ -63,15 +63,13 @@ jobs:
           echo '# [Changelog](changelog//)' >> Documentation~\toc.md
           echo '# [License](license//)' >> Documentation~\toc.md
 
+      # echo `This is the documentation for the Scripting APIs of this package.` > Documentation~\api\index.md
+
       - name: Add api index
         shell: bash
         run: |
           mkdir -p Documentation~\api
-          if [[ -e Documentation~\.api_index.md ]]; then
-            cp Documentation~\api_index.md Documentation~\api\index.md
-          else
-            echo `This is the documentation for the Scripting APIs of this package.` > Documentation~\api\index.md
-          fi
+          [[ -e Documentation~\api_index.md ]] && cp Documentation~\api_index.md Documentation~\api\index.md
 
       - name: Install DocFX
         run: choco install -y docfx
