@@ -268,15 +268,24 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
+      "type": "Conceptual",
+      "source_relative_path": "changelog/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "changelog/CHANGELOG.html",
+          "hash": "Z4xxQmfNrySkgg2gPXSH6RcI6UV0PSgoyGXxgSDsHyk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "changelog/toc.yml",
       "output": {
         ".html": {
           "relative_path": "changelog/toc.html",
-          "hash": "0Ei9e+ElDpNrh+m3ViBULhWjPCD56UUduhMYaAD8Ahc="
+          "hash": "j/R7VsgfMrRj2PSFCxNuNW5i4MM9bx8I75x/hK6u+GE="
         }
       },
       "is_incremental": false,
@@ -305,15 +314,24 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
+      "type": "Conceptual",
+      "source_relative_path": "license/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "license/LICENSE.html",
+          "hash": "bc48qkI3apvM199Zf9ZVWw2omNF+cOMmnO+svOrQzxI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "license/toc.yml",
       "output": {
         ".html": {
           "relative_path": "license/toc.html",
-          "hash": "U0Elrw80aKMxVvua4m/IewHAA+Q7LNfOFzrBLcPUgMk="
+          "hash": "3sfv6RkkqWekrwnt0enkRH5g52dpC0R/dIdaGtX1p4M="
         }
       },
       "is_incremental": false,
@@ -356,15 +374,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "Mflx51+5mtJDcc6rHiLFFpkaiaGjuz2WP1itbh9hZv4="
+          "hash": "XUv1uP0Pd6XJcXTVGxmhDmma1wCoP0JIjAZ5nFAcfaQ="
         }
       },
       "is_incremental": false,
@@ -385,7 +400,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 2,
+          "total_file_count": 4,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
