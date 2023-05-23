@@ -43,20 +43,24 @@ jobs:
       #   with:
       #     name: generated-files
       #     path: Documentation~
+      
+      
+      
+      # echo - name: Changes > Documentation~\changelog\toc.yml
+      # echo   href: CHANGELOG.md >> Documentation~\changelog\toc.yml
 
       - name: Generate changelog page
         run: |
           mkdir -p Documentation~\changelog
           cp CHANGELOG.md Documentation~\changelog\CHANGELOG.md
-          echo - name: Changes > Documentation~\changelog\toc.yml
-          echo   href: CHANGELOG.md >> Documentation~\changelog\toc.yml
+          echo #[Changes](CHANGELOG.md) > Documentation~\changelog\toc.md
 
-      - name: Generate license page
-        run: |
-          mkdir -p Documentation~\license
-          cp LICENSE.md Documentation~\license\LICENSE.md
-          echo - name: License > Documentation~\license\toc.yml
-          echo   href: LICENSE.md >> Documentation~\license\toc.yml
+      # - name: Generate license page
+      #   run: |
+      #     mkdir -p Documentation~\license
+      #     cp LICENSE.md Documentation~\license\LICENSE.md
+      #     echo - name: License > Documentation~\license\toc.yml
+      #     echo   href: LICENSE.md >> Documentation~\license\toc.yml
 
       - name: Install DocFX
         run: choco install -y docfx
