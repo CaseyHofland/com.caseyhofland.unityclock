@@ -64,7 +64,6 @@ jobs:
           echo '# [License](license//)' >> Documentation~\toc.md
 
       - name: Add api index
-        shell: bash
         run: |
           mkdir -p Documentation~\api
           if [[ -e Documentation~\.api_index.md ]]; then
