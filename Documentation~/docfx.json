@@ -75,7 +75,7 @@
             "https://xref.docs.microsoft.com/query?uid={uid}"
         ],
         "dest": "../_site",
-        "templates": [
+        "template": [
             "default",
             "modern"
         ]
