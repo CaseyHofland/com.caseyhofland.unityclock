@@ -28,7 +28,7 @@ jobs:
     runs-on: windows-latest # Required by DocFX
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         # with:
         #   submodules: true
 
@@ -37,7 +37,7 @@ jobs:
 
       # Upload the generated documentation
       - name: Upload site artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: _site
           path: _site # Must equals the 'build.dest' value on your docfx.json
@@ -48,13 +48,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         # with:
         #   submodules: true
 
       # Download the generated documentation
       - name: Download site artifact
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v3
         with:
           name: _site
 
