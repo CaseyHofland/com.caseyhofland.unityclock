@@ -6,16 +6,6 @@ on:
       - main
 
 jobs:
-  # Install DocFX to build the documentation with
-  install-docfx:
-    runs-on: windows-latest # Required by DocFX
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Install DocFX
-        run: choco install -y docfx
-  
   # Prepare the Unity package documentation files for the build job
   documentation-setup:
     runs-on: ubuntu-latest
@@ -31,13 +21,16 @@ jobs:
 
   # Build the documentation
   build:
-    needs: [install-docfx, documentation-setup]
+    needs: documentation-setup
     runs-on: windows-latest # Required by DocFX
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         # with:
         #   submodules: true
+
+      - name: Install DocFX
+        run: choco install -y docfx
 
       - name: Build
         run: docfx Documentation~/docfx.json
