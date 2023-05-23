@@ -7,11 +7,42 @@ on:
 
 jobs:
   # Prepare the Unity package documentation files for the build job
-  documentation-setup:
-    runs-on: ubuntu-latest
+  # documentation-setup:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v3
+
+  #     - name: Generate changelog page
+  #       run: |
+  #         mkdir -p Documentation~\changelog
+  #         cp CHANGELOG.md Documentation~\changelog\CHANGELOG.md
+  #         ( echo - name: Changes & echo   href: CHANGELOG.md) > Documentation~\changelog\toc.yml
+
+  #     - name: Generate license page
+  #       run: cp LICENSE.md Documentation~\license\LICENSE.md
+
+  #     - name: Upload generated files
+  #       uses: actions/upload-artifact@v1
+  #       with:
+  #         name: generated-files
+  #         path: Documentation~
+
+  # Build the documentation
+  build:
+    # needs: documentation-setup
+    runs-on: windows-latest # Required by DocFX
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        # with:
+        #   submodules: true
+
+      # - name: Download generated files
+      #   uses: actions/download-artifact@v1
+      #   with:
+      #     name: generated-files
+      #     path: Documentation~
 
       - name: Generate changelog page
         run: |
@@ -20,29 +51,10 @@ jobs:
           ( echo - name: Changes & echo   href: CHANGELOG.md) > Documentation~\changelog\toc.yml
 
       - name: Generate license page
-        run: cp LICENSE.md Documentation~\license\LICENSE.md
-
-      - name: Upload generated files
-        uses: actions/upload-artifact@v1
-        with:
-          name: generated-files
-          path: Documentation~/**/*
-
-  # Build the documentation
-  build:
-    needs: documentation-setup
-    runs-on: windows-latest # Required by DocFX
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        # with:
-        #   submodules: true
-
-      - name: Download generated files
-        uses: actions/download-artifact@v1
-        with:
-          name: generated-files
-          path: Documentation~
+        run: |
+          mkdir -p Documentation\license
+          cp LICENSE.md Documentation~\license\LICENSE.md
+          ( echo - name: License & echo   href: LICENSE.md) > Documentation~\license\toc.yml
 
       - name: Install DocFX
         run: choco install -y docfx
