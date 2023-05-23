@@ -1,4 +1,9 @@
 {
+  "api/index.html": {
+    "href": "api/index.html",
+    "title": "Check me ooooouuuuut!!! | Unity Clock",
+    "keywords": "Check me ooooouuuuut!!! I'm a super-duper cool api index file!"
+  },
   "api/System.html": {
     "href": "api/System.html",
     "title": "Namespace System | Unity Clock",
