@@ -315,6 +315,30 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "license/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "license/LICENSE.html",
+          "hash": "bc48qkI3apvM199Zf9ZVWw2omNF+cOMmnO+svOrQzxI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "license/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "license/toc.html",
+          "hash": "3sfv6RkkqWekrwnt0enkRH5g52dpC0R/dIdaGtX1p4M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "manual/etiam.md",
       "output": {
         ".html": {
@@ -355,7 +379,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "g3RKUQxn3cnYznAO7G3G31nLDNK17zN4U18akPWsCpg="
+          "hash": "XUv1uP0Pd6XJcXTVGxmhDmma1wCoP0JIjAZ5nFAcfaQ="
         }
       },
       "is_incremental": false,
@@ -376,7 +400,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 3,
+          "total_file_count": 4,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
