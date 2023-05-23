@@ -63,6 +63,11 @@ jobs:
           echo '# [Changelog](changelog//)' >> Documentation~\toc.md
           echo '# [License](license//)' >> Documentation~\toc.md
 
+      - name: Add api index
+        run: |
+          mkdir -p Documentation~\api
+          cp Documentation~\api_index.md Documentation~\api\index.md
+
       - name: Install DocFX
         run: choco install -y docfx
 
