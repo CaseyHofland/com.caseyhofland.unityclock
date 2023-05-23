@@ -53,7 +53,7 @@ jobs:
 
       - name: Generate license page
         run: |
-          mkdir -p Documentation\license
+          mkdir -p Documentation~\license
           cp LICENSE.md Documentation~\license\LICENSE.md
           echo - name: License > Documentation~\license\toc.yml
           echo   href: LICENSE.md >> Documentation~\license\toc.yml
