@@ -23,7 +23,7 @@
         "content": [
             {
                 "files": [
-                    "toc.yml"
+                    "toc.md"
                 ]
             },
             {
@@ -50,7 +50,6 @@
             {
                 "src": "manual",
                 "files": [
-                    "toc.yml",
                     "*.md"
                 ],
                 "dest": "manual"
@@ -63,8 +62,11 @@
                 ]
             }
         ],
+        "template": [
+            "modern"
+        ],
         "sitemap": {
-            "baseUrl": "https://casey-hofland.github.io/UnityClock/manual/"
+            "baseUrl": "https://casey-hofland.github.io/UnityClock/"
         },
         "xref": [
             "https://casey-hofland.github.io/UnityClock/"
@@ -72,10 +74,6 @@
         "xrefService": [
             "https://xref.docs.microsoft.com/query?uid={uid}"
         ],
-        "dest": "../_site",
-        "template": [
-            "default",
-            "modern"
-        ]
+        "dest": "../_site"
     }
 }

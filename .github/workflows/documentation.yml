@@ -56,6 +56,13 @@ jobs:
           cp LICENSE.md Documentation~\license\LICENSE.md
           echo '# [License](LICENSE.md)' > Documentation~\license\toc.md
 
+      - name: Generate main Table of Contents
+        run: |
+          echo '# [Manual](manual/)' > Documentation~\toc.md
+          echo '# [Scripting API](api/)' >> Documentation~\toc.md
+          echo '# [Changelog](changelog/)' >> Documentation~\toc.md
+          echo '# [License](license/)' >> Documentation~\toc.md
+
       - name: Install DocFX
         run: choco install -y docfx
 
