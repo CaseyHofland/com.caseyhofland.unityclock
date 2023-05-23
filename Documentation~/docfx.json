@@ -58,7 +58,7 @@
         "resource": [
             {
                 "files": [
-                    "**/images/**"
+                    "manual/[Ii]mages/**"
                 ]
             }
         ],
