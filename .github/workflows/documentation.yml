@@ -53,7 +53,7 @@ jobs:
         run: |
           mkdir -p Documentation~\changelog
           cp CHANGELOG.md Documentation~\changelog\CHANGELOG.md
-          echo #[Changes](CHANGELOG.md) > Documentation~\changelog\toc.md
+          echo '# [Changes](CHANGELOG.md)' > Documentation~\changelog\toc.md
 
       # - name: Generate license page
       #   run: |
