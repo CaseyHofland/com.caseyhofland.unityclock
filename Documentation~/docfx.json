@@ -1,81 +1,28 @@
 {
-    "metadata": [
-        {
-            "src": [
-                {
-                    "src": "..",
-                    "files": [
-                        "**/*.cs"
-                    ]
-                }
-            ],
-            "globalNamespaceId": "Global",
-            "dest": "api"
-        }
-    ],
+    "metadata": [{
+        "src": [{"src": "..", "files": ["**/*.cs"]}],
+        "globalNamespaceId": "Global",
+        "dest": "api"
+    }],
     "build": {
         "globalMetadata": {
             "_appTitle": "Unity Clock",
-            "_appFooter": "Unity Clock",
+            "_appFooter": "Made by [Casey Hofland](https://github.com/Casey-Hofland) using [DocFX](https://dotnet.github.io/docfx/)",
             "_disableContribution": true,
             "_enableSearch": true
         },
         "content": [
-            {
-                "files": [
-                    "toc.md"
-                ]
-            },
-            {
-                "src": "license",
-                "files": [
-                    "*.md"
-                ],
-                "dest": "license"
-            },
-            {
-                "src": "changelog",
-                "files": [
-                    "*.md"
-                ],
-                "dest": "changelog"
-            },
-            {
-                "src": "api",
-                "files": [
-                    "*.yml",
-                    "index.md"
-                ],
-                "dest": "api"
-            },
-            {
-                "src": "manual",
-                "files": [
-                    "*.md"
-                ],
-                "dest": "manual"
-            }
+            {"files": ["toc.md"]},
+            {"src": "license", "files": ["*.md"], "dest": "license"},
+            {"src": "changelog", "files": ["*.md"], "dest": "changelog"},
+            {"src": "api", "files": ["*.yml", "index.md"], "dest": "api"},
+            {"src": "manual", "files": ["*.md"], "dest": "manual"}
         ],
-        "resource": [
-            {
-                "files": [
-                    "manual/[Ii]mages/**"
-                ]
-            }
-        ],
-        "template": [
-            "default",
-            "modern"
-        ],
-        "sitemap": {
-            "baseUrl": "https://casey-hofland.github.io/UnityClock/"
-        },
-        "xref": [
-            "https://casey-hofland.github.io/UnityClock/"
-        ],
-        "xrefService": [
-            "https://xref.docs.microsoft.com/query?uid={uid}"
-        ],
+        "resource": [{"files": ["manual/[Ii]mages/**"]}],
+        "template": ["default", "modern"],
+        "sitemap": {"baseUrl": "https://casey-hofland.github.io/UnityClock/"},
+        "xref": ["https://casey-hofland.github.io/UnityClock/"],
+        "xrefService": ["https://xref.docs.microsoft.com/query?uid={uid}"],
         "dest": "../_site"
     }
 }
