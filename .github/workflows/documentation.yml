@@ -67,7 +67,7 @@ jobs:
         run: |
           mkdir -p Documentation~\api
           echo `This is the documentation for the Scripting APIs of this package.` > Documentation~\api\index.md
-          [ -e Documentation~\.api_index.md ] && cp Documentation~\api_index.md Documentation~\api\index.md
+          if exist Documentation~\.api_index.md cp Documentation~\api_index.md Documentation~\api\index.md
 
       - name: Install DocFX
         run: choco install -y docfx
