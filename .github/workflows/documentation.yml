@@ -15,7 +15,7 @@ jobs:
 
       - name: Generate changelog page
         run: |
-          mkdir -p Documentation~/changelog
+          md Documentation~\changelog
           cp CHANGELOG.md Documentation~/changelog/CHANGELOG.md
           ( echo - name: Changes & echo   href: CHANGELOG.md) > Documentation~/changelog/toc.yml
 
