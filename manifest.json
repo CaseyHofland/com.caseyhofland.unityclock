@@ -1,13 +1,6 @@
 {
   "sitemap": {
-    "fileOptions": {
-      "api/*": {
-        "baseUrl": "https://casey-hofland.github.io/UnityClock/manual/index.html/",
-        "changefreq": "daily"
-      }
-    },
-    "baseUrl": "https://casey-hofland.github.io/UnityClock/manual/index.html/",
-    "changefreq": "daily"
+    "baseUrl": "https://casey-hofland.github.io/UnityClock/manual/"
   },
   "homepages": [],
   "source_base_path": "D:/a/UnityClock/UnityClock/Documentation~",
@@ -28,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/System.TimeOnly.html",
-          "hash": "8zblVYhRHrkubK0iGpH6wAe8RLexQVhF3oMG1tSQl5Q="
+          "hash": "gqhAKbNOX1zZGXi4RD9v8vVPp7TnnUqNqVXiKxtiRGQ="
         }
       },
       "is_incremental": false,
@@ -40,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/System.html",
-          "hash": "B/wtB5I7ltlPrC25EqF8KAMDeDziadYQdzZGCJKhjMo="
+          "hash": "F4LfLOJriNxkSDegdjSkCmvbAznoCwmsvSGis4/J1nA="
         }
       },
       "is_incremental": false,
@@ -52,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.Clock.html",
-          "hash": "pXxblT/qPAQNMGtDVZwJg8Fk1p+7Fpg8uSlukzEjock="
+          "hash": "3ELHxuKTxOnzSTBZCSwIH1ayXMaoK/P/MoQ3+BFli84="
         }
       },
       "is_incremental": false,
@@ -64,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.ClockVolume.html",
-          "hash": "fEkmCnZezxumkvSYkUSPdI2fwVmRh+SSGqdNJ7x4g9Q="
+          "hash": "UK+IuSrubCtQ/ioTOcYtSTm8ELG5h8Cc/zi2Zrcfa9U="
         }
       },
       "is_incremental": false,
@@ -76,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.Editor.ClockPreviewControl.html",
-          "hash": "sDUy8CNo3sAn6b9Mc1LP7RRw3fnjsnGNOn/B1hgtgvM="
+          "hash": "LQwv7Op7m6ZzbXkWE/uo7NCX/156Tc2n81FBYo5AS/Y="
         }
       },
       "is_incremental": false,
@@ -88,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.Editor.ClockToolbar.html",
-          "hash": "S97n2QBtHsVRLQe0trIHZYGP0dkYW5O0FXQ/jdwuNQ0="
+          "hash": "I5QT+WQvfIs9iyIbYE3FMmIOzBBcOoG9r3gAEEoBSi8="
         }
       },
       "is_incremental": false,
@@ -100,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.Editor.PreviewTimeElement.html",
-          "hash": "4lY1Ynq/XALXq5SoNTphbceVMBp9+YsDz8sZRPaELOw="
+          "hash": "K1RutFpWMhYqwQcrEm0kQs02qe1bKcVu6SxuoN32HnI="
         }
       },
       "is_incremental": false,
@@ -112,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.Editor.PreviewTimeLapseElement.html",
-          "hash": "4Wn+W5AXacBaaAxELJ4rk31/PQm0pj7oXYMqAslwlWw="
+          "hash": "qNRsUWJpK1xI4CapheGgqU+rXYb8+DrVCFjCgXDYlVE="
         }
       },
       "is_incremental": false,
@@ -124,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.Editor.TemporalAnimationProcessor.html",
-          "hash": "ciRh6jfstIVftb+UNwmc3vZeKxxGhMHK7QYbkuiIKNI="
+          "hash": "Bc8IytLh2lLXIG9SLePI2PvmaiZKAiMvMk32+DTWK2A="
         }
       },
       "is_incremental": false,
@@ -136,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.Editor.TimeOnlyDrawer.html",
-          "hash": "Ipvwa2oUgymAjqdozHdziM4iCk3fRjgkNPkli1qhTck="
+          "hash": "tpitu5Jb75AA6th4HFJBO/7JWQyKfSpR22bbfA8K+R4="
         }
       },
       "is_incremental": false,
@@ -148,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.Editor.TimeSpanDrawer.html",
-          "hash": "K3SW5kxi6sSguRy13Hl91PgKNTQpAiSiM3180PY6eUQ="
+          "hash": "9k8hf4FIs8+HB1wGI7vo9yJyY9Nxe+CRkVwNbpQLcn0="
         }
       },
       "is_incremental": false,
@@ -160,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.Editor.html",
-          "hash": "xrkYhocARPB+NZKrJeXbXwUacFf0gGMTX8Y5mw6uXkw="
+          "hash": "2jaFnQXHKIjMvI3Ka1kVdofK7xuKe2XDmzPUBKs0TEg="
         }
       },
       "is_incremental": false,
@@ -172,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.ITemporal.html",
-          "hash": "Uwh36vwi9GQY40WI+M27BIRCnb1qnSrDOHiTJTsXZqU="
+          "hash": "haOJGCOolHHOd+iloiXgsLe/gYHTi9stq3lNg5ZwXQw="
         }
       },
       "is_incremental": false,
@@ -184,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.TemporalAnimation.html",
-          "hash": "sl8yAxRGKsj5BFeWWdbimL7S33PwoAhIYzlON5B706E="
+          "hash": "oMvtYzrratW745UICsbOLCW0hoeN3IEkz6s6UQxreo0="
         }
       },
       "is_incremental": false,
@@ -196,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.TimeOnlyAttribute.html",
-          "hash": "udQVXpbo8yaxmeUdkL0rMirUkptOaG0TwzSx/yRP2Ow="
+          "hash": "vrmzGgqc+IAY9kceiPNaIlKXFn430BEkZHJn91lH1aY="
         }
       },
       "is_incremental": false,
@@ -208,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.TimeOnlyParameter.html",
-          "hash": "IDD5Dd+nR/KuBOU37fDsfjEik2vO4WHSuDbbQBnlfmk="
+          "hash": "HZWk2QLA1d3ohXMppsuYwEyoB9Sd3GL5w8a7KHPzcq0="
         }
       },
       "is_incremental": false,
@@ -220,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.TimeRange.html",
-          "hash": "LQT7LllpeNtMj/sf1U9uMP52Y4rRDHZpwhnKvpNFUIs="
+          "hash": "jSpv6q9VukWXo91fjCiKCwDsLVvFYn87doDh14P8910="
         }
       },
       "is_incremental": false,
@@ -232,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.TimeSpanAttribute.html",
-          "hash": "2ewZNRgtk0ue9gIzszEOqZFo9f2pSp2d8JwPzQoI8B4="
+          "hash": "AbDm2I1m0fKJBf+J6o1h2X8NeZIpcopDrQqWRfxl2RU="
         }
       },
       "is_incremental": false,
@@ -244,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.TimeSpanParameter.html",
-          "hash": "izrKdRw7iFWyjbZIKUD9IrVQCeC2RZuWwRMJEloSbl8="
+          "hash": "LOV5qamnGdSSoTXCz2citqa7V/NlmOUfjag9Bb/K3tg="
         }
       },
       "is_incremental": false,
@@ -256,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityClock.html",
-          "hash": "qJRkuXdfmucrMAxAD6Uo7aRtvra8brC9SQdOlJqhSDI="
+          "hash": "pCtrq2PYqLGgf2tebIjubf6WMQ4ZNNMgnJUYnUdTafo="
         }
       },
       "is_incremental": false,
@@ -275,48 +268,52 @@
       "version": ""
     },
     {
-      "type": "Conceptual",
-      "source_relative_path": "changelog/CHANGELOG.md",
-      "output": {
-        ".html": {
-          "relative_path": "changelog/CHANGELOG.html",
-          "hash": "Hv4RdXVdqP0TV75RnRIpdC68CvyQZPH9S/3I+Ja46yQ="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Toc",
       "source_relative_path": "changelog/toc.yml",
       "output": {
         ".html": {
           "relative_path": "changelog/toc.html",
-          "hash": "j/R7VsgfMrRj2PSFCxNuNW5i4MM9bx8I75x/hK6u+GE="
+          "hash": "0Ei9e+ElDpNrh+m3ViBULhWjPCD56UUduhMYaAD8Ahc="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "type": "Conceptual",
-      "source_relative_path": "license/LICENSE.md",
+      "type": "Resource",
+      "source_relative_path": "images/ExampleManual.png",
       "output": {
-        ".html": {
-          "relative_path": "license/LICENSE.html",
-          "hash": "ezzSp45Op9jIuGOOud0Tnx+2oM7SvXRNuX9krlFM1LI="
+        "resource": {
+          "relative_path": "images/ExampleManual.png"
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "images/ExampleScriptingApi.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/ExampleScriptingApi.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Toc",
       "source_relative_path": "license/toc.yml",
       "output": {
         ".html": {
           "relative_path": "license/toc.html",
-          "hash": "3sfv6RkkqWekrwnt0enkRH5g52dpC0R/dIdaGtX1p4M="
+          "hash": "U0Elrw80aKMxVvua4m/IewHAA+Q7LNfOFzrBLcPUgMk="
         }
       },
       "is_incremental": false,
@@ -328,7 +325,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/etiam.html",
-          "hash": "KDjNcR5o0GeRWkJWo8SiTvHz8lLBze+b1BYnCS6RfK0="
+          "hash": "PS3rw0fO9xfLxoGwIJlNZx9RBYuLqB8XdjskbdlkWoA="
         }
       },
       "is_incremental": false,
@@ -340,7 +337,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/index.html",
-          "hash": "zv1PyPipY+9iMjlPfPEMkYetTkfwNLtfroD5owjLeD8="
+          "hash": "W84HpJH3mOh749sObgI3/7SaeWj1Qmby1cB4q5zbVN8="
         }
       },
       "is_incremental": false,
@@ -359,34 +356,15 @@
       "version": ""
     },
     {
-      "type": "Resource",
-      "source_relative_path": "resources/ExampleManual.png",
-      "output": {
-        "resource": {
-          "relative_path": "resources/ExampleManual.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "resources/ExampleScriptingApi.png",
-      "output": {
-        "resource": {
-          "relative_path": "resources/ExampleScriptingApi.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "XUv1uP0Pd6XJcXTVGxmhDmma1wCoP0JIjAZ5nFAcfaQ="
+          "hash": "Mflx51+5mtJDcc6rHiLFFpkaiaGjuz2WP1itbh9hZv4="
         }
       },
       "is_incremental": false,
@@ -407,7 +385,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 4,
+          "total_file_count": 2,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
