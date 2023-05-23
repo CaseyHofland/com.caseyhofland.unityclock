@@ -59,13 +59,14 @@ jobs:
       - name: Generate main Table of Contents
         run: |
           echo '# [Manual](manual//)' > Documentation~\toc.md
-          echo '# [Scripting API](api//)' >> Documentation~\toc.md
+          echo '# [Scripting API](api//index.md)' >> Documentation~\toc.md
           echo '# [Changelog](changelog//)' >> Documentation~\toc.md
           echo '# [License](license//)' >> Documentation~\toc.md
 
       - name: Add api index
         run: |
           mkdir -p Documentation~\api
+          echo `This is the documentation for the Scripting APIs of this package.` > Documentation~\api\index.md
           cp Documentation~\api_index.md Documentation~\api\index.md
 
       - name: Install DocFX
