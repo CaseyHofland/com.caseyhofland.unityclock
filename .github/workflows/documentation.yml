@@ -1,4 +1,4 @@
-name: Generate DocFX Documentation
+name: Build DocFX Documentation
 
 on:
   push:
@@ -6,23 +6,31 @@ on:
       - main
 
 jobs:
+  # Install DocFX to build the documentation with
+  install-docfx:
+    runs-on: windows-latest # Required by DocFX
+    steps:
+      - name: Install DocFX
+        run: choco install -y docfx
+  
+  # Prepare the Unity package documentation files for the build job
+  documentation-setup:
+    steps:
+      - name: Generate Changelog Page
+        run: cp CHANGELOG.md Documentation~/changelog/CHANGELOG.md
+
+      - name: Generate License Page
+        run: cp LICENSE.md Documentation~/license/LICENSE.md
+
   # Build the documentation
   build:
+    needs: [install-docfx, documentation-setup]
     runs-on: windows-latest # Required by DocFX
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         # with:
         #   submodules: true
-
-      - name: Install DocFX
-        run: choco install -y docfx
-
-      - name: Generate Changelog Page
-        run: cp CHANGELOG.md Documentation~/changelog/CHANGELOG.md
-
-      - name: Generate License Page
-        run: cp LICENSE.md Documentation~/license/LICENSE.md
 
       - name: Build
         run: docfx Documentation~/docfx.json
