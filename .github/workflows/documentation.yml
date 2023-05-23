@@ -67,7 +67,11 @@ jobs:
         shell: bash
         run: |
           mkdir -p Documentation~\api
-          if exist Documentation~\api_index.md (cp Documentation~\api_index.md Documentation~\api\index.md) else (echo `This is the documentation for the Scripting APIs of this package.` > Documentation~\api\index.md)
+          if [[ -e Documentation~\.api_index.md ]]; then
+            cp Documentation~\api_index.md Documentation~\api\index.md
+          else
+            echo `This is the documentation for the Scripting APIs of this package.` > Documentation~\api\index.md
+          fi
 
       - name: Install DocFX
         run: choco install -y docfx
