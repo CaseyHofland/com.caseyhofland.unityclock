@@ -292,28 +292,6 @@
       "version": ""
     },
     {
-      "type": "Resource",
-      "source_relative_path": "images/ExampleManual.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/ExampleManual.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/ExampleScriptingApi.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/ExampleScriptingApi.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
       "type": "Conceptual",
       "source_relative_path": "license/LICENSE.md",
       "output": {
@@ -350,12 +328,45 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "manual/images/ExampleManual.png",
+      "output": {
+        "resource": {
+          "relative_path": "manual/images/ExampleManual.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "manual/images/ExampleScriptingApi.png",
+      "output": {
+        "resource": {
+          "relative_path": "manual/images/ExampleScriptingApi.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "manual/images/VS17-6.png",
+      "output": {
+        "resource": {
+          "relative_path": "manual/images/VS17-6.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "manual/index.md",
       "output": {
         ".html": {
           "relative_path": "manual/index.html",
-          "hash": "W84HpJH3mOh749sObgI3/7SaeWj1Qmby1cB4q5zbVN8="
+          "hash": "cie/Ef+KGoNdGXH3brPBeUkv9mmeTKytHm9/KtPZUro="
         }
       },
       "is_incremental": false,
