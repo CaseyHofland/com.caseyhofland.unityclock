@@ -6,22 +6,8 @@ on:
       - main
 
 jobs:
-  # Prepare the Unity package documentation files for the build job
-  documentation-setup:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Generate Changelog Page
-        run: cp CHANGELOG.md Documentation~/changelog/CHANGELOG.md
-
-      - name: Generate License Page
-        run: cp LICENSE.md Documentation~/license/LICENSE.md
-
   # Build the documentation
   build:
-    needs: documentation-setup
     runs-on: windows-latest # Required by DocFX
     steps:
       - name: Checkout
@@ -31,6 +17,12 @@ jobs:
 
       - name: Install DocFX
         run: choco install -y docfx
+
+      # Prepare the Unity package documentation files for the build job
+      - name: Documentation setup
+        run: |
+          cp CHANGELOG.md Documentation~/changelog/CHANGELOG.md
+          cp LICENSE.md Documentation~/license/LICENSE.md
 
       - name: Build
         run: docfx Documentation~/docfx.json
