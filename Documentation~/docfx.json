@@ -17,6 +17,7 @@
         "globalMetadata": {
             "_appTitle": "Unity Clock",
             "_appFooter": "Unity Clock",
+            "_disableContribution": true,
             "_enableSearch": true
         },
         "content": [
@@ -60,18 +61,12 @@
         "resource": [
             {
                 "files": [
-                    "resources/**/*"
+                    "**/images/**"
                 ]
             }
         ],
         "sitemap": {
-            "baseUrl": "https://casey-hofland.github.io/UnityClock/manual/index.html",
-            "changefreq": "daily",
-            "fileOptions": {
-                "api/*": {
-                    "changefreq": "daily"
-                }
-            }
+            "baseUrl": "https://casey-hofland.github.io/UnityClock/manual/"
         },
         "xref": [
             "https://casey-hofland.github.io/UnityClock/"
@@ -80,7 +75,7 @@
             "https://xref.docs.microsoft.com/query?uid={uid}"
         ],
         "dest": "../_site",
-        "template": [
+        "templates": [
             "default",
             "modern"
         ]
