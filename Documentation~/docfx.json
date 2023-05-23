@@ -43,7 +43,8 @@
             {
                 "src": "api",
                 "files": [
-                    "*.yml"
+                    "*.yml",
+                    "index.md"
                 ],
                 "dest": "api"
             },
