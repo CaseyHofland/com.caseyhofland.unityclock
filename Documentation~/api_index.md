@@ -1,3 +1,0 @@
-# Cool test
-
-Yo
