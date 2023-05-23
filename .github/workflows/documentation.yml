@@ -22,12 +22,11 @@ jobs:
       - name: Generate license page
         run: cp LICENSE.md Documentation~\license\LICENSE.md
 
-      - name: Cache generated files
-        uses: actions/cache@v2
-        id: generated-files
+      - name: Upload generated files
+        uses: actions/upload-artifact@v1
         with:
+          name: generated-files
           path: Documentation~
-          key: ${{ github.sha }}
 
   # Build the documentation
   build:
@@ -39,12 +38,10 @@ jobs:
         # with:
         #   submodules: true
 
-      - name: Retrieve generated files
-        uses: actions/cache@v2
-        id: generated-files
+      - name: Download generated files
+        uses: actions/download-artifact@v1
         with:
-          path: Documentation~
-          key: ${{ github.sha }}
+          name: generated-files
 
       - name: Install DocFX
         run: choco install -y docfx
