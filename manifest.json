@@ -375,7 +375,7 @@
     },
     {
       "type": "Toc",
-      "source_relative_path": "toc.yml",
+      "source_relative_path": "toc.md",
       "output": {
         ".html": {
           "relative_path": "toc.html",
