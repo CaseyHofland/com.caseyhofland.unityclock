@@ -15,12 +15,12 @@ jobs:
 
       - name: Generate changelog page
         run: |
-          md Documentation~\changelog
-          cp CHANGELOG.md Documentation~/changelog/CHANGELOG.md
-          ( echo - name: Changes & echo   href: CHANGELOG.md) > Documentation~/changelog/toc.yml
+          mkdir -p Documentation~\changelog
+          cp CHANGELOG.md Documentation~\changelog\CHANGELOG.md
+          ( echo - name: Changes & echo   href: CHANGELOG.md) > Documentation~\changelog\toc.yml
 
       - name: Generate license page
-        run: cp LICENSE.md Documentation~/license/LICENSE.md
+        run: cp LICENSE.md Documentation~\license\LICENSE.md
 
       - name: Cache generated files
         uses: actions/cache@v2
