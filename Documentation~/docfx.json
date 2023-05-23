@@ -22,8 +22,7 @@
         "content": [
             {
                 "files": [
-                    "toc.yml",
-                    "index.md"
+                    "toc.yml"
                 ]
             },
             {
@@ -66,7 +65,7 @@
             }
         ],
         "sitemap": {
-            "baseUrl": "https://casey-hofland.github.io/UnityClock/",
+            "baseUrl": "https://casey-hofland.github.io/UnityClock/manual/index.html",
             "changefreq": "daily",
             "fileOptions": {
                 "api/*": {
