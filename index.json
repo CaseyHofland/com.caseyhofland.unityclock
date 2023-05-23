@@ -99,6 +99,11 @@
     "title": "Class TimeSpanParameter | Unity Clock",
     "keywords": "Class TimeSpanParameter A that holds a TimeSpan value. Inheritance Object TimeSpanParameter Namespace : UnityClock Assembly : cs.temp.dll.dll Syntax [Serializable] public sealed class TimeSpanParameter : VolumeParameter<TimeSpan> Constructors TimeSpanParameter(TimeSpan, Boolean) Creates a new TimeSpanParameter instance. Declaration public TimeSpanParameter(TimeSpan value, bool overrideState = false) Parameters Type Name Description TimeSpan value The initial value to store in the parameter. Boolean overrideState The initial override state for the parameter. Properties value Declaration public override TimeSpan value { get; set; } Property Value Type Description TimeSpan Methods Interp(TimeSpan, TimeSpan, Single) Declaration public override void Interp(TimeSpan from, TimeSpan to, float t) Parameters Type Name Description TimeSpan from TimeSpan to Single t"
   },
+  "changelog/CHANGELOG.html": {
+    "href": "changelog/CHANGELOG.html",
+    "title": "Changelog | Unity Clock",
+    "keywords": "Changelog All notable changes to this package will be documented in this file. The format is based on Keep a Changelog and this project adheres to Semantic Versioning . [0.9.0-pre] - 2023-05-15 This is the first release of Unity Clock . Unity Clock is a time-of-day system for Unity that allows full creative flexibility with a non-destructive workflow."
+  },
   "manual/etiam.html": {
     "href": "manual/etiam.html",
     "title": "Etiam nantemque exul | Unity Clock",
