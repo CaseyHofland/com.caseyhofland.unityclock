@@ -1,0 +1,452 @@
+{
+  "sitemap": {
+    "fileOptions": {
+      "api/*": {
+        "baseUrl": "https://casey-hofland.github.io/UnityClock/",
+        "changefreq": "daily"
+      }
+    },
+    "baseUrl": "https://casey-hofland.github.io/UnityClock/",
+    "changefreq": "daily"
+  },
+  "homepages": [],
+  "source_base_path": "D:/a/UnityClock/UnityClock/Documentation~",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/System.TimeOnly.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/System.TimeOnly.html",
+          "hash": "8zblVYhRHrkubK0iGpH6wAe8RLexQVhF3oMG1tSQl5Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/System.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/System.html",
+          "hash": "B/wtB5I7ltlPrC25EqF8KAMDeDziadYQdzZGCJKhjMo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Clock.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Clock.html",
+          "hash": "pXxblT/qPAQNMGtDVZwJg8Fk1p+7Fpg8uSlukzEjock="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.ClockVolume.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.ClockVolume.html",
+          "hash": "fEkmCnZezxumkvSYkUSPdI2fwVmRh+SSGqdNJ7x4g9Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Editor.ClockPreviewControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Editor.ClockPreviewControl.html",
+          "hash": "sDUy8CNo3sAn6b9Mc1LP7RRw3fnjsnGNOn/B1hgtgvM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Editor.ClockToolbar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Editor.ClockToolbar.html",
+          "hash": "S97n2QBtHsVRLQe0trIHZYGP0dkYW5O0FXQ/jdwuNQ0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Editor.PreviewTimeElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Editor.PreviewTimeElement.html",
+          "hash": "4lY1Ynq/XALXq5SoNTphbceVMBp9+YsDz8sZRPaELOw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Editor.PreviewTimeLapseElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Editor.PreviewTimeLapseElement.html",
+          "hash": "4Wn+W5AXacBaaAxELJ4rk31/PQm0pj7oXYMqAslwlWw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Editor.TemporalAnimationProcessor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Editor.TemporalAnimationProcessor.html",
+          "hash": "ciRh6jfstIVftb+UNwmc3vZeKxxGhMHK7QYbkuiIKNI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Editor.TimeOnlyDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Editor.TimeOnlyDrawer.html",
+          "hash": "Ipvwa2oUgymAjqdozHdziM4iCk3fRjgkNPkli1qhTck="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Editor.TimeSpanDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Editor.TimeSpanDrawer.html",
+          "hash": "K3SW5kxi6sSguRy13Hl91PgKNTQpAiSiM3180PY6eUQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Editor.html",
+          "hash": "xrkYhocARPB+NZKrJeXbXwUacFf0gGMTX8Y5mw6uXkw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.ITemporal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.ITemporal.html",
+          "hash": "Uwh36vwi9GQY40WI+M27BIRCnb1qnSrDOHiTJTsXZqU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.TemporalAnimation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.TemporalAnimation.html",
+          "hash": "sl8yAxRGKsj5BFeWWdbimL7S33PwoAhIYzlON5B706E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.TimeOnlyAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.TimeOnlyAttribute.html",
+          "hash": "udQVXpbo8yaxmeUdkL0rMirUkptOaG0TwzSx/yRP2Ow="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.TimeOnlyParameter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.TimeOnlyParameter.html",
+          "hash": "IDD5Dd+nR/KuBOU37fDsfjEik2vO4WHSuDbbQBnlfmk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.TimeRange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.TimeRange.html",
+          "hash": "LQT7LllpeNtMj/sf1U9uMP52Y4rRDHZpwhnKvpNFUIs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.TimeSpanAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.TimeSpanAttribute.html",
+          "hash": "2ewZNRgtk0ue9gIzszEOqZFo9f2pSp2d8JwPzQoI8B4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.TimeSpanParameter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.TimeSpanParameter.html",
+          "hash": "izrKdRw7iFWyjbZIKUD9IrVQCeC2RZuWwRMJEloSbl8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.html",
+          "hash": "qJRkuXdfmucrMAxAD6Uo7aRtvra8brC9SQdOlJqhSDI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "dwl3BHzsD5R06IXhzAb3xmK7MugH9/sZRROS9qgZG+g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "changelog/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "changelog/CHANGELOG.html",
+          "hash": "Hv4RdXVdqP0TV75RnRIpdC68CvyQZPH9S/3I+Ja46yQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "changelog/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "changelog/toc.html",
+          "hash": "j/R7VsgfMrRj2PSFCxNuNW5i4MM9bx8I75x/hK6u+GE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "/iMtq3SkrWeMSa33n2DVAsPtVkFuqryuFrmLOwUZulk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "license/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "license/LICENSE.html",
+          "hash": "ezzSp45Op9jIuGOOud0Tnx+2oM7SvXRNuX9krlFM1LI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "license/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "license/toc.html",
+          "hash": "3sfv6RkkqWekrwnt0enkRH5g52dpC0R/dIdaGtX1p4M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/etiam.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/etiam.html",
+          "hash": "KDjNcR5o0GeRWkJWo8SiTvHz8lLBze+b1BYnCS6RfK0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "manual/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "manual/toc.html",
+          "hash": "uzB7xfBXIoSIBGbS6sskhJ5Kzp0PjOdxDEBLji3hF6c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/ExampleManual.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/ExampleManual.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/ExampleScriptingApi.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/ExampleScriptingApi.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "aK6zWhW1ehuLOVcqtMhkDUEnVNXuB3u8ab6X7c3ZGFo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 4,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 20,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
