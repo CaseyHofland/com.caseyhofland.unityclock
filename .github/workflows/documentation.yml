@@ -10,12 +10,18 @@ jobs:
   install-docfx:
     runs-on: windows-latest # Required by DocFX
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
       - name: Install DocFX
         run: choco install -y docfx
   
   # Prepare the Unity package documentation files for the build job
   documentation-setup:
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Generate Changelog Page
         run: cp CHANGELOG.md Documentation~/changelog/CHANGELOG.md
 
