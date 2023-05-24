@@ -73,7 +73,8 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 7.x
-        run: dotnet tool update -g docfx
+      
+      - run: dotnet tool update -g docfx
 
       # - name: Install DocFX
       #   run: choco install -y docfx
