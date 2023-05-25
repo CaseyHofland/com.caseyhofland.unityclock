@@ -16,25 +16,29 @@ jobs:
         #   submodules: true
 
       - name: Generate changelog page
-        run: mkdir -p Documentation~\changelog
-      - run: cp CHANGELOG.md Documentation~\changelog\CHANGELOG.md
-      - run: echo '# [Changes](CHANGELOG.md)' > Documentation~\changelog\toc.md
+        run: |
+          mkdir -p Documentation~\changelog
+          cp CHANGELOG.md Documentation~\changelog\CHANGELOG.md
+          echo '# [Changes](CHANGELOG.md)' > Documentation~\changelog\toc.md
 
       - name: Generate license page
-        run: mkdir -p Documentation~\license
-      - run: cp LICENSE.md Documentation~\license\LICENSE.md
-      - run: echo '# [License](LICENSE.md)' > Documentation~\license\toc.md
+        run: |
+          mkdir -p Documentation~\license
+          cp LICENSE.md Documentation~\license\LICENSE.md
+          echo '# [License](LICENSE.md)' > Documentation~\license\toc.md
 
       - name: Generate main Table of Contents
-        run: echo '# [Manual](manual//)' > Documentation~\toc.md
-      - run: echo '# [Scripting API](api//)' >> Documentation~\toc.md
-      - run: echo '# [Changelog](changelog//)' >> Documentation~\toc.md
-      - run: echo '# [License](license//)' >> Documentation~\toc.md
+        run: |
+          echo '# [Manual](manual//)' > Documentation~\toc.md
+          echo '# [Scripting API](api//)' >> Documentation~\toc.md
+          echo '# [Changelog](changelog//)' >> Documentation~\toc.md
+          echo '# [License](license//)' >> Documentation~\toc.md
 
       - name: Add api index
         # shell: bash
-        run: mkdir -p Documentation~\api
-      - run: echo 'This is the documentation for the Scripting APIs of this package.' > Documentation~\api\index.md
+        run: |
+          mkdir -p Documentation~\api
+          echo 'This is the documentation for the Scripting APIs of this package.' > Documentation~\api\index.md
 
       # - name: Install DocFX
       #   run: choco install -y docfx
