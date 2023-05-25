@@ -2,7 +2,8 @@
     "metadata": [{
         "src": [{"src": "..", "files": ["**/*.cs"]}],
         "globalNamespaceId": "Global",
-        "dest": "api"
+        "dest": "api",
+        "allowCompilationErrors": true
     }],
     "build": {
         "globalMetadata": {
