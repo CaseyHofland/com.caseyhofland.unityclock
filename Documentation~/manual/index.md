@@ -16,7 +16,7 @@ percusso plectro templa fuit diva minimum debere, quid nomen Philomela animis.
 Verbis istis flagrat vulnera inpediique ignes. Gravi filo obvius arte Amphionis
 Panes emisitque iubet.
 
-![VS17-6](Images/VS17-6.png "Visual Studio Performance Improvements 17.6")<br/>_It is much faster since visual studio 2022.17.6_
+![VS17-6](images/VS17-6.png "Visual Studio Performance Improvements 17.6")<br/>_It is much faster since visual studio 2022.17.6_
 
 ## Latona te timens
 

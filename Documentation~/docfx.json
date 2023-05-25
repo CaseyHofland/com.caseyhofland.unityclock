@@ -19,7 +19,7 @@
             {"src": "api", "files": ["*.yml", "index.md"], "dest": "api"},
             {"src": "manual", "files": ["*.md"], "dest": "manual"}
         ],
-        "resource": [{"files": ["manual/[Ii]mages/**"]}],
+        "resource": [{"files": ["manual/images/**"]}],
         "template": ["default", "modern"],
         "sitemap": {"baseUrl": "https://casey-hofland.github.io/UnityClock/"},
         "xref": ["https://casey-hofland.github.io/UnityClock/"],
