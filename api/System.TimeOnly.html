@@ -1,1805 +1,1666 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-  
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Struct TimeOnly
-   | Unity Clock </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Struct TimeOnly
-   | Unity Clock ">
-    <meta name="generator" content="docfx 2.59.4.0">
-    
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-    
-    <meta property="docfx:rel" content="../">
-    
+      <title>Struct TimeOnly
+ | Unity Clock </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct TimeOnly
+ | Unity Clock ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Casey-Hofland/UnityClock/new/main/apiSpec/new?filename=System_TimeOnly.md&amp;value=---%0Auid%3A%20System.TimeOnly%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
-        
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+
+  <script type="module">
+    import options from './../public/main.js'
+    import { init } from './../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
-        
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
         </div>
-      </header>
-      <div class="container body-content">
-        
-        <div id="search-results">
-          <div class="search-list">Search Results for <span></span></div>
-          <div class="sr-items">
-            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
         </div>
       </div>
-      <div role="main" class="container body-content hide-when-search">
-        
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="System.TimeOnly">
-  
-  
-  <h1 id="System_TimeOnly" data-uid="System.TimeOnly" class="text-break">Struct TimeOnly
+
+        <article data-uid="System.TimeOnly">
+
+
+
+  <h1 id="System_TimeOnly" data-uid="System.TimeOnly" class="text-break">
+    Struct TimeOnly
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h1>
-  <div class="markdown level0 summary"><p>Represents a time of day, as would be read from a clock, within the range 00:00:00 to 23:59:59.9999999.</p>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="System.html">System</a></dd></dl>
+  
+  </div>
+
+  <div class="markdown summary"><p>Represents a time of day, as would be read from a clock, within the range 00:00:00 to 23:59:59.9999999.</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="System.TimeOnly.html">TimeOnly</a>&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="System.TimeOnly.html">TimeOnly</a>&gt;</div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
-    </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="System.html">System</a></h6>
-  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="System_TimeOnly_syntax">Syntax</h5>
+  <div class="markdown conceptual"></div>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public readonly struct TimeOnly : IComparable, IComparable&lt;TimeOnly&gt;, IEquatable&lt;TimeOnly&gt;</code></pre>
   </div>
-  <h3 id="constructors">Constructors
-  </h3>
+
+
+
+
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="System.TimeOnly.html">TimeOnly</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="System.TimeOnly.html">TimeOnly</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
   <a id="System_TimeOnly__ctor_" data-uid="System.TimeOnly.#ctor*"></a>
-  <h4 id="System_TimeOnly__ctor_System_Int32_System_Int32_" data-uid="System.TimeOnly.#ctor(System.Int32,System.Int32)">TimeOnly(Int32, Int32)</h4>
+
+  <h3 id="System_TimeOnly__ctor_System_Int32_System_Int32_" data-uid="System.TimeOnly.#ctor(System.Int32,System.Int32)">
+  TimeOnly(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Initializes a new instance of the timeOnly structure to the specified hour and the minute.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TimeOnly(int hour, int minute)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">hour</span></td>
-        <td><p>The hours (0 through 23).</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">minute</span></td>
-        <td><p>The minutes (0 through 59).</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>hour</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The hours (0 through 23).</p>
+</dd>
+    <dt><code>minute</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The minutes (0 through 59).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly__ctor_" data-uid="System.TimeOnly.#ctor*"></a>
-  <h4 id="System_TimeOnly__ctor_System_Int32_System_Int32_System_Int32_" data-uid="System.TimeOnly.#ctor(System.Int32,System.Int32,System.Int32)">TimeOnly(Int32, Int32, Int32)</h4>
+
+  <h3 id="System_TimeOnly__ctor_System_Int32_System_Int32_System_Int32_" data-uid="System.TimeOnly.#ctor(System.Int32,System.Int32,System.Int32)">
+  TimeOnly(int, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Initializes a new instance of the timeOnly structure to the specified hour, minute, and second.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TimeOnly(int hour, int minute, int second)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">hour</span></td>
-        <td><p>The hours (0 through 23).</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">minute</span></td>
-        <td><p>The minutes (0 through 59).</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">second</span></td>
-        <td><p>The seconds (0 through 59).</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>hour</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The hours (0 through 23).</p>
+</dd>
+    <dt><code>minute</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The minutes (0 through 59).</p>
+</dd>
+    <dt><code>second</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The seconds (0 through 59).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly__ctor_" data-uid="System.TimeOnly.#ctor*"></a>
-  <h4 id="System_TimeOnly__ctor_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="System.TimeOnly.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">TimeOnly(Int32, Int32, Int32, Int32)</h4>
+
+  <h3 id="System_TimeOnly__ctor_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="System.TimeOnly.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+  TimeOnly(int, int, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Initializes a new instance of the timeOnly structure to the specified hour, minute, second, and millisecond.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TimeOnly(int hour, int minute, int second, int millisecond)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">hour</span></td>
-        <td><p>The hours (0 through 23).</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">minute</span></td>
-        <td><p>The minutes (0 through 59).</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">second</span></td>
-        <td><p>The seconds (0 through 59).</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">millisecond</span></td>
-        <td><p>The millisecond (0 through 999).</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>hour</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The hours (0 through 23).</p>
+</dd>
+    <dt><code>minute</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The minutes (0 through 59).</p>
+</dd>
+    <dt><code>second</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The seconds (0 through 59).</p>
+</dd>
+    <dt><code>millisecond</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The millisecond (0 through 999).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly__ctor_" data-uid="System.TimeOnly.#ctor*"></a>
-  <h4 id="System_TimeOnly__ctor_System_Int64_" data-uid="System.TimeOnly.#ctor(System.Int64)">TimeOnly(Int64)</h4>
+
+  <h3 id="System_TimeOnly__ctor_System_Int64_" data-uid="System.TimeOnly.#ctor(System.Int64)">
+  TimeOnly(long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Initializes a new instance of the TimeOnly structure using a specified number of ticks.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TimeOnly(long ticks)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">Int64</a></td>
-        <td><span class="parametername">ticks</span></td>
-        <td><p>A time of day expressed in the number of 100-nanosecond units since 00:00:00.0000000.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-  </h3>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ticks</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>A time of day expressed in the number of 100-nanosecond units since 00:00:00.0000000.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="System_TimeOnly_Hour_" data-uid="System.TimeOnly.Hour*"></a>
-  <h4 id="System_TimeOnly_Hour" data-uid="System.TimeOnly.Hour">Hour</h4>
+
+  <h3 id="System_TimeOnly_Hour" data-uid="System.TimeOnly.Hour">
+  Hour
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the hour component of the time represented by this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly int Hour { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int Hour { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_MaxValue_" data-uid="System.TimeOnly.MaxValue*"></a>
-  <h4 id="System_TimeOnly_MaxValue" data-uid="System.TimeOnly.MaxValue">MaxValue</h4>
+
+  <h3 id="System_TimeOnly_MaxValue" data-uid="System.TimeOnly.MaxValue">
+  MaxValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Represents the largest possible value of TimeOnly.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly TimeOnly MaxValue { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static TimeOnly MaxValue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_Millisecond_" data-uid="System.TimeOnly.Millisecond*"></a>
-  <h4 id="System_TimeOnly_Millisecond" data-uid="System.TimeOnly.Millisecond">Millisecond</h4>
+
+  <h3 id="System_TimeOnly_Millisecond" data-uid="System.TimeOnly.Millisecond">
+  Millisecond
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the millisecond component of the time represented by this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly int Millisecond { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int Millisecond { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="System_TimeOnly_Minute_" data-uid="System.TimeOnly.Minute*"></a>
-  <h4 id="System_TimeOnly_Minute" data-uid="System.TimeOnly.Minute">Minute</h4>
-  <div class="markdown level1 summary"><p>Gets the minute component of the time represented by this instance.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly int Minute { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_MinValue_" data-uid="System.TimeOnly.MinValue*"></a>
-  <h4 id="System_TimeOnly_MinValue" data-uid="System.TimeOnly.MinValue">MinValue</h4>
+
+  <h3 id="System_TimeOnly_MinValue" data-uid="System.TimeOnly.MinValue">
+  MinValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Represents the smallest possible value of TimeOnly.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly TimeOnly MinValue { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static TimeOnly MinValue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="System_TimeOnly_Minute_" data-uid="System.TimeOnly.Minute*"></a>
+
+  <h3 id="System_TimeOnly_Minute" data-uid="System.TimeOnly.Minute">
+  Minute
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the minute component of the time represented by this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Minute { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_Second_" data-uid="System.TimeOnly.Second*"></a>
-  <h4 id="System_TimeOnly_Second" data-uid="System.TimeOnly.Second">Second</h4>
+
+  <h3 id="System_TimeOnly_Second" data-uid="System.TimeOnly.Second">
+  Second
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the second component of the time represented by this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly int Second { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int Second { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_Ticks_" data-uid="System.TimeOnly.Ticks*"></a>
-  <h4 id="System_TimeOnly_Ticks" data-uid="System.TimeOnly.Ticks">Ticks</h4>
+
+  <h3 id="System_TimeOnly_Ticks" data-uid="System.TimeOnly.Ticks">
+  Ticks
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the number of ticks that represent the time of this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly long Ticks { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public long Ticks { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">Int64</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-  </h3>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="System_TimeOnly_Add_" data-uid="System.TimeOnly.Add*"></a>
-  <h4 id="System_TimeOnly_Add_System_TimeSpan_" data-uid="System.TimeOnly.Add(System.TimeSpan)">Add(TimeSpan)</h4>
+
+  <h3 id="System_TimeOnly_Add_System_TimeSpan_" data-uid="System.TimeOnly.Add(System.TimeSpan)">
+  Add(TimeSpan)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L131"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns a new TimeOnly that adds the value of the specified TimeSpan to the value of this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly TimeOnly Add(TimeSpan value)</code></pre>
+    <pre><code class="lang-csharp hljs">public TimeOnly Add(TimeSpan value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>A positive or negative time interval.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><p>An object whose value is the sum of the time represented by this instance and the time interval represented by value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></dt>
+    <dd><p>A positive or negative time interval.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>An object whose value is the sum of the time represented by this instance and the time interval represented by value.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_Add_" data-uid="System.TimeOnly.Add*"></a>
-  <h4 id="System_TimeOnly_Add_System_TimeSpan_System_Int32__" data-uid="System.TimeOnly.Add(System.TimeSpan,System.Int32@)">Add(TimeSpan, out Int32)</h4>
+
+  <h3 id="System_TimeOnly_Add_System_TimeSpan_System_Int32__" data-uid="System.TimeOnly.Add(System.TimeSpan,System.Int32@)">
+  Add(TimeSpan, out int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns a new TimeOnly that adds the value of the specified TimeSpan to the value of this instance.
 If the result wraps past the end of the day, this method will return the number of excess days as an out parameter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly TimeOnly Add(TimeSpan value, out int wrappedDays)</code></pre>
+    <pre><code class="lang-csharp hljs">public TimeOnly Add(TimeSpan value, out int wrappedDays)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>A positive or negative time interval.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">wrappedDays</span></td>
-        <td><p>When this method returns, contains the number of excess days if any that resulted from wrapping during this addition operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><p>An object whose value is the sum of the time represented by this instance and the time interval represented by value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></dt>
+    <dd><p>A positive or negative time interval.</p>
+</dd>
+    <dt><code>wrappedDays</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>When this method returns, contains the number of excess days if any that resulted from wrapping during this addition operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>An object whose value is the sum of the time represented by this instance and the time interval represented by value.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_AddHours_" data-uid="System.TimeOnly.AddHours*"></a>
-  <h4 id="System_TimeOnly_AddHours_System_Double_" data-uid="System.TimeOnly.AddHours(System.Double)">AddHours(Double)</h4>
+
+  <h3 id="System_TimeOnly_AddHours_System_Double_" data-uid="System.TimeOnly.AddHours(System.Double)">
+  AddHours(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L147"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns a new TimeOnly that adds the specified number of hours to the value of this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly TimeOnly AddHours(double value)</code></pre>
+    <pre><code class="lang-csharp hljs">public TimeOnly AddHours(double value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Double</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>A number of whole and fractional hours. The value parameter can be negative or positive.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><p>An object whose value is the sum of the time represented by this instance and the number of hours represented by value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>A number of whole and fractional hours. The value parameter can be negative or positive.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>An object whose value is the sum of the time represented by this instance and the number of hours represented by value.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_AddHours_" data-uid="System.TimeOnly.AddHours*"></a>
-  <h4 id="System_TimeOnly_AddHours_System_Double_System_Int32__" data-uid="System.TimeOnly.AddHours(System.Double,System.Int32@)">AddHours(Double, out Int32)</h4>
+
+  <h3 id="System_TimeOnly_AddHours_System_Double_System_Int32__" data-uid="System.TimeOnly.AddHours(System.Double,System.Int32@)">
+  AddHours(double, out int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns a new TimeOnly that adds the specified number of hours to the value of this instance.
 If the result wraps past the end of the day, this method will return the number of excess days as an out parameter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly TimeOnly AddHours(double value, out int wrappedDays)</code></pre>
+    <pre><code class="lang-csharp hljs">public TimeOnly AddHours(double value, out int wrappedDays)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Double</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>A number of whole and fractional hours. The value parameter can be negative or positive.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">wrappedDays</span></td>
-        <td><p>When this method returns, contains the number of excess days if any that resulted from wrapping during this addition operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><p>An object whose value is the sum of the time represented by this instance and the number of hours represented by value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>A number of whole and fractional hours. The value parameter can be negative or positive.</p>
+</dd>
+    <dt><code>wrappedDays</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>When this method returns, contains the number of excess days if any that resulted from wrapping during this addition operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>An object whose value is the sum of the time represented by this instance and the number of hours represented by value.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_AddMinutes_" data-uid="System.TimeOnly.AddMinutes*"></a>
-  <h4 id="System_TimeOnly_AddMinutes_System_Double_" data-uid="System.TimeOnly.AddMinutes(System.Double)">AddMinutes(Double)</h4>
+
+  <h3 id="System_TimeOnly_AddMinutes_System_Double_" data-uid="System.TimeOnly.AddMinutes(System.Double)">
+  AddMinutes(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L163"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns a new TimeOnly that adds the specified number of minutes to the value of this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly TimeOnly AddMinutes(double value)</code></pre>
+    <pre><code class="lang-csharp hljs">public TimeOnly AddMinutes(double value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Double</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>A number of whole and fractional minutes. The value parameter can be negative or positive.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><p>An object whose value is the sum of the time represented by this instance and the number of minutes represented by value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>A number of whole and fractional minutes. The value parameter can be negative or positive.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>An object whose value is the sum of the time represented by this instance and the number of minutes represented by value.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_AddMinutes_" data-uid="System.TimeOnly.AddMinutes*"></a>
-  <h4 id="System_TimeOnly_AddMinutes_System_Double_System_Int32__" data-uid="System.TimeOnly.AddMinutes(System.Double,System.Int32@)">AddMinutes(Double, out Int32)</h4>
+
+  <h3 id="System_TimeOnly_AddMinutes_System_Double_System_Int32__" data-uid="System.TimeOnly.AddMinutes(System.Double,System.Int32@)">
+  AddMinutes(double, out int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L172"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns a new TimeOnly that adds the specified number of minutes to the value of this instance.
 If the result wraps past the end of the day, this method will return the number of excess days as an out parameter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly TimeOnly AddMinutes(double value, out int wrappedDays)</code></pre>
+    <pre><code class="lang-csharp hljs">public TimeOnly AddMinutes(double value, out int wrappedDays)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Double</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>A number of whole and fractional minutes. The value parameter can be negative or positive.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">wrappedDays</span></td>
-        <td><p>When this method returns, contains the number of excess days if any that resulted from wrapping during this addition operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><p>An object whose value is the sum of the time represented by this instance and the number of minutes represented by value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>A number of whole and fractional minutes. The value parameter can be negative or positive.</p>
+</dd>
+    <dt><code>wrappedDays</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>When this method returns, contains the number of excess days if any that resulted from wrapping during this addition operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>An object whose value is the sum of the time represented by this instance and the number of minutes represented by value.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_CompareTo_" data-uid="System.TimeOnly.CompareTo*"></a>
-  <h4 id="System_TimeOnly_CompareTo_System_Object_" data-uid="System.TimeOnly.CompareTo(System.Object)">CompareTo(Object)</h4>
+
+  <h3 id="System_TimeOnly_CompareTo_System_Object_" data-uid="System.TimeOnly.CompareTo(System.Object)">
+  CompareTo(object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L358"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Compares the value of this instance to a specified object that contains a specified TimeOnly value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified TimeOnly value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly int CompareTo(object value)</code></pre>
+    <pre><code class="lang-csharp hljs">public int CompareTo(object? value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>A boxed object to compare, or null.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><p>A signed number indicating the relative values of this instance and the value parameter.
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>A boxed object to compare, or null.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>A signed number indicating the relative values of this instance and the value parameter.
 Less than zero if this instance is earlier than value.
 Zero if this instance is the same as value.
 Greater than zero if this instance is later than value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_CompareTo_" data-uid="System.TimeOnly.CompareTo*"></a>
-  <h4 id="System_TimeOnly_CompareTo_System_TimeOnly_" data-uid="System.TimeOnly.CompareTo(System.TimeOnly)">CompareTo(TimeOnly)</h4>
+
+  <h3 id="System_TimeOnly_CompareTo_System_TimeOnly_" data-uid="System.TimeOnly.CompareTo(System.TimeOnly)">
+  CompareTo(TimeOnly)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L346"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Compares the value of this instance to a specified TimeOnly value and indicates whether this instance is earlier than, the same as, or later than the specified TimeOnly value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly int CompareTo(TimeOnly value)</code></pre>
+    <pre><code class="lang-csharp hljs">public int CompareTo(TimeOnly value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The object to compare to the current instance.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><p>A signed number indicating the relative values of this instance and the value parameter.
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The object to compare to the current instance.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>A signed number indicating the relative values of this instance and the value parameter.
 Less than zero if this instance is earlier than value.
 Zero if this instance is the same as value.
 Greater than zero if this instance is later than value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="System_TimeOnly_Deconstruct_" data-uid="System.TimeOnly.Deconstruct*"></a>
-  <h4 id="System_TimeOnly_Deconstruct_System_Int32__System_Int32__" data-uid="System.TimeOnly.Deconstruct(System.Int32@,System.Int32@)">Deconstruct(out Int32, out Int32)</h4>
-  <div class="markdown level1 summary"><p>Deconstructs <a class="xref" href="System.TimeOnly.html">TimeOnly</a> by <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Hour">Hour</a> and <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Minute">Minute</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly void Deconstruct(out int hour, out int minute)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">hour</span></td>
-        <td><p>Deconstructed parameter for <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Hour">Hour</a>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">minute</span></td>
-        <td><p>Deconstructed parameter for <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Minute">Minute</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="System_TimeOnly_Deconstruct_" data-uid="System.TimeOnly.Deconstruct*"></a>
-  <h4 id="System_TimeOnly_Deconstruct_System_Int32__System_Int32__System_Int32__" data-uid="System.TimeOnly.Deconstruct(System.Int32@,System.Int32@,System.Int32@)">Deconstruct(out Int32, out Int32, out Int32)</h4>
-  <div class="markdown level1 summary"><p>Deconstructs <a class="xref" href="System.TimeOnly.html">TimeOnly</a> by <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Hour">Hour</a>, <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Minute">Minute</a> and <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Second">Second</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly void Deconstruct(out int hour, out int minute, out int second)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">hour</span></td>
-        <td><p>Deconstructed parameter for <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Hour">Hour</a>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">minute</span></td>
-        <td><p>Deconstructed parameter for <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Minute">Minute</a>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">second</span></td>
-        <td><p>Deconstructed parameter for <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Second">Second</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="System_TimeOnly_Deconstruct_" data-uid="System.TimeOnly.Deconstruct*"></a>
-  <h4 id="System_TimeOnly_Deconstruct_System_Int32__System_Int32__System_Int32__System_Int32__" data-uid="System.TimeOnly.Deconstruct(System.Int32@,System.Int32@,System.Int32@,System.Int32@)">Deconstruct(out Int32, out Int32, out Int32, out Int32)</h4>
-  <div class="markdown level1 summary"><p>Deconstructs <a class="xref" href="System.TimeOnly.html">TimeOnly</a> by <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Hour">Hour</a>, <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Minute">Minute</a>, <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Second">Second</a> and <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Millisecond">Millisecond</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly void Deconstruct(out int hour, out int minute, out int second, out int millisecond)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">hour</span></td>
-        <td><p>Deconstructed parameter for <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Hour">Hour</a>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">minute</span></td>
-        <td><p>Deconstructed parameter for <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Minute">Minute</a>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">second</span></td>
-        <td><p>Deconstructed parameter for <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Second">Second</a>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">millisecond</span></td>
-        <td><p>Deconstructed parameter for <a class="xref" href="System.TimeOnly.html#System_TimeOnly_Millisecond">Millisecond</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_Equals_" data-uid="System.TimeOnly.Equals*"></a>
-  <h4 id="System_TimeOnly_Equals_System_Object_" data-uid="System.TimeOnly.Equals(System.Object)">Equals(Object)</h4>
+
+  <h3 id="System_TimeOnly_Equals_System_Object_" data-uid="System.TimeOnly.Equals(System.Object)">
+  Equals(object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L381"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns a value indicating whether this instance is equal to a specified object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override readonly bool Equals(object value)</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool Equals(object? value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The object to compare to this instance.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>true if value is an instance of TimeOnly and equals the value of this instance; otherwise, false.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals#system-valuetype-equals(system-object)">ValueType.Equals(Object)</a></div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The object to compare to this instance.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if value is an instance of TimeOnly and equals the value of this instance; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_Equals_" data-uid="System.TimeOnly.Equals*"></a>
-  <h4 id="System_TimeOnly_Equals_System_TimeOnly_" data-uid="System.TimeOnly.Equals(System.TimeOnly)">Equals(TimeOnly)</h4>
+
+  <h3 id="System_TimeOnly_Equals_System_TimeOnly_" data-uid="System.TimeOnly.Equals(System.TimeOnly)">
+  Equals(TimeOnly)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L374"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns a value indicating whether the value of this instance is equal to the value of the specified TimeOnly instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly bool Equals(TimeOnly value)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Equals(TimeOnly value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The object to compare to this instance.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>true if the value parameter equals the value of this instance; otherwise, false.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The object to compare to this instance.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if the value parameter equals the value of this instance; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_FromDateTime_" data-uid="System.TimeOnly.FromDateTime*"></a>
-  <h4 id="System_TimeOnly_FromDateTime_System_DateTime_" data-uid="System.TimeOnly.FromDateTime(System.DateTime)">FromDateTime(DateTime)</h4>
+
+  <h3 id="System_TimeOnly_FromDateTime_System_DateTime_" data-uid="System.TimeOnly.FromDateTime(System.DateTime)">
+  FromDateTime(DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L326"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Constructs a TimeOnly object from a DateTime representing the time of the day in this DateTime object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TimeOnly FromDateTime(DateTime dateTime)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
-        <td><span class="parametername">dateTime</span></td>
-        <td><p>The time DateTime object to extract the time of the day from.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><p>A TimeOnly object representing time of the day specified in the DateTime object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dateTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The time DateTime object to extract the time of the day from.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>A TimeOnly object representing time of the day specified in the DateTime object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_FromTimeSpan_" data-uid="System.TimeOnly.FromTimeSpan*"></a>
-  <h4 id="System_TimeOnly_FromTimeSpan_System_TimeSpan_" data-uid="System.TimeOnly.FromTimeSpan(System.TimeSpan)">FromTimeSpan(TimeSpan)</h4>
+
+  <h3 id="System_TimeOnly_FromTimeSpan_System_TimeSpan_" data-uid="System.TimeOnly.FromTimeSpan(System.TimeSpan)">
+  FromTimeSpan(TimeSpan)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L319"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Constructs a TimeOnly object from a TimeSpan representing the time elapsed since midnight.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TimeOnly FromTimeSpan(TimeSpan timeSpan)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
-        <td><span class="parametername">timeSpan</span></td>
-        <td><p>The time interval measured since midnight. This value has to be positive and not exceeding the time of the day.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><p>A TimeOnly object representing the time elapsed since midnight using the timeSpan value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>timeSpan</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></dt>
+    <dd><p>The time interval measured since midnight. This value has to be positive and not exceeding the time of the day.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>A TimeOnly object representing the time elapsed since midnight using the timeSpan value.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_GetHashCode_" data-uid="System.TimeOnly.GetHashCode*"></a>
-  <h4 id="System_TimeOnly_GetHashCode" data-uid="System.TimeOnly.GetHashCode">GetHashCode()</h4>
+
+  <h3 id="System_TimeOnly_GetHashCode" data-uid="System.TimeOnly.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L387"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns the hash code for this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override readonly int GetHashCode()</code></pre>
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><p>A 32-bit signed integer hash code.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode#system-valuetype-gethashcode">ValueType.GetHashCode()</a></div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>A 32-bit signed integer hash code.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_IsBetween_" data-uid="System.TimeOnly.IsBetween*"></a>
-  <h4 id="System_TimeOnly_IsBetween_System_TimeOnly_System_TimeOnly_" data-uid="System.TimeOnly.IsBetween(System.TimeOnly,System.TimeOnly)">IsBetween(TimeOnly, TimeOnly)</h4>
+
+  <h3 id="System_TimeOnly_IsBetween_System_TimeOnly_System_TimeOnly_" data-uid="System.TimeOnly.IsBetween(System.TimeOnly,System.TimeOnly)">
+  IsBetween(TimeOnly, TimeOnly)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L185"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Determines if a time falls within the range provided.
 Supports both &quot;normal&quot; ranges such as 10:00-12:00, and ranges that span midnight such as 23:00-01:00.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly bool IsBetween(TimeOnly start, TimeOnly end)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool IsBetween(TimeOnly start, TimeOnly end)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">start</span></td>
-        <td><p>The starting time of day, inclusive.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">end</span></td>
-        <td><p>The ending time of day, exclusive.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>True, if the time falls within the range, false otherwise.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="System_TimeOnly_IsBetween_System_TimeOnly_System_TimeOnly__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>If <code data-dev-comment-type="paramref" class="paramref">start</code> and <code data-dev-comment-type="paramref" class="paramref">end</code> are equal, this method returns false, meaning there is zero elapsed time between the two values.
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The starting time of day, inclusive.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The ending time of day, exclusive.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True, if the time falls within the range, false otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="System_TimeOnly_IsBetween_System_TimeOnly_System_TimeOnly__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>If <code class="paramref">start</code> and <code class="paramref">end</code> are equal, this method returns false, meaning there is zero elapsed time between the two values.
 If you wish to treat such cases as representing one or more whole days, then first check for equality before calling this method.</p>
 </div>
+
+
+
+
   <a id="System_TimeOnly_ToLongTimeString_" data-uid="System.TimeOnly.ToLongTimeString*"></a>
-  <h4 id="System_TimeOnly_ToLongTimeString" data-uid="System.TimeOnly.ToLongTimeString">ToLongTimeString()</h4>
+
+  <h3 id="System_TimeOnly_ToLongTimeString" data-uid="System.TimeOnly.ToLongTimeString">
+  ToLongTimeString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L397"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Converts the value of the current TimeOnly object to its equivalent long date string representation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly string ToLongTimeString()</code></pre>
+    <pre><code class="lang-csharp hljs">public string ToLongTimeString()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>A string that contains the long time string representation of the current TimeOnly object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A string that contains the long time string representation of the current TimeOnly object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_ToShortTimeString_" data-uid="System.TimeOnly.ToShortTimeString*"></a>
-  <h4 id="System_TimeOnly_ToShortTimeString" data-uid="System.TimeOnly.ToShortTimeString">ToShortTimeString()</h4>
+
+  <h3 id="System_TimeOnly_ToShortTimeString" data-uid="System.TimeOnly.ToShortTimeString">
+  ToShortTimeString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L403"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Converts the value of the current TimeOnly object to its equivalent short time string representation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly string ToShortTimeString()</code></pre>
+    <pre><code class="lang-csharp hljs">public string ToShortTimeString()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>A string that contains the short time string representation of the current TimeOnly object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A string that contains the short time string representation of the current TimeOnly object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_ToString_" data-uid="System.TimeOnly.ToString*"></a>
-  <h4 id="System_TimeOnly_ToString" data-uid="System.TimeOnly.ToString">ToString()</h4>
+
+  <h3 id="System_TimeOnly_ToString" data-uid="System.TimeOnly.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L410"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Converts the value of the current TimeOnly object to its equivalent string representation using the formatting conventions of the current culture.
 The TimeOnly object will be formatted in short form.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override readonly string ToString()</code></pre>
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>A string that contains the short time string representation of the current TimeOnly object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring#system-valuetype-tostring">ValueType.ToString()</a></div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A string that contains the short time string representation of the current TimeOnly object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_ToString_" data-uid="System.TimeOnly.ToString*"></a>
-  <h4 id="System_TimeOnly_ToString_System_IFormatProvider_" data-uid="System.TimeOnly.ToString(System.IFormatProvider)">ToString(IFormatProvider)</h4>
+
+  <h3 id="System_TimeOnly_ToString_System_IFormatProvider_" data-uid="System.TimeOnly.ToString(System.IFormatProvider)">
+  ToString(IFormatProvider?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L425"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Converts the value of the current TimeOnly object to its equivalent string representation using the specified culture-specific format information.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly string ToString(IFormatProvider provider)</code></pre>
+    <pre><code class="lang-csharp hljs">public string ToString(IFormatProvider? provider)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
-        <td><span class="parametername">provider</span></td>
-        <td><p>An object that supplies culture-specific formatting information.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>A string representation of value of the current TimeOnly object as specified by provider.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>provider</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></dt>
+    <dd><p>An object that supplies culture-specific formatting information.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A string representation of value of the current TimeOnly object as specified by provider.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_ToString_" data-uid="System.TimeOnly.ToString*"></a>
-  <h4 id="System_TimeOnly_ToString_System_String_" data-uid="System.TimeOnly.ToString(System.String)">ToString(String)</h4>
+
+  <h3 id="System_TimeOnly_ToString_System_String_" data-uid="System.TimeOnly.ToString(System.String)">
+  ToString(string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L418"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Converts the value of the current TimeOnly object to its equivalent string representation using the specified format and the formatting conventions of the current culture.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly string ToString(string format)</code></pre>
+    <pre><code class="lang-csharp hljs">public string ToString(string? format)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">format</span></td>
-        <td><p>A standard or custom time format string.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>A string representation of value of the current TimeOnly object as specified by format.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="System_TimeOnly_ToString_System_String__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>The accepted standard formats are &apos;r&apos;, &apos;R&apos;, &apos;o&apos;, &apos;O&apos;, &apos;t&apos; and &apos;T&apos;. </p>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>format</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A standard or custom time format string.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A string representation of value of the current TimeOnly object as specified by format.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="System_TimeOnly_ToString_System_String__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The accepted standard formats are 'r', 'R', 'o', 'O', 't' and 'T'.</p>
 </div>
+
+
+
+
   <a id="System_TimeOnly_ToString_" data-uid="System.TimeOnly.ToString*"></a>
-  <h4 id="System_TimeOnly_ToString_System_String_System_IFormatProvider_" data-uid="System.TimeOnly.ToString(System.String,System.IFormatProvider)">ToString(String, IFormatProvider)</h4>
+
+  <h3 id="System_TimeOnly_ToString_System_String_System_IFormatProvider_" data-uid="System.TimeOnly.ToString(System.String,System.IFormatProvider)">
+  ToString(string?, IFormatProvider?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L434"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Converts the value of the current TimeOnly object to its equivalent string representation using the specified culture-specific format information.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly string ToString(string format, IFormatProvider provider)</code></pre>
+    <pre><code class="lang-csharp hljs">public string ToString(string? format, IFormatProvider? provider)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">format</span></td>
-        <td><p>A standard or custom time format string.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></td>
-        <td><span class="parametername">provider</span></td>
-        <td><p>An object that supplies culture-specific formatting information.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>A string representation of value of the current TimeOnly object as specified by format and provider.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="System_TimeOnly_ToString_System_String_System_IFormatProvider__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>The accepted standard formats are &apos;r&apos;, &apos;R&apos;, &apos;o&apos;, &apos;O&apos;, &apos;t&apos; and &apos;T&apos;. </p>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>format</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A standard or custom time format string.</p>
+</dd>
+    <dt><code>provider</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></dt>
+    <dd><p>An object that supplies culture-specific formatting information.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A string representation of value of the current TimeOnly object as specified by format and provider.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="System_TimeOnly_ToString_System_String_System_IFormatProvider__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The accepted standard formats are 'r', 'R', 'o', 'O', 't' and 'T'.</p>
 </div>
+
+
+
+
   <a id="System_TimeOnly_ToTimeSpan_" data-uid="System.TimeOnly.ToTimeSpan*"></a>
-  <h4 id="System_TimeOnly_ToTimeSpan" data-uid="System.TimeOnly.ToTimeSpan">ToTimeSpan()</h4>
+
+  <h3 id="System_TimeOnly_ToTimeSpan" data-uid="System.TimeOnly.ToTimeSpan">
+  ToTimeSpan()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L332"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Convert the current TimeOnly instance to a TimeSpan object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly TimeSpan ToTimeSpan()</code></pre>
+    <pre><code class="lang-csharp hljs">public TimeSpan ToTimeSpan()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
-        <td><p>A TimeSpan object spanning to the time specified in the current TimeOnly object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="operators">Operators
-  </h3>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></dt>
+    <dd><p>A TimeSpan object spanning to the time specified in the current TimeOnly object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
   <a id="System_TimeOnly_op_Equality_" data-uid="System.TimeOnly.op_Equality*"></a>
-  <h4 id="System_TimeOnly_op_Equality_System_TimeOnly_System_TimeOnly_" data-uid="System.TimeOnly.op_Equality(System.TimeOnly,System.TimeOnly)">Equality(TimeOnly, TimeOnly)</h4>
+
+  <h3 id="System_TimeOnly_op_Equality_System_TimeOnly_System_TimeOnly_" data-uid="System.TimeOnly.op_Equality(System.TimeOnly,System.TimeOnly)">
+  operator ==(TimeOnly, TimeOnly)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L202"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Determines whether two specified instances of TimeOnly are equal.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool operator ==(TimeOnly left, TimeOnly right)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The first object to compare.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The second object to compare.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>true if left and right represent the same time; otherwise, false.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The first object to compare.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The second object to compare.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if left and right represent the same time; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_op_GreaterThan_" data-uid="System.TimeOnly.op_GreaterThan*"></a>
-  <h4 id="System_TimeOnly_op_GreaterThan_System_TimeOnly_System_TimeOnly_" data-uid="System.TimeOnly.op_GreaterThan(System.TimeOnly,System.TimeOnly)">GreaterThan(TimeOnly, TimeOnly)</h4>
+
+  <h3 id="System_TimeOnly_op_GreaterThan_System_TimeOnly_System_TimeOnly_" data-uid="System.TimeOnly.op_GreaterThan(System.TimeOnly,System.TimeOnly)">
+  operator &gt;(TimeOnly, TimeOnly)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L220"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Determines whether one specified TimeOnly is later than another specified TimeOnly.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator&gt;(TimeOnly left, TimeOnly right)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool operator &gt;(TimeOnly left, TimeOnly right)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The first object to compare.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The second object to compare.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>true if left is later than right; otherwise, false.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The first object to compare.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The second object to compare.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if left is later than right; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_op_GreaterThanOrEqual_" data-uid="System.TimeOnly.op_GreaterThanOrEqual*"></a>
-  <h4 id="System_TimeOnly_op_GreaterThanOrEqual_System_TimeOnly_System_TimeOnly_" data-uid="System.TimeOnly.op_GreaterThanOrEqual(System.TimeOnly,System.TimeOnly)">GreaterThanOrEqual(TimeOnly, TimeOnly)</h4>
+
+  <h3 id="System_TimeOnly_op_GreaterThanOrEqual_System_TimeOnly_System_TimeOnly_" data-uid="System.TimeOnly.op_GreaterThanOrEqual(System.TimeOnly,System.TimeOnly)">
+  operator &gt;=(TimeOnly, TimeOnly)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L229"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Determines whether one specified TimeOnly represents a time that is the same as or later than another specified TimeOnly.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool operator &gt;=(TimeOnly left, TimeOnly right)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The first object to compare.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The second object to compare.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>true if left is the same as or later than right; otherwise, false.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The first object to compare.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The second object to compare.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if left is the same as or later than right; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_op_Inequality_" data-uid="System.TimeOnly.op_Inequality*"></a>
-  <h4 id="System_TimeOnly_op_Inequality_System_TimeOnly_System_TimeOnly_" data-uid="System.TimeOnly.op_Inequality(System.TimeOnly,System.TimeOnly)">Inequality(TimeOnly, TimeOnly)</h4>
+
+  <h3 id="System_TimeOnly_op_Inequality_System_TimeOnly_System_TimeOnly_" data-uid="System.TimeOnly.op_Inequality(System.TimeOnly,System.TimeOnly)">
+  operator !=(TimeOnly, TimeOnly)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L211"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Determines whether two specified instances of TimeOnly are not equal.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool operator !=(TimeOnly left, TimeOnly right)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The first object to compare.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The second object to compare.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>true if left and right do not represent the same time; otherwise, false.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The first object to compare.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The second object to compare.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if left and right do not represent the same time; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_op_LessThan_" data-uid="System.TimeOnly.op_LessThan*"></a>
-  <h4 id="System_TimeOnly_op_LessThan_System_TimeOnly_System_TimeOnly_" data-uid="System.TimeOnly.op_LessThan(System.TimeOnly,System.TimeOnly)">LessThan(TimeOnly, TimeOnly)</h4>
+
+  <h3 id="System_TimeOnly_op_LessThan_System_TimeOnly_System_TimeOnly_" data-uid="System.TimeOnly.op_LessThan(System.TimeOnly,System.TimeOnly)">
+  operator &lt;(TimeOnly, TimeOnly)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L238"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Determines whether one specified TimeOnly is earlier than another specified TimeOnly.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool operator &lt;(TimeOnly left, TimeOnly right)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The first object to compare.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The second object to compare.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>true if left is earlier than right; otherwise, false.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The first object to compare.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The second object to compare.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if left is earlier than right; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_op_LessThanOrEqual_" data-uid="System.TimeOnly.op_LessThanOrEqual*"></a>
-  <h4 id="System_TimeOnly_op_LessThanOrEqual_System_TimeOnly_System_TimeOnly_" data-uid="System.TimeOnly.op_LessThanOrEqual(System.TimeOnly,System.TimeOnly)">LessThanOrEqual(TimeOnly, TimeOnly)</h4>
+
+  <h3 id="System_TimeOnly_op_LessThanOrEqual_System_TimeOnly_System_TimeOnly_" data-uid="System.TimeOnly.op_LessThanOrEqual(System.TimeOnly,System.TimeOnly)">
+  operator &lt;=(TimeOnly, TimeOnly)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L247"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Determines whether one specified TimeOnly represents a time that is the same as or earlier than another specified TimeOnly.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool operator &lt;=(TimeOnly left, TimeOnly right)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The first object to compare.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The second object to compare.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>true if left is the same as or earlier than right; otherwise, false.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The first object to compare.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The second object to compare.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if left is the same as or earlier than right; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="System_TimeOnly_op_Subtraction_" data-uid="System.TimeOnly.op_Subtraction*"></a>
-  <h4 id="System_TimeOnly_op_Subtraction_System_TimeOnly_System_TimeOnly_" data-uid="System.TimeOnly.op_Subtraction(System.TimeOnly,System.TimeOnly)">Subtraction(TimeOnly, TimeOnly)</h4>
+
+  <h3 id="System_TimeOnly_op_Subtraction_System_TimeOnly_System_TimeOnly_" data-uid="System.TimeOnly.op_Subtraction(System.TimeOnly,System.TimeOnly)">
+  operator -(TimeOnly, TimeOnly)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Casey-Hofland/UnityClock/blob/main/Runtime/TimeOnlyFix/TimeOnly.cs/#L255"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gives the elapsed time between two points on a circular clock, which will always be a positive value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TimeSpan operator -(TimeOnly t1, TimeOnly t2)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">t1</span></td>
-        <td><p>The first TimeOnly instance.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="System.TimeOnly.html">TimeOnly</a></td>
-        <td><span class="parametername">t2</span></td>
-        <td><p>The second TimeOnly instance..</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
-        <td><p>The elapsed time between t1 and t2.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">System.IComparable</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">System.IComparable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
-  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>t1</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The first TimeOnly instance.</p>
+</dd>
+    <dt><code>t2</code> <a class="xref" href="System.TimeOnly.html">TimeOnly</a></dt>
+    <dd><p>The second TimeOnly instance..</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></dt>
+    <dd><p>The elapsed time between t1 and t2.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
 </article>
-          </div>
-          
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
+
+
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made by <a href="https://github.com/Casey-Hofland" target="_blank">Casey Hofland</a> using <a href="https://dotnet.github.io/docfx" target="_blank">DocFX</a></span>
         </div>
       </div>
-      
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-            <span>Made by <a href="https://github.com/Casey-Hofland" target="_blank">Casey Hofland</a> using <a href="https://dotnet.github.io/docfx" target="_blank">DocFX</a></span>
-            
-          </div>
-        </div>
-      </footer>
-    </div>
-    
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+    </footer>
   </body>
 </html>

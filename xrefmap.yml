@@ -13,52 +13,67 @@ references:
   commentId: T:System.TimeOnly
   fullName: System.TimeOnly
   nameWithType: TimeOnly
-- uid: System.TimeOnly.#ctor(System.Int32,System.Int32)
-  name: TimeOnly(Int32, Int32)
-  href: api/System.TimeOnly.html#System_TimeOnly__ctor_System_Int32_System_Int32_
-  commentId: M:System.TimeOnly.#ctor(System.Int32,System.Int32)
-  fullName: System.TimeOnly.TimeOnly(System.Int32, System.Int32)
-  nameWithType: TimeOnly.TimeOnly(Int32, Int32)
-- uid: System.TimeOnly.#ctor(System.Int32,System.Int32,System.Int32)
-  name: TimeOnly(Int32, Int32, Int32)
-  href: api/System.TimeOnly.html#System_TimeOnly__ctor_System_Int32_System_Int32_System_Int32_
-  commentId: M:System.TimeOnly.#ctor(System.Int32,System.Int32,System.Int32)
-  fullName: System.TimeOnly.TimeOnly(System.Int32, System.Int32, System.Int32)
-  nameWithType: TimeOnly.TimeOnly(Int32, Int32, Int32)
 - uid: System.TimeOnly.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
-  name: TimeOnly(Int32, Int32, Int32, Int32)
+  name: TimeOnly(int, int, int, int)
   href: api/System.TimeOnly.html#System_TimeOnly__ctor_System_Int32_System_Int32_System_Int32_System_Int32_
   commentId: M:System.TimeOnly.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
-  fullName: System.TimeOnly.TimeOnly(System.Int32, System.Int32, System.Int32, System.Int32)
-  nameWithType: TimeOnly.TimeOnly(Int32, Int32, Int32, Int32)
+  name.vb: New(Integer, Integer, Integer, Integer)
+  fullName: System.TimeOnly.TimeOnly(int, int, int, int)
+  fullName.vb: System.TimeOnly.New(Integer, Integer, Integer, Integer)
+  nameWithType: TimeOnly.TimeOnly(int, int, int, int)
+  nameWithType.vb: TimeOnly.New(Integer, Integer, Integer, Integer)
+- uid: System.TimeOnly.#ctor(System.Int32,System.Int32,System.Int32)
+  name: TimeOnly(int, int, int)
+  href: api/System.TimeOnly.html#System_TimeOnly__ctor_System_Int32_System_Int32_System_Int32_
+  commentId: M:System.TimeOnly.#ctor(System.Int32,System.Int32,System.Int32)
+  name.vb: New(Integer, Integer, Integer)
+  fullName: System.TimeOnly.TimeOnly(int, int, int)
+  fullName.vb: System.TimeOnly.New(Integer, Integer, Integer)
+  nameWithType: TimeOnly.TimeOnly(int, int, int)
+  nameWithType.vb: TimeOnly.New(Integer, Integer, Integer)
+- uid: System.TimeOnly.#ctor(System.Int32,System.Int32)
+  name: TimeOnly(int, int)
+  href: api/System.TimeOnly.html#System_TimeOnly__ctor_System_Int32_System_Int32_
+  commentId: M:System.TimeOnly.#ctor(System.Int32,System.Int32)
+  name.vb: New(Integer, Integer)
+  fullName: System.TimeOnly.TimeOnly(int, int)
+  fullName.vb: System.TimeOnly.New(Integer, Integer)
+  nameWithType: TimeOnly.TimeOnly(int, int)
+  nameWithType.vb: TimeOnly.New(Integer, Integer)
 - uid: System.TimeOnly.#ctor(System.Int64)
-  name: TimeOnly(Int64)
+  name: TimeOnly(long)
   href: api/System.TimeOnly.html#System_TimeOnly__ctor_System_Int64_
   commentId: M:System.TimeOnly.#ctor(System.Int64)
-  fullName: System.TimeOnly.TimeOnly(System.Int64)
-  nameWithType: TimeOnly.TimeOnly(Int64)
+  name.vb: New(Long)
+  fullName: System.TimeOnly.TimeOnly(long)
+  fullName.vb: System.TimeOnly.New(Long)
+  nameWithType: TimeOnly.TimeOnly(long)
+  nameWithType.vb: TimeOnly.New(Long)
 - uid: System.TimeOnly.#ctor*
   name: TimeOnly
   href: api/System.TimeOnly.html#System_TimeOnly__ctor_
   commentId: Overload:System.TimeOnly.#ctor
   isSpec: "True"
+  name.vb: New
   fullName: System.TimeOnly.TimeOnly
+  fullName.vb: System.TimeOnly.New
   nameWithType: TimeOnly.TimeOnly
+  nameWithType.vb: TimeOnly.New
+- uid: System.TimeOnly.Add(System.TimeSpan,System.Int32@)
+  name: Add(TimeSpan, out int)
+  href: api/System.TimeOnly.html#System_TimeOnly_Add_System_TimeSpan_System_Int32__
+  commentId: M:System.TimeOnly.Add(System.TimeSpan,System.Int32@)
+  name.vb: Add(TimeSpan, Integer)
+  fullName: System.TimeOnly.Add(System.TimeSpan, out int)
+  fullName.vb: System.TimeOnly.Add(System.TimeSpan, Integer)
+  nameWithType: TimeOnly.Add(TimeSpan, out int)
+  nameWithType.vb: TimeOnly.Add(TimeSpan, Integer)
 - uid: System.TimeOnly.Add(System.TimeSpan)
   name: Add(TimeSpan)
   href: api/System.TimeOnly.html#System_TimeOnly_Add_System_TimeSpan_
   commentId: M:System.TimeOnly.Add(System.TimeSpan)
   fullName: System.TimeOnly.Add(System.TimeSpan)
   nameWithType: TimeOnly.Add(TimeSpan)
-- uid: System.TimeOnly.Add(System.TimeSpan,System.Int32@)
-  name: Add(TimeSpan, out Int32)
-  href: api/System.TimeOnly.html#System_TimeOnly_Add_System_TimeSpan_System_Int32__
-  commentId: M:System.TimeOnly.Add(System.TimeSpan,System.Int32@)
-  name.vb: Add(TimeSpan, ByRef Int32)
-  fullName: System.TimeOnly.Add(System.TimeSpan, out System.Int32)
-  fullName.vb: System.TimeOnly.Add(System.TimeSpan, ByRef System.Int32)
-  nameWithType: TimeOnly.Add(TimeSpan, out Int32)
-  nameWithType.vb: TimeOnly.Add(TimeSpan, ByRef Int32)
 - uid: System.TimeOnly.Add*
   name: Add
   href: api/System.TimeOnly.html#System_TimeOnly_Add_
@@ -66,21 +81,24 @@ references:
   isSpec: "True"
   fullName: System.TimeOnly.Add
   nameWithType: TimeOnly.Add
-- uid: System.TimeOnly.AddHours(System.Double)
-  name: AddHours(Double)
-  href: api/System.TimeOnly.html#System_TimeOnly_AddHours_System_Double_
-  commentId: M:System.TimeOnly.AddHours(System.Double)
-  fullName: System.TimeOnly.AddHours(System.Double)
-  nameWithType: TimeOnly.AddHours(Double)
 - uid: System.TimeOnly.AddHours(System.Double,System.Int32@)
-  name: AddHours(Double, out Int32)
+  name: AddHours(double, out int)
   href: api/System.TimeOnly.html#System_TimeOnly_AddHours_System_Double_System_Int32__
   commentId: M:System.TimeOnly.AddHours(System.Double,System.Int32@)
-  name.vb: AddHours(Double, ByRef Int32)
-  fullName: System.TimeOnly.AddHours(System.Double, out System.Int32)
-  fullName.vb: System.TimeOnly.AddHours(System.Double, ByRef System.Int32)
-  nameWithType: TimeOnly.AddHours(Double, out Int32)
-  nameWithType.vb: TimeOnly.AddHours(Double, ByRef Int32)
+  name.vb: AddHours(Double, Integer)
+  fullName: System.TimeOnly.AddHours(double, out int)
+  fullName.vb: System.TimeOnly.AddHours(Double, Integer)
+  nameWithType: TimeOnly.AddHours(double, out int)
+  nameWithType.vb: TimeOnly.AddHours(Double, Integer)
+- uid: System.TimeOnly.AddHours(System.Double)
+  name: AddHours(double)
+  href: api/System.TimeOnly.html#System_TimeOnly_AddHours_System_Double_
+  commentId: M:System.TimeOnly.AddHours(System.Double)
+  name.vb: AddHours(Double)
+  fullName: System.TimeOnly.AddHours(double)
+  fullName.vb: System.TimeOnly.AddHours(Double)
+  nameWithType: TimeOnly.AddHours(double)
+  nameWithType.vb: TimeOnly.AddHours(Double)
 - uid: System.TimeOnly.AddHours*
   name: AddHours
   href: api/System.TimeOnly.html#System_TimeOnly_AddHours_
@@ -88,21 +106,24 @@ references:
   isSpec: "True"
   fullName: System.TimeOnly.AddHours
   nameWithType: TimeOnly.AddHours
-- uid: System.TimeOnly.AddMinutes(System.Double)
-  name: AddMinutes(Double)
-  href: api/System.TimeOnly.html#System_TimeOnly_AddMinutes_System_Double_
-  commentId: M:System.TimeOnly.AddMinutes(System.Double)
-  fullName: System.TimeOnly.AddMinutes(System.Double)
-  nameWithType: TimeOnly.AddMinutes(Double)
 - uid: System.TimeOnly.AddMinutes(System.Double,System.Int32@)
-  name: AddMinutes(Double, out Int32)
+  name: AddMinutes(double, out int)
   href: api/System.TimeOnly.html#System_TimeOnly_AddMinutes_System_Double_System_Int32__
   commentId: M:System.TimeOnly.AddMinutes(System.Double,System.Int32@)
-  name.vb: AddMinutes(Double, ByRef Int32)
-  fullName: System.TimeOnly.AddMinutes(System.Double, out System.Int32)
-  fullName.vb: System.TimeOnly.AddMinutes(System.Double, ByRef System.Int32)
-  nameWithType: TimeOnly.AddMinutes(Double, out Int32)
-  nameWithType.vb: TimeOnly.AddMinutes(Double, ByRef Int32)
+  name.vb: AddMinutes(Double, Integer)
+  fullName: System.TimeOnly.AddMinutes(double, out int)
+  fullName.vb: System.TimeOnly.AddMinutes(Double, Integer)
+  nameWithType: TimeOnly.AddMinutes(double, out int)
+  nameWithType.vb: TimeOnly.AddMinutes(Double, Integer)
+- uid: System.TimeOnly.AddMinutes(System.Double)
+  name: AddMinutes(double)
+  href: api/System.TimeOnly.html#System_TimeOnly_AddMinutes_System_Double_
+  commentId: M:System.TimeOnly.AddMinutes(System.Double)
+  name.vb: AddMinutes(Double)
+  fullName: System.TimeOnly.AddMinutes(double)
+  fullName.vb: System.TimeOnly.AddMinutes(Double)
+  nameWithType: TimeOnly.AddMinutes(double)
+  nameWithType.vb: TimeOnly.AddMinutes(Double)
 - uid: System.TimeOnly.AddMinutes*
   name: AddMinutes
   href: api/System.TimeOnly.html#System_TimeOnly_AddMinutes_
@@ -111,11 +132,14 @@ references:
   fullName: System.TimeOnly.AddMinutes
   nameWithType: TimeOnly.AddMinutes
 - uid: System.TimeOnly.CompareTo(System.Object)
-  name: CompareTo(Object)
+  name: CompareTo(object?)
   href: api/System.TimeOnly.html#System_TimeOnly_CompareTo_System_Object_
   commentId: M:System.TimeOnly.CompareTo(System.Object)
-  fullName: System.TimeOnly.CompareTo(System.Object)
-  nameWithType: TimeOnly.CompareTo(Object)
+  name.vb: CompareTo(Object)
+  fullName: System.TimeOnly.CompareTo(object?)
+  fullName.vb: System.TimeOnly.CompareTo(Object)
+  nameWithType: TimeOnly.CompareTo(object?)
+  nameWithType.vb: TimeOnly.CompareTo(Object)
 - uid: System.TimeOnly.CompareTo(System.TimeOnly)
   name: CompareTo(TimeOnly)
   href: api/System.TimeOnly.html#System_TimeOnly_CompareTo_System_TimeOnly_
@@ -129,46 +153,15 @@ references:
   isSpec: "True"
   fullName: System.TimeOnly.CompareTo
   nameWithType: TimeOnly.CompareTo
-- uid: System.TimeOnly.Deconstruct(System.Int32@,System.Int32@)
-  name: Deconstruct(out Int32, out Int32)
-  href: api/System.TimeOnly.html#System_TimeOnly_Deconstruct_System_Int32__System_Int32__
-  commentId: M:System.TimeOnly.Deconstruct(System.Int32@,System.Int32@)
-  name.vb: Deconstruct(ByRef Int32, ByRef Int32)
-  fullName: System.TimeOnly.Deconstruct(out System.Int32, out System.Int32)
-  fullName.vb: System.TimeOnly.Deconstruct(ByRef System.Int32, ByRef System.Int32)
-  nameWithType: TimeOnly.Deconstruct(out Int32, out Int32)
-  nameWithType.vb: TimeOnly.Deconstruct(ByRef Int32, ByRef Int32)
-- uid: System.TimeOnly.Deconstruct(System.Int32@,System.Int32@,System.Int32@)
-  name: Deconstruct(out Int32, out Int32, out Int32)
-  href: api/System.TimeOnly.html#System_TimeOnly_Deconstruct_System_Int32__System_Int32__System_Int32__
-  commentId: M:System.TimeOnly.Deconstruct(System.Int32@,System.Int32@,System.Int32@)
-  name.vb: Deconstruct(ByRef Int32, ByRef Int32, ByRef Int32)
-  fullName: System.TimeOnly.Deconstruct(out System.Int32, out System.Int32, out System.Int32)
-  fullName.vb: System.TimeOnly.Deconstruct(ByRef System.Int32, ByRef System.Int32, ByRef System.Int32)
-  nameWithType: TimeOnly.Deconstruct(out Int32, out Int32, out Int32)
-  nameWithType.vb: TimeOnly.Deconstruct(ByRef Int32, ByRef Int32, ByRef Int32)
-- uid: System.TimeOnly.Deconstruct(System.Int32@,System.Int32@,System.Int32@,System.Int32@)
-  name: Deconstruct(out Int32, out Int32, out Int32, out Int32)
-  href: api/System.TimeOnly.html#System_TimeOnly_Deconstruct_System_Int32__System_Int32__System_Int32__System_Int32__
-  commentId: M:System.TimeOnly.Deconstruct(System.Int32@,System.Int32@,System.Int32@,System.Int32@)
-  name.vb: Deconstruct(ByRef Int32, ByRef Int32, ByRef Int32, ByRef Int32)
-  fullName: System.TimeOnly.Deconstruct(out System.Int32, out System.Int32, out System.Int32, out System.Int32)
-  fullName.vb: System.TimeOnly.Deconstruct(ByRef System.Int32, ByRef System.Int32, ByRef System.Int32, ByRef System.Int32)
-  nameWithType: TimeOnly.Deconstruct(out Int32, out Int32, out Int32, out Int32)
-  nameWithType.vb: TimeOnly.Deconstruct(ByRef Int32, ByRef Int32, ByRef Int32, ByRef Int32)
-- uid: System.TimeOnly.Deconstruct*
-  name: Deconstruct
-  href: api/System.TimeOnly.html#System_TimeOnly_Deconstruct_
-  commentId: Overload:System.TimeOnly.Deconstruct
-  isSpec: "True"
-  fullName: System.TimeOnly.Deconstruct
-  nameWithType: TimeOnly.Deconstruct
 - uid: System.TimeOnly.Equals(System.Object)
-  name: Equals(Object)
+  name: Equals(object?)
   href: api/System.TimeOnly.html#System_TimeOnly_Equals_System_Object_
   commentId: M:System.TimeOnly.Equals(System.Object)
-  fullName: System.TimeOnly.Equals(System.Object)
-  nameWithType: TimeOnly.Equals(Object)
+  name.vb: Equals(Object)
+  fullName: System.TimeOnly.Equals(object?)
+  fullName.vb: System.TimeOnly.Equals(Object)
+  nameWithType: TimeOnly.Equals(object?)
+  nameWithType.vb: TimeOnly.Equals(Object)
 - uid: System.TimeOnly.Equals(System.TimeOnly)
   name: Equals(TimeOnly)
   href: api/System.TimeOnly.html#System_TimeOnly_Equals_System_TimeOnly_
@@ -186,8 +179,11 @@ references:
   name: FromDateTime(DateTime)
   href: api/System.TimeOnly.html#System_TimeOnly_FromDateTime_System_DateTime_
   commentId: M:System.TimeOnly.FromDateTime(System.DateTime)
+  name.vb: FromDateTime(Date)
   fullName: System.TimeOnly.FromDateTime(System.DateTime)
+  fullName.vb: System.TimeOnly.FromDateTime(Date)
   nameWithType: TimeOnly.FromDateTime(DateTime)
+  nameWithType.vb: TimeOnly.FromDateTime(Date)
 - uid: System.TimeOnly.FromDateTime*
   name: FromDateTime
   href: api/System.TimeOnly.html#System_TimeOnly_FromDateTime_
@@ -300,96 +296,138 @@ references:
   fullName: System.TimeOnly.MinValue
   nameWithType: TimeOnly.MinValue
 - uid: System.TimeOnly.op_Equality(System.TimeOnly,System.TimeOnly)
-  name: Equality(TimeOnly, TimeOnly)
+  name: operator ==(TimeOnly, TimeOnly)
   href: api/System.TimeOnly.html#System_TimeOnly_op_Equality_System_TimeOnly_System_TimeOnly_
   commentId: M:System.TimeOnly.op_Equality(System.TimeOnly,System.TimeOnly)
-  fullName: System.TimeOnly.Equality(System.TimeOnly, System.TimeOnly)
-  nameWithType: TimeOnly.Equality(TimeOnly, TimeOnly)
+  name.vb: =(TimeOnly, TimeOnly)
+  fullName: System.TimeOnly.operator ==(System.TimeOnly, System.TimeOnly)
+  fullName.vb: System.TimeOnly.=(System.TimeOnly, System.TimeOnly)
+  nameWithType: TimeOnly.operator ==(TimeOnly, TimeOnly)
+  nameWithType.vb: TimeOnly.=(TimeOnly, TimeOnly)
 - uid: System.TimeOnly.op_Equality*
-  name: Equality
+  name: operator ==
   href: api/System.TimeOnly.html#System_TimeOnly_op_Equality_
   commentId: Overload:System.TimeOnly.op_Equality
   isSpec: "True"
-  fullName: System.TimeOnly.Equality
-  nameWithType: TimeOnly.Equality
+  name.vb: =
+  fullName: System.TimeOnly.operator ==
+  fullName.vb: System.TimeOnly.=
+  nameWithType: TimeOnly.operator ==
+  nameWithType.vb: TimeOnly.=
 - uid: System.TimeOnly.op_GreaterThan(System.TimeOnly,System.TimeOnly)
-  name: GreaterThan(TimeOnly, TimeOnly)
+  name: operator >(TimeOnly, TimeOnly)
   href: api/System.TimeOnly.html#System_TimeOnly_op_GreaterThan_System_TimeOnly_System_TimeOnly_
   commentId: M:System.TimeOnly.op_GreaterThan(System.TimeOnly,System.TimeOnly)
-  fullName: System.TimeOnly.GreaterThan(System.TimeOnly, System.TimeOnly)
-  nameWithType: TimeOnly.GreaterThan(TimeOnly, TimeOnly)
+  name.vb: '>(TimeOnly, TimeOnly)'
+  fullName: System.TimeOnly.operator >(System.TimeOnly, System.TimeOnly)
+  fullName.vb: System.TimeOnly.>(System.TimeOnly, System.TimeOnly)
+  nameWithType: TimeOnly.operator >(TimeOnly, TimeOnly)
+  nameWithType.vb: TimeOnly.>(TimeOnly, TimeOnly)
 - uid: System.TimeOnly.op_GreaterThan*
-  name: GreaterThan
+  name: operator >
   href: api/System.TimeOnly.html#System_TimeOnly_op_GreaterThan_
   commentId: Overload:System.TimeOnly.op_GreaterThan
   isSpec: "True"
-  fullName: System.TimeOnly.GreaterThan
-  nameWithType: TimeOnly.GreaterThan
+  name.vb: '>'
+  fullName: System.TimeOnly.operator >
+  fullName.vb: System.TimeOnly.>
+  nameWithType: TimeOnly.operator >
+  nameWithType.vb: TimeOnly.>
 - uid: System.TimeOnly.op_GreaterThanOrEqual(System.TimeOnly,System.TimeOnly)
-  name: GreaterThanOrEqual(TimeOnly, TimeOnly)
+  name: operator >=(TimeOnly, TimeOnly)
   href: api/System.TimeOnly.html#System_TimeOnly_op_GreaterThanOrEqual_System_TimeOnly_System_TimeOnly_
   commentId: M:System.TimeOnly.op_GreaterThanOrEqual(System.TimeOnly,System.TimeOnly)
-  fullName: System.TimeOnly.GreaterThanOrEqual(System.TimeOnly, System.TimeOnly)
-  nameWithType: TimeOnly.GreaterThanOrEqual(TimeOnly, TimeOnly)
+  name.vb: '>=(TimeOnly, TimeOnly)'
+  fullName: System.TimeOnly.operator >=(System.TimeOnly, System.TimeOnly)
+  fullName.vb: System.TimeOnly.>=(System.TimeOnly, System.TimeOnly)
+  nameWithType: TimeOnly.operator >=(TimeOnly, TimeOnly)
+  nameWithType.vb: TimeOnly.>=(TimeOnly, TimeOnly)
 - uid: System.TimeOnly.op_GreaterThanOrEqual*
-  name: GreaterThanOrEqual
+  name: operator >=
   href: api/System.TimeOnly.html#System_TimeOnly_op_GreaterThanOrEqual_
   commentId: Overload:System.TimeOnly.op_GreaterThanOrEqual
   isSpec: "True"
-  fullName: System.TimeOnly.GreaterThanOrEqual
-  nameWithType: TimeOnly.GreaterThanOrEqual
+  name.vb: '>='
+  fullName: System.TimeOnly.operator >=
+  fullName.vb: System.TimeOnly.>=
+  nameWithType: TimeOnly.operator >=
+  nameWithType.vb: TimeOnly.>=
 - uid: System.TimeOnly.op_Inequality(System.TimeOnly,System.TimeOnly)
-  name: Inequality(TimeOnly, TimeOnly)
+  name: operator !=(TimeOnly, TimeOnly)
   href: api/System.TimeOnly.html#System_TimeOnly_op_Inequality_System_TimeOnly_System_TimeOnly_
   commentId: M:System.TimeOnly.op_Inequality(System.TimeOnly,System.TimeOnly)
-  fullName: System.TimeOnly.Inequality(System.TimeOnly, System.TimeOnly)
-  nameWithType: TimeOnly.Inequality(TimeOnly, TimeOnly)
+  name.vb: <>(TimeOnly, TimeOnly)
+  fullName: System.TimeOnly.operator !=(System.TimeOnly, System.TimeOnly)
+  fullName.vb: System.TimeOnly.<>(System.TimeOnly, System.TimeOnly)
+  nameWithType: TimeOnly.operator !=(TimeOnly, TimeOnly)
+  nameWithType.vb: TimeOnly.<>(TimeOnly, TimeOnly)
 - uid: System.TimeOnly.op_Inequality*
-  name: Inequality
+  name: operator !=
   href: api/System.TimeOnly.html#System_TimeOnly_op_Inequality_
   commentId: Overload:System.TimeOnly.op_Inequality
   isSpec: "True"
-  fullName: System.TimeOnly.Inequality
-  nameWithType: TimeOnly.Inequality
+  name.vb: <>
+  fullName: System.TimeOnly.operator !=
+  fullName.vb: System.TimeOnly.<>
+  nameWithType: TimeOnly.operator !=
+  nameWithType.vb: TimeOnly.<>
 - uid: System.TimeOnly.op_LessThan(System.TimeOnly,System.TimeOnly)
-  name: LessThan(TimeOnly, TimeOnly)
+  name: operator <(TimeOnly, TimeOnly)
   href: api/System.TimeOnly.html#System_TimeOnly_op_LessThan_System_TimeOnly_System_TimeOnly_
   commentId: M:System.TimeOnly.op_LessThan(System.TimeOnly,System.TimeOnly)
-  fullName: System.TimeOnly.LessThan(System.TimeOnly, System.TimeOnly)
-  nameWithType: TimeOnly.LessThan(TimeOnly, TimeOnly)
+  name.vb: <(TimeOnly, TimeOnly)
+  fullName: System.TimeOnly.operator <(System.TimeOnly, System.TimeOnly)
+  fullName.vb: System.TimeOnly.<(System.TimeOnly, System.TimeOnly)
+  nameWithType: TimeOnly.operator <(TimeOnly, TimeOnly)
+  nameWithType.vb: TimeOnly.<(TimeOnly, TimeOnly)
 - uid: System.TimeOnly.op_LessThan*
-  name: LessThan
+  name: operator <
   href: api/System.TimeOnly.html#System_TimeOnly_op_LessThan_
   commentId: Overload:System.TimeOnly.op_LessThan
   isSpec: "True"
-  fullName: System.TimeOnly.LessThan
-  nameWithType: TimeOnly.LessThan
+  name.vb: <
+  fullName: System.TimeOnly.operator <
+  fullName.vb: System.TimeOnly.<
+  nameWithType: TimeOnly.operator <
+  nameWithType.vb: TimeOnly.<
 - uid: System.TimeOnly.op_LessThanOrEqual(System.TimeOnly,System.TimeOnly)
-  name: LessThanOrEqual(TimeOnly, TimeOnly)
+  name: operator <=(TimeOnly, TimeOnly)
   href: api/System.TimeOnly.html#System_TimeOnly_op_LessThanOrEqual_System_TimeOnly_System_TimeOnly_
   commentId: M:System.TimeOnly.op_LessThanOrEqual(System.TimeOnly,System.TimeOnly)
-  fullName: System.TimeOnly.LessThanOrEqual(System.TimeOnly, System.TimeOnly)
-  nameWithType: TimeOnly.LessThanOrEqual(TimeOnly, TimeOnly)
+  name.vb: <=(TimeOnly, TimeOnly)
+  fullName: System.TimeOnly.operator <=(System.TimeOnly, System.TimeOnly)
+  fullName.vb: System.TimeOnly.<=(System.TimeOnly, System.TimeOnly)
+  nameWithType: TimeOnly.operator <=(TimeOnly, TimeOnly)
+  nameWithType.vb: TimeOnly.<=(TimeOnly, TimeOnly)
 - uid: System.TimeOnly.op_LessThanOrEqual*
-  name: LessThanOrEqual
+  name: operator <=
   href: api/System.TimeOnly.html#System_TimeOnly_op_LessThanOrEqual_
   commentId: Overload:System.TimeOnly.op_LessThanOrEqual
   isSpec: "True"
-  fullName: System.TimeOnly.LessThanOrEqual
-  nameWithType: TimeOnly.LessThanOrEqual
+  name.vb: <=
+  fullName: System.TimeOnly.operator <=
+  fullName.vb: System.TimeOnly.<=
+  nameWithType: TimeOnly.operator <=
+  nameWithType.vb: TimeOnly.<=
 - uid: System.TimeOnly.op_Subtraction(System.TimeOnly,System.TimeOnly)
-  name: Subtraction(TimeOnly, TimeOnly)
+  name: operator -(TimeOnly, TimeOnly)
   href: api/System.TimeOnly.html#System_TimeOnly_op_Subtraction_System_TimeOnly_System_TimeOnly_
   commentId: M:System.TimeOnly.op_Subtraction(System.TimeOnly,System.TimeOnly)
-  fullName: System.TimeOnly.Subtraction(System.TimeOnly, System.TimeOnly)
-  nameWithType: TimeOnly.Subtraction(TimeOnly, TimeOnly)
+  name.vb: -(TimeOnly, TimeOnly)
+  fullName: System.TimeOnly.operator -(System.TimeOnly, System.TimeOnly)
+  fullName.vb: System.TimeOnly.-(System.TimeOnly, System.TimeOnly)
+  nameWithType: TimeOnly.operator -(TimeOnly, TimeOnly)
+  nameWithType.vb: TimeOnly.-(TimeOnly, TimeOnly)
 - uid: System.TimeOnly.op_Subtraction*
-  name: Subtraction
+  name: operator -
   href: api/System.TimeOnly.html#System_TimeOnly_op_Subtraction_
   commentId: Overload:System.TimeOnly.op_Subtraction
   isSpec: "True"
-  fullName: System.TimeOnly.Subtraction
-  nameWithType: TimeOnly.Subtraction
+  name.vb: '-'
+  fullName: System.TimeOnly.operator -
+  fullName.vb: System.TimeOnly.-
+  nameWithType: TimeOnly.operator -
+  nameWithType.vb: TimeOnly.-
 - uid: System.TimeOnly.Second
   name: Second
   href: api/System.TimeOnly.html#System_TimeOnly_Second
@@ -449,23 +487,32 @@ references:
   fullName: System.TimeOnly.ToString()
   nameWithType: TimeOnly.ToString()
 - uid: System.TimeOnly.ToString(System.IFormatProvider)
-  name: ToString(IFormatProvider)
+  name: ToString(IFormatProvider?)
   href: api/System.TimeOnly.html#System_TimeOnly_ToString_System_IFormatProvider_
   commentId: M:System.TimeOnly.ToString(System.IFormatProvider)
-  fullName: System.TimeOnly.ToString(System.IFormatProvider)
-  nameWithType: TimeOnly.ToString(IFormatProvider)
-- uid: System.TimeOnly.ToString(System.String)
-  name: ToString(String)
-  href: api/System.TimeOnly.html#System_TimeOnly_ToString_System_String_
-  commentId: M:System.TimeOnly.ToString(System.String)
-  fullName: System.TimeOnly.ToString(System.String)
-  nameWithType: TimeOnly.ToString(String)
+  name.vb: ToString(IFormatProvider)
+  fullName: System.TimeOnly.ToString(System.IFormatProvider?)
+  fullName.vb: System.TimeOnly.ToString(System.IFormatProvider)
+  nameWithType: TimeOnly.ToString(IFormatProvider?)
+  nameWithType.vb: TimeOnly.ToString(IFormatProvider)
 - uid: System.TimeOnly.ToString(System.String,System.IFormatProvider)
-  name: ToString(String, IFormatProvider)
+  name: ToString(string?, IFormatProvider?)
   href: api/System.TimeOnly.html#System_TimeOnly_ToString_System_String_System_IFormatProvider_
   commentId: M:System.TimeOnly.ToString(System.String,System.IFormatProvider)
-  fullName: System.TimeOnly.ToString(System.String, System.IFormatProvider)
-  nameWithType: TimeOnly.ToString(String, IFormatProvider)
+  name.vb: ToString(String, IFormatProvider)
+  fullName: System.TimeOnly.ToString(string?, System.IFormatProvider?)
+  fullName.vb: System.TimeOnly.ToString(String, System.IFormatProvider)
+  nameWithType: TimeOnly.ToString(string?, IFormatProvider?)
+  nameWithType.vb: TimeOnly.ToString(String, IFormatProvider)
+- uid: System.TimeOnly.ToString(System.String)
+  name: ToString(string?)
+  href: api/System.TimeOnly.html#System_TimeOnly_ToString_System_String_
+  commentId: M:System.TimeOnly.ToString(System.String)
+  name.vb: ToString(String)
+  fullName: System.TimeOnly.ToString(string?)
+  fullName.vb: System.TimeOnly.ToString(String)
+  nameWithType: TimeOnly.ToString(string?)
+  nameWithType.vb: TimeOnly.ToString(String)
 - uid: System.TimeOnly.ToString*
   name: ToString
   href: api/System.TimeOnly.html#System_TimeOnly_ToString_
@@ -517,18 +564,18 @@ references:
   isSpec: "True"
   fullName: UnityClock.Clock.ElapsedTime
   nameWithType: Clock.ElapsedTime
-- uid: UnityClock.Clock.InverseLerp(System.TimeOnly,System.TimeOnly)
-  name: InverseLerp(TimeOnly, TimeOnly)
-  href: api/UnityClock.Clock.html#UnityClock_Clock_InverseLerp_System_TimeOnly_System_TimeOnly_
-  commentId: M:UnityClock.Clock.InverseLerp(System.TimeOnly,System.TimeOnly)
-  fullName: UnityClock.Clock.InverseLerp(System.TimeOnly, System.TimeOnly)
-  nameWithType: Clock.InverseLerp(TimeOnly, TimeOnly)
 - uid: UnityClock.Clock.InverseLerp(System.TimeOnly,System.TimeOnly,System.TimeOnly)
   name: InverseLerp(TimeOnly, TimeOnly, TimeOnly)
   href: api/UnityClock.Clock.html#UnityClock_Clock_InverseLerp_System_TimeOnly_System_TimeOnly_System_TimeOnly_
   commentId: M:UnityClock.Clock.InverseLerp(System.TimeOnly,System.TimeOnly,System.TimeOnly)
   fullName: UnityClock.Clock.InverseLerp(System.TimeOnly, System.TimeOnly, System.TimeOnly)
   nameWithType: Clock.InverseLerp(TimeOnly, TimeOnly, TimeOnly)
+- uid: UnityClock.Clock.InverseLerp(System.TimeOnly,System.TimeOnly)
+  name: InverseLerp(TimeOnly, TimeOnly)
+  href: api/UnityClock.Clock.html#UnityClock_Clock_InverseLerp_System_TimeOnly_System_TimeOnly_
+  commentId: M:UnityClock.Clock.InverseLerp(System.TimeOnly,System.TimeOnly)
+  fullName: UnityClock.Clock.InverseLerp(System.TimeOnly, System.TimeOnly)
+  nameWithType: Clock.InverseLerp(TimeOnly, TimeOnly)
 - uid: UnityClock.Clock.InverseLerp(System.TimeSpan,System.TimeSpan,System.TimeSpan)
   name: InverseLerp(TimeSpan, TimeSpan, TimeSpan)
   href: api/UnityClock.Clock.html#UnityClock_Clock_InverseLerp_System_TimeSpan_System_TimeSpan_System_TimeSpan_
@@ -543,17 +590,23 @@ references:
   fullName: UnityClock.Clock.InverseLerp
   nameWithType: Clock.InverseLerp
 - uid: UnityClock.Clock.Lerp(System.TimeOnly,System.TimeOnly,System.Single)
-  name: Lerp(TimeOnly, TimeOnly, Single)
+  name: Lerp(TimeOnly, TimeOnly, float)
   href: api/UnityClock.Clock.html#UnityClock_Clock_Lerp_System_TimeOnly_System_TimeOnly_System_Single_
   commentId: M:UnityClock.Clock.Lerp(System.TimeOnly,System.TimeOnly,System.Single)
-  fullName: UnityClock.Clock.Lerp(System.TimeOnly, System.TimeOnly, System.Single)
-  nameWithType: Clock.Lerp(TimeOnly, TimeOnly, Single)
+  name.vb: Lerp(TimeOnly, TimeOnly, Single)
+  fullName: UnityClock.Clock.Lerp(System.TimeOnly, System.TimeOnly, float)
+  fullName.vb: UnityClock.Clock.Lerp(System.TimeOnly, System.TimeOnly, Single)
+  nameWithType: Clock.Lerp(TimeOnly, TimeOnly, float)
+  nameWithType.vb: Clock.Lerp(TimeOnly, TimeOnly, Single)
 - uid: UnityClock.Clock.Lerp(System.TimeSpan,System.TimeSpan,System.Single)
-  name: Lerp(TimeSpan, TimeSpan, Single)
+  name: Lerp(TimeSpan, TimeSpan, float)
   href: api/UnityClock.Clock.html#UnityClock_Clock_Lerp_System_TimeSpan_System_TimeSpan_System_Single_
   commentId: M:UnityClock.Clock.Lerp(System.TimeSpan,System.TimeSpan,System.Single)
-  fullName: UnityClock.Clock.Lerp(System.TimeSpan, System.TimeSpan, System.Single)
-  nameWithType: Clock.Lerp(TimeSpan, TimeSpan, Single)
+  name.vb: Lerp(TimeSpan, TimeSpan, Single)
+  fullName: UnityClock.Clock.Lerp(System.TimeSpan, System.TimeSpan, float)
+  fullName.vb: UnityClock.Clock.Lerp(System.TimeSpan, System.TimeSpan, Single)
+  nameWithType: Clock.Lerp(TimeSpan, TimeSpan, float)
+  nameWithType.vb: Clock.Lerp(TimeSpan, TimeSpan, Single)
 - uid: UnityClock.Clock.Lerp*
   name: Lerp
   href: api/UnityClock.Clock.html#UnityClock_Clock_Lerp_
@@ -562,17 +615,23 @@ references:
   fullName: UnityClock.Clock.Lerp
   nameWithType: Clock.Lerp
 - uid: UnityClock.Clock.LerpUnclamped(System.TimeOnly,System.TimeOnly,System.Single)
-  name: LerpUnclamped(TimeOnly, TimeOnly, Single)
+  name: LerpUnclamped(TimeOnly, TimeOnly, float)
   href: api/UnityClock.Clock.html#UnityClock_Clock_LerpUnclamped_System_TimeOnly_System_TimeOnly_System_Single_
   commentId: M:UnityClock.Clock.LerpUnclamped(System.TimeOnly,System.TimeOnly,System.Single)
-  fullName: UnityClock.Clock.LerpUnclamped(System.TimeOnly, System.TimeOnly, System.Single)
-  nameWithType: Clock.LerpUnclamped(TimeOnly, TimeOnly, Single)
+  name.vb: LerpUnclamped(TimeOnly, TimeOnly, Single)
+  fullName: UnityClock.Clock.LerpUnclamped(System.TimeOnly, System.TimeOnly, float)
+  fullName.vb: UnityClock.Clock.LerpUnclamped(System.TimeOnly, System.TimeOnly, Single)
+  nameWithType: Clock.LerpUnclamped(TimeOnly, TimeOnly, float)
+  nameWithType.vb: Clock.LerpUnclamped(TimeOnly, TimeOnly, Single)
 - uid: UnityClock.Clock.LerpUnclamped(System.TimeSpan,System.TimeSpan,System.Single)
-  name: LerpUnclamped(TimeSpan, TimeSpan, Single)
+  name: LerpUnclamped(TimeSpan, TimeSpan, float)
   href: api/UnityClock.Clock.html#UnityClock_Clock_LerpUnclamped_System_TimeSpan_System_TimeSpan_System_Single_
   commentId: M:UnityClock.Clock.LerpUnclamped(System.TimeSpan,System.TimeSpan,System.Single)
-  fullName: UnityClock.Clock.LerpUnclamped(System.TimeSpan, System.TimeSpan, System.Single)
-  nameWithType: Clock.LerpUnclamped(TimeSpan, TimeSpan, Single)
+  name.vb: LerpUnclamped(TimeSpan, TimeSpan, Single)
+  fullName: UnityClock.Clock.LerpUnclamped(System.TimeSpan, System.TimeSpan, float)
+  fullName.vb: UnityClock.Clock.LerpUnclamped(System.TimeSpan, System.TimeSpan, Single)
+  nameWithType: Clock.LerpUnclamped(TimeSpan, TimeSpan, float)
+  nameWithType.vb: Clock.LerpUnclamped(TimeSpan, TimeSpan, Single)
 - uid: UnityClock.Clock.LerpUnclamped*
   name: LerpUnclamped
   href: api/UnityClock.Clock.html#UnityClock_Clock_LerpUnclamped_
@@ -638,11 +697,14 @@ references:
   fullName: UnityClock.ClockVolume.OnEnable
   nameWithType: ClockVolume.OnEnable
 - uid: UnityClock.ClockVolume.Override(VolumeComponent,System.Single)
-  name: Override(VolumeComponent, Single)
+  name: Override(VolumeComponent, float)
   href: api/UnityClock.ClockVolume.html#UnityClock_ClockVolume_Override_VolumeComponent_System_Single_
   commentId: M:UnityClock.ClockVolume.Override(VolumeComponent,System.Single)
-  fullName: UnityClock.ClockVolume.Override(VolumeComponent, System.Single)
-  nameWithType: ClockVolume.Override(VolumeComponent, Single)
+  name.vb: Override(VolumeComponent, Single)
+  fullName: UnityClock.ClockVolume.Override(VolumeComponent, float)
+  fullName.vb: UnityClock.ClockVolume.Override(VolumeComponent, Single)
+  nameWithType: ClockVolume.Override(VolumeComponent, float)
+  nameWithType.vb: ClockVolume.Override(VolumeComponent, Single)
 - uid: UnityClock.ClockVolume.Override*
   name: Override
   href: api/UnityClock.ClockVolume.html#UnityClock_ClockVolume_Override_
@@ -769,15 +831,21 @@ references:
   name: ClockToolbar()
   href: api/UnityClock.Editor.ClockToolbar.html#UnityClock_Editor_ClockToolbar__ctor
   commentId: M:UnityClock.Editor.ClockToolbar.#ctor
+  name.vb: New()
   fullName: UnityClock.Editor.ClockToolbar.ClockToolbar()
+  fullName.vb: UnityClock.Editor.ClockToolbar.New()
   nameWithType: ClockToolbar.ClockToolbar()
+  nameWithType.vb: ClockToolbar.New()
 - uid: UnityClock.Editor.ClockToolbar.#ctor*
   name: ClockToolbar
   href: api/UnityClock.Editor.ClockToolbar.html#UnityClock_Editor_ClockToolbar__ctor_
   commentId: Overload:UnityClock.Editor.ClockToolbar.#ctor
   isSpec: "True"
+  name.vb: New
   fullName: UnityClock.Editor.ClockToolbar.ClockToolbar
+  fullName.vb: UnityClock.Editor.ClockToolbar.New
   nameWithType: ClockToolbar.ClockToolbar
+  nameWithType.vb: ClockToolbar.New
 - uid: UnityClock.Editor.ClockToolbar.clockPreviewControl
   name: clockPreviewControl
   href: api/UnityClock.Editor.ClockToolbar.html#UnityClock_Editor_ClockToolbar_clockPreviewControl
@@ -820,15 +888,21 @@ references:
   name: PreviewTimeElement()
   href: api/UnityClock.Editor.PreviewTimeElement.html#UnityClock_Editor_PreviewTimeElement__ctor
   commentId: M:UnityClock.Editor.PreviewTimeElement.#ctor
+  name.vb: New()
   fullName: UnityClock.Editor.PreviewTimeElement.PreviewTimeElement()
+  fullName.vb: UnityClock.Editor.PreviewTimeElement.New()
   nameWithType: PreviewTimeElement.PreviewTimeElement()
+  nameWithType.vb: PreviewTimeElement.New()
 - uid: UnityClock.Editor.PreviewTimeElement.#ctor*
   name: PreviewTimeElement
   href: api/UnityClock.Editor.PreviewTimeElement.html#UnityClock_Editor_PreviewTimeElement__ctor_
   commentId: Overload:UnityClock.Editor.PreviewTimeElement.#ctor
   isSpec: "True"
+  name.vb: New
   fullName: UnityClock.Editor.PreviewTimeElement.PreviewTimeElement
+  fullName.vb: UnityClock.Editor.PreviewTimeElement.New
   nameWithType: PreviewTimeElement.PreviewTimeElement
+  nameWithType.vb: PreviewTimeElement.New
 - uid: UnityClock.Editor.PreviewTimeElement.clockPreviewControl
   name: clockPreviewControl
   href: api/UnityClock.Editor.PreviewTimeElement.html#UnityClock_Editor_PreviewTimeElement_clockPreviewControl
@@ -891,15 +965,21 @@ references:
   name: PreviewTimeLapseElement()
   href: api/UnityClock.Editor.PreviewTimeLapseElement.html#UnityClock_Editor_PreviewTimeLapseElement__ctor
   commentId: M:UnityClock.Editor.PreviewTimeLapseElement.#ctor
+  name.vb: New()
   fullName: UnityClock.Editor.PreviewTimeLapseElement.PreviewTimeLapseElement()
+  fullName.vb: UnityClock.Editor.PreviewTimeLapseElement.New()
   nameWithType: PreviewTimeLapseElement.PreviewTimeLapseElement()
+  nameWithType.vb: PreviewTimeLapseElement.New()
 - uid: UnityClock.Editor.PreviewTimeLapseElement.#ctor*
   name: PreviewTimeLapseElement
   href: api/UnityClock.Editor.PreviewTimeLapseElement.html#UnityClock_Editor_PreviewTimeLapseElement__ctor_
   commentId: Overload:UnityClock.Editor.PreviewTimeLapseElement.#ctor
   isSpec: "True"
+  name.vb: New
   fullName: UnityClock.Editor.PreviewTimeLapseElement.PreviewTimeLapseElement
+  fullName.vb: UnityClock.Editor.PreviewTimeLapseElement.New
   nameWithType: PreviewTimeLapseElement.PreviewTimeLapseElement
+  nameWithType.vb: PreviewTimeLapseElement.New
 - uid: UnityClock.Editor.PreviewTimeLapseElement.clockPreviewControl
   name: clockPreviewControl
   href: api/UnityClock.Editor.PreviewTimeLapseElement.html#UnityClock_Editor_PreviewTimeLapseElement_clockPreviewControl
@@ -1109,39 +1189,57 @@ references:
   name: TimeOnlyAttribute()
   href: api/UnityClock.TimeOnlyAttribute.html#UnityClock_TimeOnlyAttribute__ctor
   commentId: M:UnityClock.TimeOnlyAttribute.#ctor
+  name.vb: New()
   fullName: UnityClock.TimeOnlyAttribute.TimeOnlyAttribute()
+  fullName.vb: UnityClock.TimeOnlyAttribute.New()
   nameWithType: TimeOnlyAttribute.TimeOnlyAttribute()
-- uid: UnityClock.TimeOnlyAttribute.#ctor(System.Boolean)
-  name: TimeOnlyAttribute(Boolean)
-  href: api/UnityClock.TimeOnlyAttribute.html#UnityClock_TimeOnlyAttribute__ctor_System_Boolean_
-  commentId: M:UnityClock.TimeOnlyAttribute.#ctor(System.Boolean)
-  fullName: UnityClock.TimeOnlyAttribute.TimeOnlyAttribute(System.Boolean)
-  nameWithType: TimeOnlyAttribute.TimeOnlyAttribute(Boolean)
+  nameWithType.vb: TimeOnlyAttribute.New()
 - uid: UnityClock.TimeOnlyAttribute.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String)
-  name: TimeOnlyAttribute(Boolean, Boolean, Boolean, Boolean, Boolean, String)
+  name: TimeOnlyAttribute(bool, bool, bool, bool, bool, string)
   href: api/UnityClock.TimeOnlyAttribute.html#UnityClock_TimeOnlyAttribute__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_String_
   commentId: M:UnityClock.TimeOnlyAttribute.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String)
-  fullName: UnityClock.TimeOnlyAttribute.TimeOnlyAttribute(System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.String)
-  nameWithType: TimeOnlyAttribute.TimeOnlyAttribute(Boolean, Boolean, Boolean, Boolean, Boolean, String)
+  name.vb: New(Boolean, Boolean, Boolean, Boolean, Boolean, String)
+  fullName: UnityClock.TimeOnlyAttribute.TimeOnlyAttribute(bool, bool, bool, bool, bool, string)
+  fullName.vb: UnityClock.TimeOnlyAttribute.New(Boolean, Boolean, Boolean, Boolean, Boolean, String)
+  nameWithType: TimeOnlyAttribute.TimeOnlyAttribute(bool, bool, bool, bool, bool, string)
+  nameWithType.vb: TimeOnlyAttribute.New(Boolean, Boolean, Boolean, Boolean, Boolean, String)
 - uid: UnityClock.TimeOnlyAttribute.#ctor(System.Boolean,System.String)
-  name: TimeOnlyAttribute(Boolean, String)
+  name: TimeOnlyAttribute(bool, string)
   href: api/UnityClock.TimeOnlyAttribute.html#UnityClock_TimeOnlyAttribute__ctor_System_Boolean_System_String_
   commentId: M:UnityClock.TimeOnlyAttribute.#ctor(System.Boolean,System.String)
-  fullName: UnityClock.TimeOnlyAttribute.TimeOnlyAttribute(System.Boolean, System.String)
-  nameWithType: TimeOnlyAttribute.TimeOnlyAttribute(Boolean, String)
+  name.vb: New(Boolean, String)
+  fullName: UnityClock.TimeOnlyAttribute.TimeOnlyAttribute(bool, string)
+  fullName.vb: UnityClock.TimeOnlyAttribute.New(Boolean, String)
+  nameWithType: TimeOnlyAttribute.TimeOnlyAttribute(bool, string)
+  nameWithType.vb: TimeOnlyAttribute.New(Boolean, String)
+- uid: UnityClock.TimeOnlyAttribute.#ctor(System.Boolean)
+  name: TimeOnlyAttribute(bool)
+  href: api/UnityClock.TimeOnlyAttribute.html#UnityClock_TimeOnlyAttribute__ctor_System_Boolean_
+  commentId: M:UnityClock.TimeOnlyAttribute.#ctor(System.Boolean)
+  name.vb: New(Boolean)
+  fullName: UnityClock.TimeOnlyAttribute.TimeOnlyAttribute(bool)
+  fullName.vb: UnityClock.TimeOnlyAttribute.New(Boolean)
+  nameWithType: TimeOnlyAttribute.TimeOnlyAttribute(bool)
+  nameWithType.vb: TimeOnlyAttribute.New(Boolean)
 - uid: UnityClock.TimeOnlyAttribute.#ctor(System.String)
-  name: TimeOnlyAttribute(String)
+  name: TimeOnlyAttribute(string)
   href: api/UnityClock.TimeOnlyAttribute.html#UnityClock_TimeOnlyAttribute__ctor_System_String_
   commentId: M:UnityClock.TimeOnlyAttribute.#ctor(System.String)
-  fullName: UnityClock.TimeOnlyAttribute.TimeOnlyAttribute(System.String)
-  nameWithType: TimeOnlyAttribute.TimeOnlyAttribute(String)
+  name.vb: New(String)
+  fullName: UnityClock.TimeOnlyAttribute.TimeOnlyAttribute(string)
+  fullName.vb: UnityClock.TimeOnlyAttribute.New(String)
+  nameWithType: TimeOnlyAttribute.TimeOnlyAttribute(string)
+  nameWithType.vb: TimeOnlyAttribute.New(String)
 - uid: UnityClock.TimeOnlyAttribute.#ctor*
   name: TimeOnlyAttribute
   href: api/UnityClock.TimeOnlyAttribute.html#UnityClock_TimeOnlyAttribute__ctor_
   commentId: Overload:UnityClock.TimeOnlyAttribute.#ctor
   isSpec: "True"
+  name.vb: New
   fullName: UnityClock.TimeOnlyAttribute.TimeOnlyAttribute
+  fullName.vb: UnityClock.TimeOnlyAttribute.New
   nameWithType: TimeOnlyAttribute.TimeOnlyAttribute
+  nameWithType.vb: TimeOnlyAttribute.New
 - uid: UnityClock.TimeOnlyAttribute.showHour
   name: showHour
   href: api/UnityClock.TimeOnlyAttribute.html#UnityClock_TimeOnlyAttribute_showHour
@@ -1185,24 +1283,33 @@ references:
   fullName: UnityClock.TimeOnlyParameter
   nameWithType: TimeOnlyParameter
 - uid: UnityClock.TimeOnlyParameter.#ctor(System.TimeOnly,System.Boolean)
-  name: TimeOnlyParameter(TimeOnly, Boolean)
+  name: TimeOnlyParameter(TimeOnly, bool)
   href: api/UnityClock.TimeOnlyParameter.html#UnityClock_TimeOnlyParameter__ctor_System_TimeOnly_System_Boolean_
   commentId: M:UnityClock.TimeOnlyParameter.#ctor(System.TimeOnly,System.Boolean)
-  fullName: UnityClock.TimeOnlyParameter.TimeOnlyParameter(System.TimeOnly, System.Boolean)
-  nameWithType: TimeOnlyParameter.TimeOnlyParameter(TimeOnly, Boolean)
+  name.vb: New(TimeOnly, Boolean)
+  fullName: UnityClock.TimeOnlyParameter.TimeOnlyParameter(System.TimeOnly, bool)
+  fullName.vb: UnityClock.TimeOnlyParameter.New(System.TimeOnly, Boolean)
+  nameWithType: TimeOnlyParameter.TimeOnlyParameter(TimeOnly, bool)
+  nameWithType.vb: TimeOnlyParameter.New(TimeOnly, Boolean)
 - uid: UnityClock.TimeOnlyParameter.#ctor*
   name: TimeOnlyParameter
   href: api/UnityClock.TimeOnlyParameter.html#UnityClock_TimeOnlyParameter__ctor_
   commentId: Overload:UnityClock.TimeOnlyParameter.#ctor
   isSpec: "True"
+  name.vb: New
   fullName: UnityClock.TimeOnlyParameter.TimeOnlyParameter
+  fullName.vb: UnityClock.TimeOnlyParameter.New
   nameWithType: TimeOnlyParameter.TimeOnlyParameter
+  nameWithType.vb: TimeOnlyParameter.New
 - uid: UnityClock.TimeOnlyParameter.Interp(System.TimeOnly,System.TimeOnly,System.Single)
-  name: Interp(TimeOnly, TimeOnly, Single)
+  name: Interp(TimeOnly, TimeOnly, float)
   href: api/UnityClock.TimeOnlyParameter.html#UnityClock_TimeOnlyParameter_Interp_System_TimeOnly_System_TimeOnly_System_Single_
   commentId: M:UnityClock.TimeOnlyParameter.Interp(System.TimeOnly,System.TimeOnly,System.Single)
-  fullName: UnityClock.TimeOnlyParameter.Interp(System.TimeOnly, System.TimeOnly, System.Single)
-  nameWithType: TimeOnlyParameter.Interp(TimeOnly, TimeOnly, Single)
+  name.vb: Interp(TimeOnly, TimeOnly, Single)
+  fullName: UnityClock.TimeOnlyParameter.Interp(System.TimeOnly, System.TimeOnly, float)
+  fullName.vb: UnityClock.TimeOnlyParameter.Interp(System.TimeOnly, System.TimeOnly, Single)
+  nameWithType: TimeOnlyParameter.Interp(TimeOnly, TimeOnly, float)
+  nameWithType.vb: TimeOnlyParameter.Interp(TimeOnly, TimeOnly, Single)
 - uid: UnityClock.TimeOnlyParameter.Interp*
   name: Interp
   href: api/UnityClock.TimeOnlyParameter.html#UnityClock_TimeOnlyParameter_Interp_
@@ -1233,15 +1340,21 @@ references:
   name: TimeRange(TimeOnly, TimeOnly)
   href: api/UnityClock.TimeRange.html#UnityClock_TimeRange__ctor_System_TimeOnly_System_TimeOnly_
   commentId: M:UnityClock.TimeRange.#ctor(System.TimeOnly,System.TimeOnly)
+  name.vb: New(TimeOnly, TimeOnly)
   fullName: UnityClock.TimeRange.TimeRange(System.TimeOnly, System.TimeOnly)
+  fullName.vb: UnityClock.TimeRange.New(System.TimeOnly, System.TimeOnly)
   nameWithType: TimeRange.TimeRange(TimeOnly, TimeOnly)
+  nameWithType.vb: TimeRange.New(TimeOnly, TimeOnly)
 - uid: UnityClock.TimeRange.#ctor*
   name: TimeRange
   href: api/UnityClock.TimeRange.html#UnityClock_TimeRange__ctor_
   commentId: Overload:UnityClock.TimeRange.#ctor
   isSpec: "True"
+  name.vb: New
   fullName: UnityClock.TimeRange.TimeRange
+  fullName.vb: UnityClock.TimeRange.New
   nameWithType: TimeRange.TimeRange
+  nameWithType.vb: TimeRange.New
 - uid: UnityClock.TimeRange.end
   name: end
   href: api/UnityClock.TimeRange.html#UnityClock_TimeRange_end
@@ -1321,39 +1434,57 @@ references:
   name: TimeSpanAttribute()
   href: api/UnityClock.TimeSpanAttribute.html#UnityClock_TimeSpanAttribute__ctor
   commentId: M:UnityClock.TimeSpanAttribute.#ctor
+  name.vb: New()
   fullName: UnityClock.TimeSpanAttribute.TimeSpanAttribute()
+  fullName.vb: UnityClock.TimeSpanAttribute.New()
   nameWithType: TimeSpanAttribute.TimeSpanAttribute()
-- uid: UnityClock.TimeSpanAttribute.#ctor(System.Boolean)
-  name: TimeSpanAttribute(Boolean)
-  href: api/UnityClock.TimeSpanAttribute.html#UnityClock_TimeSpanAttribute__ctor_System_Boolean_
-  commentId: M:UnityClock.TimeSpanAttribute.#ctor(System.Boolean)
-  fullName: UnityClock.TimeSpanAttribute.TimeSpanAttribute(System.Boolean)
-  nameWithType: TimeSpanAttribute.TimeSpanAttribute(Boolean)
+  nameWithType.vb: TimeSpanAttribute.New()
 - uid: UnityClock.TimeSpanAttribute.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String)
-  name: TimeSpanAttribute(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, String)
+  name: TimeSpanAttribute(bool, bool, bool, bool, bool, bool, string)
   href: api/UnityClock.TimeSpanAttribute.html#UnityClock_TimeSpanAttribute__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_String_
   commentId: M:UnityClock.TimeSpanAttribute.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String)
-  fullName: UnityClock.TimeSpanAttribute.TimeSpanAttribute(System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.String)
-  nameWithType: TimeSpanAttribute.TimeSpanAttribute(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, String)
+  name.vb: New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, String)
+  fullName: UnityClock.TimeSpanAttribute.TimeSpanAttribute(bool, bool, bool, bool, bool, bool, string)
+  fullName.vb: UnityClock.TimeSpanAttribute.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, String)
+  nameWithType: TimeSpanAttribute.TimeSpanAttribute(bool, bool, bool, bool, bool, bool, string)
+  nameWithType.vb: TimeSpanAttribute.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, String)
 - uid: UnityClock.TimeSpanAttribute.#ctor(System.Boolean,System.String)
-  name: TimeSpanAttribute(Boolean, String)
+  name: TimeSpanAttribute(bool, string)
   href: api/UnityClock.TimeSpanAttribute.html#UnityClock_TimeSpanAttribute__ctor_System_Boolean_System_String_
   commentId: M:UnityClock.TimeSpanAttribute.#ctor(System.Boolean,System.String)
-  fullName: UnityClock.TimeSpanAttribute.TimeSpanAttribute(System.Boolean, System.String)
-  nameWithType: TimeSpanAttribute.TimeSpanAttribute(Boolean, String)
+  name.vb: New(Boolean, String)
+  fullName: UnityClock.TimeSpanAttribute.TimeSpanAttribute(bool, string)
+  fullName.vb: UnityClock.TimeSpanAttribute.New(Boolean, String)
+  nameWithType: TimeSpanAttribute.TimeSpanAttribute(bool, string)
+  nameWithType.vb: TimeSpanAttribute.New(Boolean, String)
+- uid: UnityClock.TimeSpanAttribute.#ctor(System.Boolean)
+  name: TimeSpanAttribute(bool)
+  href: api/UnityClock.TimeSpanAttribute.html#UnityClock_TimeSpanAttribute__ctor_System_Boolean_
+  commentId: M:UnityClock.TimeSpanAttribute.#ctor(System.Boolean)
+  name.vb: New(Boolean)
+  fullName: UnityClock.TimeSpanAttribute.TimeSpanAttribute(bool)
+  fullName.vb: UnityClock.TimeSpanAttribute.New(Boolean)
+  nameWithType: TimeSpanAttribute.TimeSpanAttribute(bool)
+  nameWithType.vb: TimeSpanAttribute.New(Boolean)
 - uid: UnityClock.TimeSpanAttribute.#ctor(System.String)
-  name: TimeSpanAttribute(String)
+  name: TimeSpanAttribute(string)
   href: api/UnityClock.TimeSpanAttribute.html#UnityClock_TimeSpanAttribute__ctor_System_String_
   commentId: M:UnityClock.TimeSpanAttribute.#ctor(System.String)
-  fullName: UnityClock.TimeSpanAttribute.TimeSpanAttribute(System.String)
-  nameWithType: TimeSpanAttribute.TimeSpanAttribute(String)
+  name.vb: New(String)
+  fullName: UnityClock.TimeSpanAttribute.TimeSpanAttribute(string)
+  fullName.vb: UnityClock.TimeSpanAttribute.New(String)
+  nameWithType: TimeSpanAttribute.TimeSpanAttribute(string)
+  nameWithType.vb: TimeSpanAttribute.New(String)
 - uid: UnityClock.TimeSpanAttribute.#ctor*
   name: TimeSpanAttribute
   href: api/UnityClock.TimeSpanAttribute.html#UnityClock_TimeSpanAttribute__ctor_
   commentId: Overload:UnityClock.TimeSpanAttribute.#ctor
   isSpec: "True"
+  name.vb: New
   fullName: UnityClock.TimeSpanAttribute.TimeSpanAttribute
+  fullName.vb: UnityClock.TimeSpanAttribute.New
   nameWithType: TimeSpanAttribute.TimeSpanAttribute
+  nameWithType.vb: TimeSpanAttribute.New
 - uid: UnityClock.TimeSpanAttribute.showDays
   name: showDays
   href: api/UnityClock.TimeSpanAttribute.html#UnityClock_TimeSpanAttribute_showDays
@@ -1403,24 +1534,33 @@ references:
   fullName: UnityClock.TimeSpanParameter
   nameWithType: TimeSpanParameter
 - uid: UnityClock.TimeSpanParameter.#ctor(System.TimeSpan,System.Boolean)
-  name: TimeSpanParameter(TimeSpan, Boolean)
+  name: TimeSpanParameter(TimeSpan, bool)
   href: api/UnityClock.TimeSpanParameter.html#UnityClock_TimeSpanParameter__ctor_System_TimeSpan_System_Boolean_
   commentId: M:UnityClock.TimeSpanParameter.#ctor(System.TimeSpan,System.Boolean)
-  fullName: UnityClock.TimeSpanParameter.TimeSpanParameter(System.TimeSpan, System.Boolean)
-  nameWithType: TimeSpanParameter.TimeSpanParameter(TimeSpan, Boolean)
+  name.vb: New(TimeSpan, Boolean)
+  fullName: UnityClock.TimeSpanParameter.TimeSpanParameter(System.TimeSpan, bool)
+  fullName.vb: UnityClock.TimeSpanParameter.New(System.TimeSpan, Boolean)
+  nameWithType: TimeSpanParameter.TimeSpanParameter(TimeSpan, bool)
+  nameWithType.vb: TimeSpanParameter.New(TimeSpan, Boolean)
 - uid: UnityClock.TimeSpanParameter.#ctor*
   name: TimeSpanParameter
   href: api/UnityClock.TimeSpanParameter.html#UnityClock_TimeSpanParameter__ctor_
   commentId: Overload:UnityClock.TimeSpanParameter.#ctor
   isSpec: "True"
+  name.vb: New
   fullName: UnityClock.TimeSpanParameter.TimeSpanParameter
+  fullName.vb: UnityClock.TimeSpanParameter.New
   nameWithType: TimeSpanParameter.TimeSpanParameter
+  nameWithType.vb: TimeSpanParameter.New
 - uid: UnityClock.TimeSpanParameter.Interp(System.TimeSpan,System.TimeSpan,System.Single)
-  name: Interp(TimeSpan, TimeSpan, Single)
+  name: Interp(TimeSpan, TimeSpan, float)
   href: api/UnityClock.TimeSpanParameter.html#UnityClock_TimeSpanParameter_Interp_System_TimeSpan_System_TimeSpan_System_Single_
   commentId: M:UnityClock.TimeSpanParameter.Interp(System.TimeSpan,System.TimeSpan,System.Single)
-  fullName: UnityClock.TimeSpanParameter.Interp(System.TimeSpan, System.TimeSpan, System.Single)
-  nameWithType: TimeSpanParameter.Interp(TimeSpan, TimeSpan, Single)
+  name.vb: Interp(TimeSpan, TimeSpan, Single)
+  fullName: UnityClock.TimeSpanParameter.Interp(System.TimeSpan, System.TimeSpan, float)
+  fullName.vb: UnityClock.TimeSpanParameter.Interp(System.TimeSpan, System.TimeSpan, Single)
+  nameWithType: TimeSpanParameter.Interp(TimeSpan, TimeSpan, float)
+  nameWithType.vb: TimeSpanParameter.Interp(TimeSpan, TimeSpan, Single)
 - uid: UnityClock.TimeSpanParameter.Interp*
   name: Interp
   href: api/UnityClock.TimeSpanParameter.html#UnityClock_TimeSpanParameter_Interp_
