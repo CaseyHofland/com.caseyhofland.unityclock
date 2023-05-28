@@ -52,6 +52,7 @@ jobs:
       - name: Build
         run: docfx Documentation~/docfx.json
 
+
       - name: Generate a client-side redirect on the index page
         run: sed -i '19i\      <meta http-equiv="refresh" content="0;URL='https://caseyhofland.github.io/com.casey.unityclock/manual/'">' _site/index.html
 
