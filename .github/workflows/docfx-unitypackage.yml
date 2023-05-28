@@ -15,6 +15,9 @@ jobs:
         # with:
         #   submodules: true
 
+      - name: Echo Pages URL
+        run: echo $GITHUB_EVENT_REPOSITORY_NAME
+
       - name: Generate index page
         run: echo 'This page redirects to the [manual](manual/).' > Documentation~/index.md
 
