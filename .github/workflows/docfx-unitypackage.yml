@@ -16,7 +16,7 @@ jobs:
         #   submodules: true
 
       - name: Generate index page
-        run: echo This page redirects to the [manual](manual/). > Documentation~/index.md
+        run: echo 'This page redirects to the [manual](manual/).' > Documentation~/index.md
 
       - name: Generate main Table of Contents
         # shell: bash
