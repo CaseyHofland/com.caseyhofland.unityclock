@@ -15,6 +15,9 @@ jobs:
         # with:
         #   submodules: true
 
+      - name: Generate index page
+        run: echo This page redirects to the [manual](manual/). > Documentation~/index.md
+
       - name: Generate main Table of Contents
         # shell: bash
         run: |
@@ -56,13 +59,12 @@ jobs:
       - name: Build
         run: docfx Documentation~/docfx.json
 
-      # - name: Generate client-side redirect on main page
-      #   run: echo '<html><head><meta http-equiv="refresh" content="0;URL='https://casey-hofland.github.io/UnityClock/manual/'"/></head></html>' > _site/index.html
-
-      - name: Generate client-side redirect on main page
+      - name: Generate a client-side redirect on the index page
         run: |
+          echo $github.event.repository.name
+          echo $github.pages
           cd _site
-          sed -i '19i      <meta http-equiv="refresh" content="0;URL='https://casey-hofland.github.io/UnityClock/manual/'">' index.html
+          sed -i '19i\      <meta http-equiv="refresh" content="0;URL='https://casey-hofland.github.io/UnityClock/manual/'">' index.html
 
       # Upload the generated documentation
       - name: Upload site artifact
