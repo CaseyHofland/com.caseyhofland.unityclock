@@ -16,16 +16,15 @@ jobs:
         #   submodules: true
 
       - name: Generate index page
-        run: echo 'This page redirects to the [manual](manual/).' > Documentation~/index.md
+        run: echo 'This page redirects to the [manual](manual/).' > 'Documentation~/index.md'
 
       - name: Generate main Table of Contents
         # shell: bash
         run: |
-          cd Documentation~
-          echo '# [Manual](manual/)' > toc.md
-          echo '# [Scripting API](api/)' >> toc.md
-          echo '# [Changelog](changelog/)' >> toc.md
-          echo '# [License](license/)' >> toc.md
+          echo '# [Manual](manual/)' > 'Documentation~\toc.md'
+          echo '# [Scripting API](api/)' >> 'Documentation~\toc.md'
+          echo '# [Changelog](changelog/)' >> 'Documentation~\toc.md'
+          echo '# [License](license/)' >> 'Documentation~\toc.md'
 
       - name: Add api index
         # shell: bash
@@ -62,8 +61,8 @@ jobs:
 
       - name: Generate a client-side redirect on the index page
         run: |
-          echo $github.event.repository.name
-          echo $github.pages
+          echo $GITHUB_EVENT_REPOSITORY_NAME
+          echo $GITHUB_PAGES
           cd _site
           sed -i '19i\      <meta http-equiv="refresh" content="0;URL='https://casey-hofland.github.io/UnityClock/manual/'">' index.html
 
