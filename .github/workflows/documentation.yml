@@ -18,30 +18,30 @@ jobs:
       - name: Generate main Table of Contents
         shell: bash
         run: |
-          echo '# [Manual](manual//)' > Documentation~\toc.md
-          echo '# [Scripting API](api//)' >> Documentation~\toc.md
-          echo '# [Changelog](changelog//)' >> Documentation~\toc.md
-          echo '# [License](license//)' >> Documentation~\toc.md
+          echo # [Manual](manual/) > Documentation~\toc.md
+          echo # [Scripting API](api/) >> Documentation~\toc.md
+          echo # [Changelog](changelog/) >> Documentation~\toc.md
+          echo # [License](license/) >> Documentation~\toc.md
 
       - name: Add api index
         # shell: bash
         run: |
           mkdir -p Documentation~\api
-          echo 'This is the documentation for the Scripting APIs of this package.' > Documentation~\api\index.md
+          echo This is the documentation for the Scripting APIs of this package. > Documentation~\api\index.md
 
       - name: Generate changelog page
         # shell: bash
         run: |
           mkdir -p Documentation~\changelog
           cp CHANGELOG.md Documentation~\changelog\CHANGELOG.md
-          echo '# [Changes](CHANGELOG.md)' > Documentation~\changelog\toc.md
+          echo # [Changes](CHANGELOG.md) > Documentation~\changelog\toc.md
 
       - name: Generate license page
         # shell: bash
         run: |
           mkdir -p Documentation~\license
           cp LICENSE.md Documentation~\license\LICENSE.md
-          echo '# [License](LICENSE.md)' > Documentation~\license\toc.md
+          echo # [License](LICENSE.md) > Documentation~\license\toc.md
 
       # - name: Install DocFX
       #   run: choco install -y docfx
