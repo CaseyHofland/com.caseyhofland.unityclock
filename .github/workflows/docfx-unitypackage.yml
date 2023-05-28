@@ -21,10 +21,10 @@ jobs:
       - name: Generate main Table of Contents
         # shell: bash
         run: |
-          echo '# [Manual](manual/)' > 'Documentation~\toc.md'
-          echo '# [Scripting API](api/)' >> 'Documentation~\toc.md'
-          echo '# [Changelog](changelog/)' >> 'Documentation~\toc.md'
-          echo '# [License](license/)' >> 'Documentation~\toc.md'
+          echo '# [Manual](manual/)' > 'Documentation~/toc.md'
+          echo '# [Scripting API](api/)' >> 'Documentation~/toc.md'
+          echo '# [Changelog](changelog/)' >> 'Documentation~/toc.md'
+          echo '# [License](license/)' >> 'Documentation~/toc.md'
 
       - name: Add api index
         # shell: bash
