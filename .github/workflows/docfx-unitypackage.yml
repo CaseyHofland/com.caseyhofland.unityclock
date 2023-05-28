@@ -59,6 +59,9 @@ jobs:
       # - name: Generate client-side redirect on main page
       #   run: echo '<html><head><meta http-equiv="refresh" content="0;URL='https://casey-hofland.github.io/UnityClock/manual/'"/></head></html>' > _site/index.html
 
+      - name: Generate client-side redirect on main page
+        run: sed -i '19i      <meta http-equiv="refresh" content="0;URL='https://casey-hofland.github.io/UnityClock/manual/'">' _site\index.html
+
       # Upload the generated documentation
       - name: Upload site artifact
         uses: actions/upload-artifact@v1
