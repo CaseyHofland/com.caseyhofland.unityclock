@@ -13,7 +13,7 @@
             "_enableSearch": true
         },
         "content": [
-            {"files": ["toc.md"]},
+            {"files": ["index.md", "toc.md"]},
             {"src": "license", "files": ["*.md"], "dest": "license"},
             {"src": "changelog", "files": ["*.md"], "dest": "changelog"},
             {"src": "api", "files": ["*.yml", "index.md"], "dest": "api"},

@@ -1,4 +1,4 @@
-name: Build DocFX Documentation
+name: docfx-unitypackage
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
         #   submodules: true
 
       - name: Generate main Table of Contents
-        shell: bash
+        # shell: bash
         run: |
           echo # [Manual](manual/) > Documentation~\toc.md
           echo # [Scripting API](api/) >> Documentation~\toc.md
@@ -55,6 +55,9 @@ jobs:
 
       - name: Build
         run: docfx Documentation~/docfx.json
+
+      # - name: Generate client-side redirect on main page
+      #   run: echo '<html><head><meta http-equiv="refresh" content="0;URL='https://casey-hofland.github.io/UnityClock/manual/'"/></head></html>' > _site/index.html
 
       # Upload the generated documentation
       - name: Upload site artifact

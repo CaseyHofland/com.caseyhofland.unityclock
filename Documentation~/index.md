@@ -1,0 +1,1 @@
+This page redirects to the [manual](manual/).
