@@ -16,35 +16,36 @@ jobs:
         #   submodules: true
 
       - name: Generate index page
-        run: echo This page redirects to the [manual](manual/). > Documentation~/index.md
+        run: echo 'This page redirects to the [manual](manual/).' > Documentation~/index.md
 
       - name: Generate main Table of Contents
         # shell: bash
         run: |
-          echo # [Manual](manual/) > Documentation~\toc.md
-          echo # [Scripting API](api/) >> Documentation~\toc.md
-          echo # [Changelog](changelog/) >> Documentation~\toc.md
-          echo # [License](license/) >> Documentation~\toc.md
+          cd Documentation~
+          echo '# [Manual](manual/)' > toc.md
+          echo '# [Scripting API](api/)' >> toc.md
+          echo '# [Changelog](changelog/)' >> toc.md
+          echo '# [License](license/)' >> toc.md
 
       - name: Add api index
         # shell: bash
         run: |
           mkdir -p Documentation~\api
-          echo This is the documentation for the Scripting APIs of this package. > Documentation~\api\index.md
+          echo 'This is the documentation for the Scripting APIs of this package.' > Documentation~\api\index.md
 
       - name: Generate changelog page
         # shell: bash
         run: |
           mkdir -p Documentation~\changelog
           cp CHANGELOG.md Documentation~\changelog\CHANGELOG.md
-          echo # [Changes](CHANGELOG.md) > Documentation~\changelog\toc.md
+          echo '# [Changes](CHANGELOG.md)' > Documentation~\changelog\toc.md
 
       - name: Generate license page
         # shell: bash
         run: |
           mkdir -p Documentation~\license
           cp LICENSE.md Documentation~\license\LICENSE.md
-          echo # [License](LICENSE.md) > Documentation~\license\toc.md
+          echo '# [License](LICENSE.md)' > Documentation~\license\toc.md
 
       # - name: Install DocFX
       #   run: choco install -y docfx
