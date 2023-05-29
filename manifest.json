@@ -16,26 +16,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/System.TimeOnly.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/System.TimeOnly.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/System.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/System.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/UnityClock.Clock.yml",
       "output": {
         ".html": {
