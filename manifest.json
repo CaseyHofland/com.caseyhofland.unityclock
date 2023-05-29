@@ -7,6 +7,14 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
       "type": "ManagedReference",
       "source_relative_path": "api/System.TimeOnly.yml",
       "output": {
@@ -222,6 +230,9 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
         }
       },
       "version": ""
@@ -242,6 +253,9 @@
       "output": {
         ".html": {
           "relative_path": "changelog/toc.html"
+        },
+        ".json": {
+          "relative_path": "changelog/toc.json"
         }
       },
       "version": ""
@@ -275,6 +289,9 @@
       "output": {
         ".html": {
           "relative_path": "license/toc.html"
+        },
+        ".json": {
+          "relative_path": "license/toc.json"
         }
       },
       "version": ""
@@ -335,6 +352,9 @@
       "output": {
         ".html": {
           "relative_path": "manual/toc.html"
+        },
+        ".json": {
+          "relative_path": "manual/toc.json"
         }
       },
       "version": ""
@@ -345,6 +365,9 @@
       "output": {
         ".html": {
           "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
       "version": ""
