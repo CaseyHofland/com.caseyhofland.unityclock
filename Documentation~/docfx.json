@@ -10,7 +10,11 @@
             "_appTitle": "Unity Clock",
             "_appFooter": "<span>Made by <a href=\"https://github.com/CaseyHofland\" target=\"_blank\">Casey Hofland</a> using <a href=\"https://dotnet.github.io/docfx\" target=\"_blank\">DocFX</a></span>",
             "_enableSearch": true,
-            "_disableContribution": true
+            "_disableContribution": true,
+            "_gitContribute": {
+                "repo": "https://github.com/CaseyHofland/com.casey.unityclock/",
+                "branch": "main"
+            }
         },
         "fileMetadata": {"_disableContribution": {"manual/**/*.md": false}},
         "content": [
