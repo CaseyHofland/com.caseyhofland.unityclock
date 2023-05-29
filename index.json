@@ -24,46 +24,6 @@
     "title": "Class ClockVolume | Unity Clock",
     "keywords": "Class ClockVolume Namespace UnityClock A volume component that holds settings for the Clock. [Serializable] public sealed class ClockVolume : VolumeComponent Inheritance object ClockVolume Fields daySpan public TimeSpanParameter daySpan Field Value TimeSpanParameter time public TimeOnlyParameter time Field Value TimeOnlyParameter Methods OnEnable() protected override void OnEnable() Override(VolumeComponent, float) public override void Override(VolumeComponent state, float interpFactor) Parameters state VolumeComponent interpFactor float"
   },
-  "api/UnityClock.Editor.ClockPreviewControl.html": {
-    "href": "api/UnityClock.Editor.ClockPreviewControl.html",
-    "title": "Class ClockPreviewControl | Unity Clock",
-    "keywords": "Class ClockPreviewControl Namespace UnityClock.Editor [Serializable] public class ClockPreviewControl Inheritance object ClockPreviewControl Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties canPreview public bool canPreview { get; } Property Value bool previewing public bool previewing { get; set; } Property Value bool time public TimeOnly time { get; set; } Property Value TimeOnly Methods OnCreate() public void OnCreate() OnDestroy() public void OnDestroy() StartPreview() public void StartPreview() StopPreview() public void StopPreview()"
-  },
-  "api/UnityClock.Editor.ClockToolbar.html": {
-    "href": "api/UnityClock.Editor.ClockToolbar.html",
-    "title": "Class ClockToolbar | Unity Clock",
-    "keywords": "Class ClockToolbar Namespace UnityClock.Editor public class ClockToolbar : ToolbarOverlay Inheritance object ClockToolbar Constructors ClockToolbar() public ClockToolbar() Fields clockPreviewControl public readonly ClockPreviewControl clockPreviewControl Field Value ClockPreviewControl Methods OnCreated() public override void OnCreated() OnWillBeDestroyed() public override void OnWillBeDestroyed()"
-  },
-  "api/UnityClock.Editor.html": {
-    "href": "api/UnityClock.Editor.html",
-    "title": "Namespace UnityClock.Editor | Unity Clock",
-    "keywords": "Namespace UnityClock.Editor Classes ClockPreviewControl ClockToolbar PreviewTimeElement PreviewTimeLapseElement TemporalAnimationProcessor TimeOnlyDrawer TimeSpanDrawer"
-  },
-  "api/UnityClock.Editor.PreviewTimeElement.html": {
-    "href": "api/UnityClock.Editor.PreviewTimeElement.html",
-    "title": "Class PreviewTimeElement | Unity Clock",
-    "keywords": "Class PreviewTimeElement Namespace UnityClock.Editor public class PreviewTimeElement : EditorToolbarDropdownToggle, IAccessContainerWindow Inheritance object PreviewTimeElement Implements IAccessContainerWindow Constructors PreviewTimeElement() public PreviewTimeElement() Properties clockPreviewControl public ClockPreviewControl clockPreviewControl { get; } Property Value ClockPreviewControl clockToolbar public ClockToolbar clockToolbar { get; } Property Value ClockToolbar containerWindow public EditorWindow containerWindow { get; set; } Property Value EditorWindow sceneView public SceneView sceneView { get; } Property Value SceneView"
-  },
-  "api/UnityClock.Editor.PreviewTimeLapseElement.html": {
-    "href": "api/UnityClock.Editor.PreviewTimeLapseElement.html",
-    "title": "Class PreviewTimeLapseElement | Unity Clock",
-    "keywords": "Class PreviewTimeLapseElement Namespace UnityClock.Editor public class PreviewTimeLapseElement : EditorToolbarDropdownToggle, IAccessContainerWindow Inheritance object PreviewTimeLapseElement Implements IAccessContainerWindow Constructors PreviewTimeLapseElement() public PreviewTimeLapseElement() Properties clockPreviewControl public ClockPreviewControl clockPreviewControl { get; } Property Value ClockPreviewControl clockToolbar public ClockToolbar clockToolbar { get; } Property Value ClockToolbar containerWindow public EditorWindow containerWindow { get; set; } Property Value EditorWindow sceneView public SceneView sceneView { get; } Property Value SceneView"
-  },
-  "api/UnityClock.Editor.TemporalAnimationProcessor.html": {
-    "href": "api/UnityClock.Editor.TemporalAnimationProcessor.html",
-    "title": "Class TemporalAnimationProcessor | Unity Clock",
-    "keywords": "Class TemporalAnimationProcessor Namespace UnityClock.Editor public class TemporalAnimationProcessor : IProcessSceneWithReport Inheritance object TemporalAnimationProcessor"
-  },
-  "api/UnityClock.Editor.TimeOnlyDrawer.html": {
-    "href": "api/UnityClock.Editor.TimeOnlyDrawer.html",
-    "title": "Class TimeOnlyDrawer | Unity Clock",
-    "keywords": "Class TimeOnlyDrawer Namespace UnityClock.Editor public class TimeOnlyDrawer : PropertyDrawer Inheritance object TimeOnlyDrawer Methods GetPropertyHeight(SerializedProperty, GUIContent) public override float GetPropertyHeight(SerializedProperty property, GUIContent label) Parameters property SerializedProperty label GUIContent Returns float OnGUI(Rect, SerializedProperty, GUIContent) public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) Parameters position Rect property SerializedProperty label GUIContent"
-  },
-  "api/UnityClock.Editor.TimeSpanDrawer.html": {
-    "href": "api/UnityClock.Editor.TimeSpanDrawer.html",
-    "title": "Class TimeSpanDrawer | Unity Clock",
-    "keywords": "Class TimeSpanDrawer Namespace UnityClock.Editor public class TimeSpanDrawer : PropertyDrawer Inheritance object TimeSpanDrawer Methods GetPropertyHeight(SerializedProperty, GUIContent) public override float GetPropertyHeight(SerializedProperty property, GUIContent label) Parameters property SerializedProperty label GUIContent Returns float OnGUI(Rect, SerializedProperty, GUIContent) public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) Parameters position Rect property SerializedProperty label GUIContent"
-  },
   "api/UnityClock.html": {
     "href": "api/UnityClock.html",
     "title": "Namespace UnityClock | Unity Clock",
@@ -107,7 +67,7 @@
   "changelog/CHANGELOG.html": {
     "href": "changelog/CHANGELOG.html",
     "title": "Changelog | Unity Clock",
-    "keywords": "Changelog All notable changes to this package will be documented in this file. The format is based on Keep a Changelog and this project adheres to Semantic Versioning. [0.9.0-pre] - 2023-05-15 This is the first release of Unity Clock. Unity Clock is a time-of-day system for Unity that allows full creative flexibility with a non-destructive workflow."
+    "keywords": "Changelog All notable changes to this package will be documented in this file. The format is based on Keep a Changelog and this project adheres to Semantic Versioning. [0.1.0-exp] - 2023-05-15 This is the first release of Unity Clock. Unity Clock is a time-of-day system for Unity that allows full creative flexibility with a non-destructive workflow."
   },
   "index.html": {
     "href": "index.html",
