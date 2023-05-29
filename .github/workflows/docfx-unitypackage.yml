@@ -52,8 +52,22 @@ jobs:
       - name: Build
         run: docfx Documentation~/docfx.json
 
+      # - name: Generate a client-side redirect on the index page
+      #   run: sed -i '19i\      <meta http-equiv="refresh" content="0;URL='https://caseyhofland.github.io/com.caseyhofland.unityclock/manual/'">' _site/index.html
+
       - name: Generate a client-side redirect on the index page
-        run: sed -i '19i\      <meta http-equiv="refresh" content="0;URL='https://caseyhofland.github.io/com.caseyhofland.unityclock/manual/'">' _site/index.html
+        run: |
+          REPO_NAME = ${{ env.GITHUB_REPOSITORY }} 
+          OWNER_NAME = ${{ env.GITHUB_REPOSITORY_OWNER }}
+          CUSTOM_DOMAIN = $(cat CNAME)
+          if [ -z "$CUSTOM_DOMAIN" ]; then
+        # No custom domain
+            GITHUB_PAGES_URL=https://$OWNER_NAME.github.io/$REPO_NAME
+          else
+        # Custom domain
+            GITHUB_PAGES_URL=https://$CUSTOM_DOMAIN
+          fi
+          sed -i '19i\      <meta http-equiv="refresh" content="0;URL='$GITHUB_PAGES_URL/manual/'">' _site/index.html
 
       # Upload the generated documentation
       - name: Upload site artifact
