@@ -52,27 +52,13 @@ jobs:
       - name: Build
         run: docfx Documentation~/docfx.json
 
+      # Generate a redirect to the manual/ page, taking protocol and custom domain names into account.
       - name: Generate redirect
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
           sed -i '19i\      <meta http-equiv="refresh" content="0;URL='"$url"manual/'">' _site/index.html
-
-      # - name: Generate a client-side redirect on the index page
-      #   run: sed -i '19i\      <meta http-equiv="refresh" content="0;URL='https://$GITHUB_REPOSITORY_OWNER.github.io/${{ github.event.repository.name }}/manual/'">' _site/index.html
-
-      # - name: Generate a client-side redirect on the index page
-        # run: |
-        #   REPO_NAME=$ { { env.GITHUB_REPOSITORY }} 
-        #   OWNER_NAME=$ { { env.GITHUB_REPOSITORY_OWNER }}
-        #   CUSTOM_DOMAIN=$(cat CNAME)
-        #   if [ -z "$CUSTOM_DOMAIN" ]; then
-        #     GITHUB_PAGES_URL=https://$OWNER_NAME.github.io/$REPO_NAME
-        #   else
-        #     GITHUB_PAGES_URL=https://$CUSTOM_DOMAIN
-        #   fi
-        #   sed -i "19i\      <meta http-equiv=\"refresh\" content=\"0;URL='$GITHUB_PAGES_URL/manual/'\">" _site/index.html
 
       # Upload the generated documentation
       - name: Upload site artifact
