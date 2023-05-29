@@ -11,6 +11,8 @@ superfusis, multum.
 3. Tibi modo ait temptant crinita daret
 4. Pariter in removi offensasque Lenaeo damno terra
 
+[!INCLUDE [Something About Me](snippets/SomethingAboutMe.md)]
+
 Phoebes ut damnosa classis ignes templo; tua ulla capillos ultima. Videre
 percusso plectro templa fuit diva minimum debere, quid nomen Philomela animis.
 Verbis istis flagrat vulnera inpediique ignes. Gravi filo obvius arte Amphionis
