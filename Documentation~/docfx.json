@@ -2,7 +2,7 @@
     "metadata": [{
         "src": [{"src": "..", "files": ["**/*.cs"]}],
         "globalNamespaceId": "Global",
-        "filter": "filter.yml",
+        "filter": "manual/filter.yml",
         "dest": "api",
         "allowCompilationErrors": true
     }],
