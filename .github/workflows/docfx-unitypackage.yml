@@ -25,7 +25,7 @@ jobs:
           echo '# [Changelog](changelog/)' >> Documentation~/toc.md
           echo '# [License](license/)' >> Documentation~/toc.md
 
-      - name: Add api index
+      - name: Generate api index
         run: |
           mkdir -p Documentation~/api
           echo 'This is the documentation for the Scripting APIs of this package.' > Documentation~/api/index.md
@@ -41,6 +41,10 @@ jobs:
           mkdir -p Documentation~/license
           cp LICENSE.md Documentation~/license/LICENSE.md
           echo '# [License](LICENSE.md)' > Documentation~/license/toc.md
+          if [ -f 'Third Party Notices.md' ]; then
+            cp 'Third Party Notices.md' 'Documentation~/license/Third Party Notices.md'
+            sed -i '1i# [Third Party Notices](Third Party Notices.md)' Documentation~/license/toc.md
+          fi
 
       - name: Dotnet Setup
         uses: actions/setup-dotnet@v3
