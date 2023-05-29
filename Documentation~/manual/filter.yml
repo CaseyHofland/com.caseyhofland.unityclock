@@ -3,5 +3,5 @@ apiRules:
     uidRegex: ^UnityClock\.Editor$
     type: Namespace
 - include:
-    uidRegex: *.
+    uidRegex: .*
     type: Namespace
