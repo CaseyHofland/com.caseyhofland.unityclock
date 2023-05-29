@@ -25,6 +25,12 @@ jobs:
           echo '# [Changelog](changelog/)' >> Documentation~/toc.md
           echo '# [License](license/)' >> Documentation~/toc.md
 
+      - name: Generate manual Table of Contents
+        run: |
+          mv Documentation~/manual/TableOfContents.md Documentation~/manual/toc.md
+          sed -i -e 's/*/#/g' Documentation~/manual/toc.md
+          sed -i -e 's/     /#/g' Documentation~/manual/toc.md
+
       - name: Generate api index
         run: |
           mkdir -p Documentation~/api
