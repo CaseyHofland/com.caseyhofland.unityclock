@@ -56,6 +56,7 @@ jobs:
       #   run: sed -i '19i\      <meta http-equiv="refresh" content="0;URL='https://caseyhofland.github.io/com.caseyhofland.unityclock/manual/'">' _site/index.html
 
       - name: Generate a client-side redirect on the index page
+        shell: bash
         run: |
           REPO_NAME=$ { { env.GITHUB_REPOSITORY }} 
           OWNER_NAME=$ { { env.GITHUB_REPOSITORY_OWNER }}
