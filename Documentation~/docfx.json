@@ -9,8 +9,6 @@
         "globalMetadata": {
             "_appTitle": "Unity Clock",
             "_appFooter": "<span>Made by <a href=\"https://github.com/CaseyHofland\" target=\"_blank\">Casey Hofland</a> using <a href=\"https://dotnet.github.io/docfx\" target=\"_blank\">DocFX</a></span>",
-            "_disableContribution": true,
-            "_enableSearch": true
         },
         "content": [
             {"files": ["index.md", "toc.md"]},
@@ -20,7 +18,6 @@
             {"src": "manual", "files": ["*.md"], "dest": "manual"}
         ],
         "resource": [{"files": ["manual/images/**"]}],
-        "template": ["default", "modern"],
         "sitemap": {"baseUrl": "https://caseyhofland.github.io/com.casey.unityclock/"},
         "xref": ["https://caseyhofland.github.io/com.casey.unityclock/"],
         "xrefService": ["https://xref.docs.microsoft.com/query?uid={uid}"],
