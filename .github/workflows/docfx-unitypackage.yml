@@ -57,8 +57,8 @@ jobs:
 
       - name: Generate a client-side redirect on the index page
         run: |
-          REPO_NAME=${{ env.GITHUB_REPOSITORY }} 
-          OWNER_NAME=${{ env.GITHUB_REPOSITORY_OWNER }}
+          REPO_NAME=$ { { env.GITHUB_REPOSITORY }} 
+          OWNER_NAME=$ { { env.GITHUB_REPOSITORY_OWNER }}
           CUSTOM_DOMAIN=$(cat CNAME)
           if [ -z "$CUSTOM_DOMAIN" ]; then
             GITHUB_PAGES_URL=https://$OWNER_NAME.github.io/$REPO_NAME
