@@ -28,7 +28,12 @@ jobs:
       - name: Generate api index
         run: |
           mkdir -p Documentation~/api
-          echo 'This is the documentation for the Scripting APIs of this package.' > Documentation~/api/index.md
+          if [ -f Documentation~/api_index.md ]; then
+            cp Documentation~/api_index.md Documentation~/api/index.md
+            rm Documentation~/api_index.md
+          else
+            echo 'This is the documentation for the Scripting APIs of this package.' > Documentation~/api/index.md
+          fi
 
       - name: Generate changelog page
         run: |
