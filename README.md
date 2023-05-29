@@ -1,8 +1,8 @@
-# UnityClock
-UnityClock is a time-of-day system for Unity that allows full creative flexibility with a non-destructive workflow.
+# Unity Clock
+Unity Clock is a time-of-day system for Unity that allows full creative flexibility with a non-destructive workflow.
 
 ## Animation Clips
-The main concept behind UnityClock is its utilization of the Animation System. UnityClock isn't like most time systems that provide components for things like rotating the sun, changing the color of the light, or any other hard-coded solution to your time-of-day needs. Instead, simply add a TemporalAnimation component to anything you want to animate with time and provide it with an animation clip. By using animation clips, it gives you full creative flexibility of when you want to change what and how you want to do it.
+The main concept behind Unity Clock is its utilization of the Animation System. Unity Clock isn't like most time systems that provide components for things like rotating the sun, changing the color of the light, or any other hard-coded solution to your time-of-day needs. Instead, simply add a TemporalAnimation component to anything you want to animate with time and provide it with an animation clip. By using animation clips, it gives you full creative flexibility of when you want to change what and how you want to do it.
 
 ## Version Control
 But the most important part of using animations is version control. Changing time will not mark your scene dirty in the editor, leaving you free to create and experiment without the fear of breaking someone elses project.

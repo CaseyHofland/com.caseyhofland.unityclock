@@ -21,7 +21,8 @@
             {"src": "api", "files": ["*.yml", "index.md"], "dest": "api"},
             {"src": "manual", "files": ["*.md"], "dest": "manual"}
         ],
-        "resource": [{"files": ["manual/images/**"]}],
+        "overwrite": ["manual/config.json", "manual/projectMetadata.json"],
+        "resource": [{"files": ["manual/images/*"]}],
         "template": ["default", "modern"],
         "sitemap": {"baseUrl": "https://caseyhofland.github.io/com.casey.unityclock/"},
         "xref": ["https://caseyhofland.github.io/com.casey.unityclock/"],
