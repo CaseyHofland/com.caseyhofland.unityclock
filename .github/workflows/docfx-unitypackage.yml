@@ -18,7 +18,7 @@ jobs:
       # This step needs to happen before anything else!
       - name: Move everything inside the manual/ folder.
         run: |
-          mv Documentation~ manual
+          mv /Documentation~ /manual
           mkdir -p Documentation~/manual
           mv manual Documentation~/manual
 
