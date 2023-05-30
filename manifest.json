@@ -56,6 +56,86 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Editor.ClockPreviewControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Editor.ClockPreviewControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Editor.ClockToolbar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Editor.ClockToolbar.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Editor.PreviewTimeElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Editor.PreviewTimeElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Editor.PreviewTimeLapseElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Editor.PreviewTimeLapseElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Editor.TemporalAnimationProcessor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Editor.TemporalAnimationProcessor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Editor.TimeOnlyDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Editor.TimeOnlyDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Editor.TimeSpanDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Editor.TimeSpanDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Editor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/UnityClock.ITemporal.yml",
       "output": {
         ".html": {
