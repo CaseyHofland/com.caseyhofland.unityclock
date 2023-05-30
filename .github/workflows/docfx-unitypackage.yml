@@ -27,11 +27,12 @@ jobs:
 
       - name: Generate main Table of Contents
         run: |
-          echo '# [Manual](manual/)' > Documentation~/toc.md
-          echo '# [Scripting API](api/)' >> Documentation~/toc.md
-          echo '# [Changelog](changelog/)' >> Documentation~/toc.md
-          echo '# [License](license/)' >> Documentation~/toc.md
+          echo '# [Manual](manual/)
+          # [Scripting API](api/)
+          # [Changelog](changelog/)
+          # [License](license/)' > Documentation~/toc.md
 
+      # Replace * and 5 consecutive spaces with # in the Table of Contents to convert Unity's format to DocFX's format.
       - name: Generate manual Table of Contents
         run: |
           mv Documentation~/manual/TableOfContents.md Documentation~/manual/toc.md
