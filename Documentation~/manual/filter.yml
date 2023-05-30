@@ -1,7 +1,0 @@
-apiRules:
-- exclude:
-    uidRegex: ^UnityClock\.Editor$
-    type: Namespace
-- include:
-    uidRegex: .*
-    type: Namespace
