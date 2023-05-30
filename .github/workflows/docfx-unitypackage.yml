@@ -63,7 +63,6 @@ jobs:
               "metadata": [{
                   "src": [{"src": "..", "files": ["**/*.cs"]}],
                   "globalNamespaceId": "Global",
-                  "filter": "manual/filter.yml",
                   "dest": "api",
                   "allowCompilationErrors": true
               }],
@@ -91,6 +90,9 @@ jobs:
                   "dest": "../_site"
               }
           }' > Documentation~/docfx.json
+          if [ -f 'manual/filter.yml' ]; 
+            sed -i '5i\        "filter": "manual/filter.yml",' Documentation~/docfx.json
+          fi
 
       - name: Dotnet Setup
         uses: actions/setup-dotnet@v3
