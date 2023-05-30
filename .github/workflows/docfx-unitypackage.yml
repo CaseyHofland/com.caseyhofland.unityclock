@@ -57,6 +57,41 @@ jobs:
             sed -i '1i# [Third Party Notices](Third Party Notices.md)' Documentation~/license/toc.md
           fi
 
+      - name: Generate docfx.json
+        run: |
+          echo '{
+              "metadata": [{
+                  "src": [{"src": "..", "files": ["**/*.cs"]}],
+                  "globalNamespaceId": "Global",
+                  "filter": "manual/filter.yml",
+                  "dest": "api",
+                  "allowCompilationErrors": true
+              }],
+              "build": {
+                  "globalMetadata": {
+                      "_appTitle": "Unity Clock",
+                      "_appFooter": "<span>Made by <a href=\"https://github.com/CaseyHofland\" target=\"_blank\">Casey Hofland</a> using <a href=\"https://dotnet.github.io/docfx\" target=\"_blank\">DocFX</a></span>",
+                      "_enableSearch": true,
+                      "_disableContribution": true
+                  },
+                  "fileMetadata": {"_disableContribution": {"manual/**/*.md": false}},
+                  "content": [
+                      {"files": ["index.md", "toc.md"]},
+                      {"src": "license", "files": ["*.md"], "dest": "license"},
+                      {"src": "changelog", "files": ["*.md"], "dest": "changelog"},
+                      {"src": "api", "files": ["*.yml", "index.md"], "dest": "api"},
+                      {"src": "manual", "files": ["*.md"], "dest": "manual"}
+                  ],
+                  "overwrite": ["manual/config.json", "manual/projectMetadata.json"],
+                  "resource": [{"files": ["manual/images/*"]}],
+                  "template": ["default", "modern"],
+                  "sitemap": {"baseUrl": "https://caseyhofland.github.io/com.casey.unityclock/"},
+                  "xref": ["https://caseyhofland.github.io/com.casey.unityclock/"],
+                  "xrefService": ["https://xref.docs.microsoft.com/query?uid={uid}"],
+                  "dest": "../_site"
+              }
+          }' > Documentation~/docfx.json
+
       - name: Dotnet Setup
         uses: actions/setup-dotnet@v3
         with:
