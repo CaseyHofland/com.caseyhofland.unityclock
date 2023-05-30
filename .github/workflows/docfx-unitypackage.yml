@@ -15,6 +15,12 @@ jobs:
         # with:
         #   submodules: true
 
+      # This step needs to happen before anything else!
+      - name: Move everything inside the manual/ folder.
+        run: |
+          mkdir -p Documentation~/manual
+          mv  -v Documentation~/* Documentation~/manual
+
       - name: Generate index page
         run: echo 'This page redirects to the [manual](manual/).' > Documentation~/index.md
 
