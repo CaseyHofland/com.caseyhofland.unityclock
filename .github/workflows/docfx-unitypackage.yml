@@ -90,7 +90,7 @@ jobs:
                   "dest": "../_site"
               }
           }' > Documentation~/docfx.json
-          if [ -f 'manual/filter.yml' ]; 
+          if [ -f 'manual/filter.yml' ]; then
             sed -i '5i\        "filter": "manual/filter.yml",' Documentation~/docfx.json
           fi
 
