@@ -97,7 +97,7 @@ jobs:
               }],
               "build": {
                   "globalMetadata": {
-                      "_appTitle": "'${{ fromJson(env.package).displayName }}'",
+                      "_appTitle": "'${{ fromJson(env.package).blabloe }}'",
                       "_appFooter": "<span>Made by <a href=\"https://github.com/'$GITHUB_REPOSITORY_OWNER'\" target=\"_blank\">'$GITHUB_REPOSITORY_OWNER'</a> using <a href=\"https://dotnet.github.io/docfx\" target=\"_blank\">DocFX</a></span>",
                       "_enableSearch": true,
                       "_disableContribution": true
@@ -122,9 +122,6 @@ jobs:
           }' > Documentation~/docfx.json
           if [ -f 'manual/filter.yml' ]; then
             sed -i '5i\        "filter": "manual/filter.yml",' Documentation~/docfx.json
-          fi
-          if [ ! -f Documentation~/manual/toc.md ]; then
-            sed -i '16i\            "_disableToc": {"manual/**/*.md": true},' Documentation~/docfx.json
           fi
 
       - name: Dotnet Setup

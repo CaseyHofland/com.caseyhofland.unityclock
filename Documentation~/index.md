@@ -1,3 +1,7 @@
+---
+_disableToc: true
+---
+
 # About Unity Clock
 
 ![Unity Clock Showcase](images/showcase.gif)
