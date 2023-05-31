@@ -75,7 +75,7 @@ jobs:
 
       - name: Read package and put it in the github environment
         run: |
-          cat ./package.json >> $GITHUB_ENV
+          echo `cat ./package.json` >> $GITHUB_ENV
 
       - id: set_var
         run: |
