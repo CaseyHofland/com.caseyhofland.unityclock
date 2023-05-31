@@ -1,8 +1,3 @@
----
-_disableToc: true
-_layout: landing
----
-
 # About Unity Clock
 
 ![Unity Clock Showcase](images/showcase.gif)
