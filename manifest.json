@@ -297,41 +297,11 @@
       "version": ""
     },
     {
-      "type": "Conceptual",
-      "source_relative_path": "manual/etiam.md",
-      "output": {
-        ".html": {
-          "relative_path": "manual/etiam.html"
-        }
-      },
-      "version": ""
-    },
-    {
       "type": "Resource",
-      "source_relative_path": "manual/images/ExampleManual.png",
+      "source_relative_path": "manual/images/showcase.gif",
       "output": {
         "resource": {
-          "relative_path": "manual/images/ExampleManual.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "manual/images/ExampleScriptingApi.png",
-      "output": {
-        "resource": {
-          "relative_path": "manual/images/ExampleScriptingApi.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "manual/images/VS17-6.png",
-      "output": {
-        "resource": {
-          "relative_path": "manual/images/VS17-6.png"
+          "relative_path": "manual/images/showcase.gif"
         }
       },
       "version": ""
@@ -342,19 +312,6 @@
       "output": {
         ".html": {
           "relative_path": "manual/index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "manual/toc.md",
-      "output": {
-        ".html": {
-          "relative_path": "manual/toc.html"
-        },
-        ".json": {
-          "relative_path": "manual/toc.json"
         }
       },
       "version": ""
