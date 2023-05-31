@@ -87,7 +87,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
-          echo '${{ fromJson(env.package).displayName }}'
           echo '{
               "metadata": [{
                   "src": [{"src": "..", "files": ["**/*.cs"]}],
