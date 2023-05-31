@@ -1,6 +1,6 @@
 {
   "sitemap": {
-    "baseUrl": "https://caseyhofland.github.io/com.casey.unityclock/"
+    "baseUrl": "$url/"
   },
   "homepages": [],
   "source_base_path": "/home/runner/work/com.caseyhofland.unityclock/com.caseyhofland.unityclock/Documentation~",
