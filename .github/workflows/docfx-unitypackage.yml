@@ -26,11 +26,6 @@ jobs:
         run: echo 'This page redirects to the [manual](manual/).' > Documentation~/index.md
 
       - name: Generate main Table of Contents
-        # run: |
-        #   echo '# [Manual](manual/)
-        #   # [Scripting API](api/)
-        #   # [Changelog](changelog/)
-        #   # [License](license/)' > Documentation~/toc.md
         run: |
           echo '- name: Manual
             href: manual/
@@ -40,7 +35,8 @@ jobs:
           - name: Changelog
             href: changelog/
           - name: License
-            href: license/' > Documentation~/toc.yml
+            href: license/
+            homepage: license/LICENSE.md' > Documentation~/toc.yml
 
       # Replace * and 5 consecutive spaces with # in the Table of Contents to convert Unity's format to DocFX's format.
       - name: Generate manual Table of Contents
