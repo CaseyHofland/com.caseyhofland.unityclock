@@ -297,21 +297,21 @@
       "version": ""
     },
     {
-      "type": "Resource",
-      "source_relative_path": "manual/images/showcase.gif",
+      "type": "Conceptual",
+      "source_relative_path": "manual/com.caseyhofland.unityclock.md",
       "output": {
-        "resource": {
-          "relative_path": "manual/images/showcase.gif"
+        ".html": {
+          "relative_path": "manual/com.caseyhofland.unityclock.html"
         }
       },
       "version": ""
     },
     {
-      "type": "Conceptual",
-      "source_relative_path": "manual/index.md",
+      "type": "Resource",
+      "source_relative_path": "manual/images/showcase.gif",
       "output": {
-        ".html": {
-          "relative_path": "manual/index.html"
+        "resource": {
+          "relative_path": "manual/images/showcase.gif"
         }
       },
       "version": ""
