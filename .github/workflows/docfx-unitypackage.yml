@@ -79,8 +79,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
-          echo "$GITHUB_SERVER_URL"
-          echo "$GITHUB_REPOSITORY_OWNER"
+          echo "package=$(jq -c . < package.json)" >> $GITHUB_ENV
+          echo '${{ fromJson(env.package).displayName }}'
+          echo '${{ fromJson(env.package).author.name }}'
+          echo '${{ fromJson(env.package).author.email }}'
+          echo '${{ fromJson(env.package).author.url }}'
           echo '{
               "metadata": [{
                   "src": [{"src": "..", "files": ["**/*.cs"]}],
