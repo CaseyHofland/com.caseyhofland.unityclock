@@ -82,7 +82,7 @@ jobs:
           content="${content//$'\r'/'%0D'}"
           echo "::set-output name=packageJson::$content"
       - run: |
-          echo "${{fromJson(steps.set_var.outputs.packageJson).version}}"
+          echo "${{fromJson(steps.set_var.outputs.packageJson).displayName}}"
 
       # TODO: make static references to github information variable e.g. _appTitle should not be constant
       - name: Generate docfx.json
@@ -99,7 +99,7 @@ jobs:
               }],
               "build": {
                   "globalMetadata": {
-                      "_appTitle": "Unity Clock",
+                      "_appTitle": "'${{ fromJson(steps.set_var.outputs.packageJson).displayName }}'",
                       "_appFooter": "<span>Made by <a href=\"https://github.com/'$GITHUB_REPOSITORY_OWNER'\" target=\"_blank\">'$GITHUB_REPOSITORY_OWNER'</a> using <a href=\"https://dotnet.github.io/docfx\" target=\"_blank\">DocFX</a></span>",
                       "_enableSearch": true,
                       "_disableContribution": true
