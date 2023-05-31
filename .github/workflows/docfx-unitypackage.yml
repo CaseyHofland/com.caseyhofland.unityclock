@@ -79,6 +79,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
+          echo "$GITHUB_SERVER_URL"
+          echo "$GITHUB_REPOSITORY_OWNER"
+          echo "${{ github.repository_owner }}"
           echo '{
               "metadata": [{
                   "src": [{"src": "..", "files": ["**/*.cs"]}],
@@ -89,7 +92,7 @@ jobs:
               "build": {
                   "globalMetadata": {
                       "_appTitle": "Unity Clock",
-                      "_appFooter": "<span>Made by <a href=\""'$GITHUB_SERVER_URL'"/"'$GITHUB_REPOSITORY_OWNER'"\" target=\"_blank\">"'$GITHUB_REPOSITORY_OWNER'"</a> using <a href=\"https://dotnet.github.io/docfx\" target=\"_blank\">DocFX</a></span>",
+                      "_appFooter": "<span>Made by <a href=\""$GITHUB_SERVER_URL"/"$GITHUB_REPOSITORY_OWNER"\" target=\"_blank\">"$GITHUB_REPOSITORY_OWNER"</a> using <a href=\"https://dotnet.github.io/docfx\" target=\"_blank\">DocFX</a></span>",
                       "_enableSearch": true,
                       "_disableContribution": true
                   },
