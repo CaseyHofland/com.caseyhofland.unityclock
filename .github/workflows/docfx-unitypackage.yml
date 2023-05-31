@@ -73,17 +73,21 @@ jobs:
             sed -i '1i# [Third Party Notices](Third Party Notices.md)' Documentation~/license/toc.md
           fi
 
+      - name: Read package and put it in the github environment
+        run: |
+          echo 'package<<EOF' >> $GITHUB_ENV
+          cat ./package.json >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+      - run: |
+          echo '${{ fromJson(env.package).displayName }}'
+
       # TODO: make static references to github information variable e.g. _appTitle should not be constant
       - name: Generate docfx.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
-          echo "package=$(jq -c . < package.json)" >> $GITHUB_ENV
           echo '${{ fromJson(env.package).displayName }}'
-          echo '${{ fromJson(env.package).author.name }}'
-          echo '${{ fromJson(env.package).author.email }}'
-          echo '${{ fromJson(env.package).author.url }}'
           echo '{
               "metadata": [{
                   "src": [{"src": "..", "files": ["**/*.cs"]}],
@@ -94,7 +98,7 @@ jobs:
               "build": {
                   "globalMetadata": {
                       "_appTitle": "Unity Clock",
-                      "_appFooter": "<span>Made by <a href=\"'$GITHUB_SERVER_URL'/'$GITHUB_REPOSITORY_OWNER'\" target=\"_blank\">'$GITHUB_REPOSITORY_OWNER'</a> using <a href=\"https://dotnet.github.io/docfx\" target=\"_blank\">DocFX</a></span>",
+                      "_appFooter": "<span>Made by <a href=\"https://github.com/'$GITHUB_REPOSITORY_OWNER'\" target=\"_blank\">'$GITHUB_REPOSITORY_OWNER'</a> using <a href=\"https://dotnet.github.io/docfx\" target=\"_blank\">DocFX</a></span>",
                       "_enableSearch": true,
                       "_disableContribution": true
                   },
