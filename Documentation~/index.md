@@ -1,54 +1,25 @@
-# Main
+# About Unity Clock
 
-## Opem ille
+![Unity Clock Showcase](images/showcase.gif)
 
-Lorem markdownum cavis exululat inutile. Illi quem caeli, vola patruo difficili
-Iuppiter Patraeque, est ardebant ingeniis Troica intus Amore tibi mirantem
-superfusis, multum.
+Unity Clock is a time-of-day system that allows full creative flexibility with a non-destructive workflow. The core philosophy is centered around the utilization of [Animation Clips](https://docs.unity3d.com/Manual/AnimationClips.html). [Animation Clips](https://docs.unity3d.com/Manual/AnimationClips.html) allow full creative flexibility in how an object should change over time, and they can be previewed in the editor without triggering scene changes, which makes it play nice with version control systems like [git](https://git-scm.com/) and [plastic](https://www.plasticscm.com/).
 
-1. Ut Achilles
-2. Et sitim
-3. Tibi modo ait temptant crinita daret
-4. Pariter in removi offensasque Lenaeo damno terra
+## Installing Unity Clock
 
-[!INCLUDE [Something About Me](snippets/SomethingAboutMe.md)]
+To install this package, follow the instructions on the [Package Manager documentation](https://docs.unity3d.com/Manual/upm-ui-giturl.html).
 
-Phoebes ut damnosa classis ignes templo; tua ulla capillos ultima. Videre
-percusso plectro templa fuit diva minimum debere, quid nomen Philomela animis.
-Verbis istis flagrat vulnera inpediique ignes. Gravi filo obvius arte Amphionis
-Panes emisitque iubet.
+## Requirements
 
-![VS17-6](images/VS17-6.png "Visual Studio Performance Improvements 17.6")<br/>_It is much faster since visual studio 2022.17.6_
+This version of Unity Clock is compatible with the following versions of the Unity Editor:
 
-## Latona te timens
+* 2022.2 and later (recommended)
 
-Latentia ante, eundem meritorum *sunto*! Elige in timuit templa ferrea, qui arma
-ligati stagnum turbant. Fraternaque aeternus, dedisse, naufragus corripiens
-ranas Amathunta et quod laetior culpa nec semper scorpius fuit vicem corpora
-ardere. Fallit in artus primordia, fratres **per aliis**, ipsi manu **Asiae quod
-marmorea**.
+## Known limitations
 
-    mountain(googleVga, pngIphone);
-    var radcabBitrate = dnsCronRecursion;
-    gui(2);
-    ipImageAix += vle(drm_cisc, horizontal + computer_key);
-    jre(vaporware_adc_multi);
+Unity Clock version 0.1.0-exp includes the following known limitations:
 
-## Lumina ut tamen praesentia vidistis nymphae auroque
-
-Bromumque **in** portant furorem. Visa init **resurgere** praevitiat canibus et,
-dedignata turea, ilia.
-
-> Pisenore mensura insula aere nec per o gladium causa: Alcidae. Veris sentes
-> pallet, alta melius nostra amborum probant, deam. Iuventae dedimus nitidaque
-> hunc traxisse sermonibus [pectine flecti](http://fulmen-seu.org/illam.aspx) an
-> pateres, hac ore gelidis foret semper. Sithon pelle.
-
-Bracchia Hippason videntur fateri hosti: palpitat animo est reliquit anne nam
-confusaque. Interea rex altis munera quem quae quoque rorant, rauco albescere
-scopulo moriensque parvo, pectus illa, quadrupedes.
-
-Notavit haec. Vertit pars quem Euryte casu usta iterum! Ablatum pectus
-corripiunt neu humus tamquam; ducens stellarum amore. Pulsisque latet, ad tamen
-victor fulva Tirynthius posco; qui inque in poena quidem
-[enses](http://gentisque-togaque.io/)!
+* Depends on the render-pipeline.core for setting time. This dependency will be removed in the future.
+* Code is subject to (a lot) of change.
+* Performance for a large amount of objects using Temporal Animations is untested.
+* Temporal Animations are still very rigid in their use. This workflow needs to be improved.
+* Animation events are unlikely to trigger (this will be fixed in the future).
