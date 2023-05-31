@@ -104,7 +104,7 @@ jobs:
                   "overwrite": ["manual/config.json", "manual/projectMetadata.json"],
                   "resource": [{"files": ["manual/images/*"]}],
                   "template": ["default", "modern"],
-                  "sitemap": {"baseUrl": "$url"},
+                  "sitemap": {"baseUrl": '"$url"'},
                   "xref": ["$url"],
                   "xrefService": ["https://xref.docs.microsoft.com/query?uid={uid}"],
                   "dest": "../_site"
