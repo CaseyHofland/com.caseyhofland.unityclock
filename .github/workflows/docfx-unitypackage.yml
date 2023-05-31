@@ -75,11 +75,11 @@ jobs:
 
       - name: Read package and put it in the github environment
         run: |
-          echo 'package<<EOF' >> $GITHUB_ENV
+          echo 'PACKAGE_JSON<<EOF' >> $GITHUB_ENV
           cat ./package.json >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
       - run: |
-          echo '${{ fromJson(env.package).displayName }}'
+          echo '${{ fromJson(env.PACKAGE_JSON).displayName }}'
 
       # TODO: make static references to github information variable e.g. _appTitle should not be constant
       - name: Generate docfx.json
