@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        # with:
-        #   submodules: true
+        with:
+          submodules: true
 
       # This step needs to happen before anything else!
       - name: Move everything inside the manual/ folder.
@@ -29,7 +29,6 @@ jobs:
         run: |
           echo '- name: Manual
             href: manual/
-            homepage: manual/index.md
           - name: Scripting API
             href: api/
             homepage: api/index.md
@@ -43,9 +42,13 @@ jobs:
       # Replace * and 5 consecutive spaces with # in the Table of Contents to convert Unity's format to DocFX's format.
       - name: Generate manual Table of Contents
         run: |
-          mv Documentation~/manual/TableOfContents.md Documentation~/manual/toc.md
-          sed -i -e 's/*/#/g' Documentation~/manual/toc.md
-          sed -i -e 's/     /#/g' Documentation~/manual/toc.md
+          if [ -f Documentation~/manual/TableOfContents.md ]; then
+            mv Documentation~/manual/TableOfContents.md Documentation~/manual/toc.md
+          fi
+          if [ -f Documentation~/manual/toc.md ]; then
+            sed -i -e 's/*/#/g' Documentation~/manual/toc.md
+            sed -i -e 's/     /#/g' Documentation~/manual/toc.md
+          fi
 
       - name: Generate api index
         run: |
@@ -73,7 +76,7 @@ jobs:
             sed -i '1i# [Third Party Notices](Third Party Notices.md)' Documentation~/license/toc.md
           fi
 
-      - name: Read package and put it in the github environment
+      - name: Read package.json
         run: |
           content=`cat package.json`
           echo 'package<<EOF' >> $GITHUB_ENV
@@ -99,7 +102,9 @@ jobs:
                       "_enableSearch": true,
                       "_disableContribution": true
                   },
-                  "fileMetadata": {"_disableContribution": {"manual/**/*.md": false}},
+                  "fileMetadata": {
+                      "_disableContribution": {"manual/**/*.md": false}
+                  },
                   "content": [
                       {"files": ["index.md", "toc.yml"]},
                       {"src": "license", "files": ["*.md"], "dest": "license"},
@@ -107,7 +112,6 @@ jobs:
                       {"src": "api", "files": ["*.yml", "index.md"], "dest": "api"},
                       {"src": "manual", "files": ["*.md"], "dest": "manual"}
                   ],
-                  "overwrite": ["manual/config.json", "manual/projectMetadata.json"],
                   "resource": [{"files": ["manual/images/*"]}],
                   "template": ["default", "modern"],
                   "sitemap": {"baseUrl": "'$url'"},
@@ -118,6 +122,9 @@ jobs:
           }' > Documentation~/docfx.json
           if [ -f 'manual/filter.yml' ]; then
             sed -i '5i\        "filter": "manual/filter.yml",' Documentation~/docfx.json
+          fi
+          if [ ! -f Documentation~/manual/toc.md ]; then
+            sed -i '16i\            "_disableToc": {"manual/**/*.md": true},' Documentation~/docfx.json
           fi
 
       - name: Dotnet Setup
@@ -138,8 +145,6 @@ jobs:
           url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
           sed -i '19i\      <meta http-equiv="refresh" content="0;URL='"$url"manual/'">' _site/index.html
 
-      # Generate 
-
       # Upload the generated documentation
       - name: Upload site artifact
         uses: actions/upload-artifact@v1
@@ -154,8 +159,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        # with:
-        #   submodules: true
+        with:
+          submodules: true
 
       # Download the generated documentation
       - name: Download site artifact
