@@ -73,13 +73,16 @@ jobs:
             sed -i '1i# [Third Party Notices](Third Party Notices.md)' Documentation~/license/toc.md
           fi
 
-      - name: Read package and put it in the github environment
+      # - name: Read package and put it in the github environment
+      - id: set_var
         run: |
-          echo 'PACKAGE_JSON<<EOF' >> $GITHUB_ENV
-          cat ./package.json >> $GITHUB_ENV
-          echo 'EOF' >> $GITHUB_ENV
+          content=`cat ./package.json`
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          echo "::set-output name=packageJson::$content"
       - run: |
-          echo '${{ fromJson(env.PACKAGE_JSON).displayName }}'
+          echo "${{fromJson(steps.set_var.outputs.packageJson).version}}"
 
       # TODO: make static references to github information variable e.g. _appTitle should not be constant
       - name: Generate docfx.json
