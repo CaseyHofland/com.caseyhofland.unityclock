@@ -26,11 +26,21 @@ jobs:
         run: echo 'This page redirects to the [manual](manual/).' > Documentation~/index.md
 
       - name: Generate main Table of Contents
+        # run: |
+        #   echo '# [Manual](manual/)
+        #   # [Scripting API](api/)
+        #   # [Changelog](changelog/)
+        #   # [License](license/)' > Documentation~/toc.md
         run: |
-          echo '# [Manual](manual/)
-          # [Scripting API](api/)
-          # [Changelog](changelog/)
-          # [License](license/)' > Documentation~/toc.md
+          echo '- name: Manual
+            href: manual/
+          - name: Scripting API
+            href: api/
+            homepage: api/index.md
+          - name: Changelog
+            href: changelog/
+          - name: License
+            href: license/' > Documentation~/toc.yml
 
       # Replace * and 5 consecutive spaces with # in the Table of Contents to convert Unity's format to DocFX's format.
       - name: Generate manual Table of Contents
@@ -83,7 +93,7 @@ jobs:
                   },
                   "fileMetadata": {"_disableContribution": {"manual/**/*.md": false}},
                   "content": [
-                      {"files": ["index.md", "toc.md"]},
+                      {"files": ["index.md", "toc.yml"]},
                       {"src": "license", "files": ["*.md"], "dest": "license"},
                       {"src": "changelog", "files": ["*.md"], "dest": "changelog"},
                       {"src": "api", "files": ["*.yml", "index.md"], "dest": "api"},
@@ -119,6 +129,8 @@ jobs:
         run: |
           url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
           sed -i '19i\      <meta http-equiv="refresh" content="0;URL='"$url"manual/'">' _site/index.html
+
+      # Generate 
 
       # Upload the generated documentation
       - name: Upload site artifact
