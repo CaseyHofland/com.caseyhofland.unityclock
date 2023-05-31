@@ -298,6 +298,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "manual/favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "manual/favicon.ico"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "manual/images/showcase.gif",
       "output": {
         "resource": {
@@ -312,6 +322,16 @@
       "output": {
         ".html": {
           "relative_path": "manual/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "manual/logo.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "manual/logo.jpg"
         }
       },
       "version": ""
