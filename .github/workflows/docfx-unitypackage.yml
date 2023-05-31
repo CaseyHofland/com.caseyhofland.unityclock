@@ -102,9 +102,7 @@ jobs:
                       "_appFooter": "<span>Made by <a href=\"https://github.com/'$GITHUB_REPOSITORY_OWNER'\" target=\"_blank\">'$GITHUB_REPOSITORY_OWNER'</a> using <a href=\"https://dotnet.github.io/docfx\" target=\"_blank\">DocFX</a></span>",
                       "_enableSearch": true,
                       "_disableContribution": true,
-                      "_disableNextArticle": true,
-                      "_appLogoPath": "manual/logo.*",
-                      "_appFaviconPath": "manual/favicon.*"
+                      "_disableNextArticle": true
                   },
                   "fileMetadata": {
                       "_disableContribution": {"manual/**/*.md": false}
@@ -116,11 +114,7 @@ jobs:
                       {"src": "api", "files": ["*.yml", "index.md"], "dest": "api"},
                       {"src": "manual", "files": ["*.md"], "dest": "manual"}
                   ],
-                  "resource": [{"files": [
-                      "manual/images/*",
-                      "manual/logo.*",
-                      "manual/favicon.*",
-                  ]}],
+                  "resource": [{"files": ["manual/images/*"]}],
                   "template": ["default", "modern"],
                   "sitemap": {"baseUrl": "'$url'"},
                   "xref": ["'$url'"],
@@ -132,8 +126,8 @@ jobs:
             sed -i '5i\        "filter": "manual/filter.yml",' Documentation~/docfx.json
           fi
           if [ ! -f Documentation~/manual.toc.md ]; then
-            sed -i '19i\            "_disableToc": {"manual/**/*.md": false},' Documentation~/docfx.json
-            sed -i '19i\            "_layout": {"manual/**/*.md": "landing"},'  Documentation~/docfx.json
+            sed -i '17i\            "_disableToc": {"manual/**/*.md": false},' Documentation~/docfx.json
+            sed -i '17i\            "_layout": {"manual/**/*.md": "landing"},'  Documentation~/docfx.json
           fi
 
       - name: Dotnet Setup
