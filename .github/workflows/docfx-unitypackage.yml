@@ -128,7 +128,7 @@ jobs:
             sed -i '17i\            "_layout": {"manual/**/*.md": "landing"},'  Documentation~/docfx.json
           fi
           if compgen -G "Documentation~/manual/images/logo.*" > /dev/null; then
-            sed -i '11i\            "_appLogoPath": "manual/images/logo.jpg"' Documentation~/docfx.json
+            sed -i '11i\            "_appLogoPath": "manual/images/logo.jpg",' Documentation~/docfx.json
           fi
           if [ -f Documentation~/manual/filter.yml ]; then
             sed -i '5i\        "filter": "manual/filter.yml",' Documentation~/docfx.json
