@@ -127,8 +127,10 @@ jobs:
             sed -i '17i\            "_disableToc": {"manual/**/*.md": false},' Documentation~/docfx.json
             sed -i '17i\            "_layout": {"manual/**/*.md": "landing"},'  Documentation~/docfx.json
           fi
-          if compgen -G "Documentation~/manual/images/logo.*" > /dev/null; then
-            sed -i '11i\            "_appLogoPath": "manual/images/logo.jpg",' Documentation~/docfx.json
+          logoPattern="Documentation~/manual/images/logo.*"
+          if compgen -G $logoPattern > /dev/null; then
+            logos=( $logoPattern )
+            sed -i '11i\            "_appLogoPath": "'${logos[0]}'",' Documentation~/docfx.json
           fi
           if [ -f Documentation~/manual/filter.yml ]; then
             sed -i '5i\        "filter": "manual/filter.yml",' Documentation~/docfx.json
