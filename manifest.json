@@ -308,10 +308,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "manual/images/logo.jpg",
+      "source_relative_path": "manual/images/logo.svg",
       "output": {
         "resource": {
-          "relative_path": "manual/images/logo.jpg"
+          "relative_path": "manual/images/logo.svg"
         }
       },
       "version": ""
