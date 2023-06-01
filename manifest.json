@@ -7,14 +7,6 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
-      "type": "Resource",
-      "output": {
-        "resource": {
-          "relative_path": "index.json"
-        }
-      }
-    },
-    {
       "type": "ManagedReference",
       "source_relative_path": "api/System.TimeOnly.yml",
       "output": {
