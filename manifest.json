@@ -298,20 +298,20 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "manual/images/favicon.ico",
+      "source_relative_path": "manual/images/favicon.png",
       "output": {
         "resource": {
-          "relative_path": "manual/images/favicon.ico"
+          "relative_path": "manual/images/favicon.png"
         }
       },
       "version": ""
     },
     {
       "type": "Resource",
-      "source_relative_path": "manual/images/logo.svg",
+      "source_relative_path": "manual/images/logo.jpg",
       "output": {
         "resource": {
-          "relative_path": "manual/images/logo.svg"
+          "relative_path": "manual/images/logo.jpg"
         }
       },
       "version": ""
