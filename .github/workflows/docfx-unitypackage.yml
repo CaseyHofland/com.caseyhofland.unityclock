@@ -123,12 +123,12 @@ jobs:
                   "dest": "../_site"
               }
           }' > Documentation~/docfx.json
-          if [ -f Documentation~/manual/filter.yml ]; then
-            sed -i '5i\        "filter": "manual/filter.yml",' Documentation~/docfx.json
-          fi
           if [ ! -f Documentation~/manual.toc.md ]; then
             sed -i '17i\            "_disableToc": {"manual/**/*.md": false},' Documentation~/docfx.json
             sed -i '17i\            "_layout": {"manual/**/*.md": "landing"},'  Documentation~/docfx.json
+          fi
+          if [ -f Documentation~/manual/filter.yml ]; then
+            sed -i '5i\        "filter": "manual/filter.yml",' Documentation~/docfx.json
           fi
 
       - name: Dotnet Setup
