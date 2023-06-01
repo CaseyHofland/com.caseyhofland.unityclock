@@ -21,6 +21,9 @@ jobs:
           mkdir -p manual
           mv -v Documentation~/* manual/
           mv -v manual Documentation~/manual
+          if [ -f Documentation~/manual/projectMetadata.json ]; then
+            mv -v Documentation~/manual/projectMetadata.json Documentation~/projectMetadata.json
+          fi
 
       - name: Generate index page
         run: echo 'This page redirects to the [manual](manual/).' > Documentation~/index.md
@@ -108,7 +111,7 @@ jobs:
                   "fileMetadata": {
                       "_disableContribution": {"manual/**/*.md": false}
                   },
-                  "globalMetadataFiles": ["manual/projectMetadata.json"],
+                  "globalMetadataFiles": ["projectMetadata.json"],
                   "content": [
                       {"files": ["index.md", "toc.yml"]},
                       {"src": "license", "files": ["*.md"], "dest": "license"},
@@ -116,7 +119,7 @@ jobs:
                       {"src": "api", "files": ["*.yml", "index.md"], "dest": "api"},
                       {"src": "manual", "files": ["*.md"], "dest": "manual"}
                   ],
-                  "resource": [{"files": ["manual/images/*", "manual/projectMetadata.json"]}],
+                  "resource": [{"files": ["manual/images/*"]}],
                   "template": ["default", "modern"],
                   "sitemap": {"baseUrl": "'$url'"},
                   "xref": ["'$url'"],
@@ -125,8 +128,8 @@ jobs:
               }
           }' > Documentation~/docfx.json
           if [ ! -f Documentation~/manual.toc.md ]; then
-            sed -i '17i\            "_disableToc": {"manual/**/*.md": false},' Documentation~/docfx.json
-            sed -i '17i\            "_layout": {"manual/**/*.md": "landing"},'  Documentation~/docfx.json
+            sed -i '18i\            "_disableToc": {"manual/**/*.md": false},' Documentation~/docfx.json
+            sed -i '18i\            "_layout": {"manual/**/*.md": "landing"},'  Documentation~/docfx.json
           fi
           if [ -f Documentation~/manual/filter.yml ]; then
             sed -i '5i\        "filter": "manual/filter.yml",' Documentation~/docfx.json
