@@ -130,7 +130,9 @@ jobs:
           logoPattern="Documentation~/manual/images/logo.*"
           if compgen -G $logoPattern > /dev/null; then
             logos=( $logoPattern )
-            sed -i '11i\            "_appLogoPath": "'${logos[0]}'",' Documentation~/docfx.json
+            logoPath=${logos[0]}
+            relativeLogoPath=${logoPath:18}
+            sed -i '11i\            "_appLogoPath": "'${relativeLogoPath}'",' Documentation~/docfx.json
           fi
           if [ -f Documentation~/manual/filter.yml ]; then
             sed -i '5i\        "filter": "manual/filter.yml",' Documentation~/docfx.json
