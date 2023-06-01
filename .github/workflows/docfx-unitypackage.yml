@@ -127,6 +127,13 @@ jobs:
             sed -i '17i\            "_disableToc": {"manual/**/*.md": false},' Documentation~/docfx.json
             sed -i '17i\            "_layout": {"manual/**/*.md": "landing"},'  Documentation~/docfx.json
           fi
+          faviconPattern="Documentation~/manual/images/favicon.*"
+          if compgen -G $faviconPattern > /dev/null; then
+            favicons=( $faviconPattern )
+            faviconPath=${favicons[0]}
+            relativeFaviconPath=${faviconPath:15}
+            sed -i '11i\            "_appFaviconPath": "'${relativeFaviconPath}'",' Documentation~/docfx.json
+          fi
           logoPattern="Documentation~/manual/images/logo.*"
           if compgen -G $logoPattern > /dev/null; then
             logos=( $logoPattern )
