@@ -298,10 +298,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "manual/images/favicon.png",
+      "source_relative_path": "manual/images/favicon.ico",
       "output": {
         "resource": {
-          "relative_path": "manual/images/favicon.png"
+          "relative_path": "manual/images/favicon.ico"
         }
       },
       "version": ""
