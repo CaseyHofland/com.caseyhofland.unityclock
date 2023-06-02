@@ -197,7 +197,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
-          sed -i '19i\      <meta http-equiv="refresh" content="0;URL='"$url"manual/'">' _site/index.html
+          sed '/^</head>/i\      <meta http-equiv="refresh" content="0;URL='"$url"manual/'">' _site/index.html
+      
+      # sed -i '19i\      <meta http-equiv="refresh" content="0;URL='"$url"manual/'">' _site/index.html
 
       # Upload the generated documentation
       - name: Upload site artifact
