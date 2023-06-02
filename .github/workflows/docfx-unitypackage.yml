@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  # Build the documentation
-  build:
+  # Generate pages, tables of contents, the docfx.json and anything the docfx needs.
+  generate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -51,7 +51,7 @@ jobs:
             sed -i -e 's/     /#/g' Documentation~/manual/toc.md
           fi
 
-      - name: Generate api index
+      - name: Generate api index page
         run: |
           mkdir -p Documentation~/api
           if [ -f Documentation~/api_index.md ]; then
@@ -123,10 +123,16 @@ jobs:
                   "dest": "../_site"
               }
           }' > Documentation~/docfx.json
+
+      - name: Disable toc if not exists
+        run: |
           if [ ! -f Documentation~/manual/toc.md ]; then
             sed -i '17i\            "_disableToc": {"manual/**/*.md": false},' Documentation~/docfx.json
             sed -i '17i\            "_layout": {"manual/**/*.md": "landing"},'  Documentation~/docfx.json
           fi
+      
+      - name: Set favicon if exists
+        run: |
           faviconPattern="Documentation~/manual/images/favicon.*"
           if compgen -G $faviconPattern > /dev/null; then
             favicons=( $faviconPattern )
@@ -134,6 +140,9 @@ jobs:
             relativeFaviconPath=${faviconPath:15}
             sed -i '11i\            "_appFaviconPath": "'${relativeFaviconPath}'",' Documentation~/docfx.json
           fi
+
+      - name: Set logo if exists
+        run: |
           logoPattern="Documentation~/manual/images/logo.*"
           if compgen -G $logoPattern > /dev/null; then
             logos=( $logoPattern )
@@ -141,9 +150,36 @@ jobs:
             relativeLogoPath=${logoPath:15}
             sed -i '11i\            "_appLogoPath": "'${relativeLogoPath}'",' Documentation~/docfx.json
           fi
+
+      - name: Set filter if exists
+        run: |
           if [ -f Documentation~/manual/filter.yml ]; then
             sed -i '5i\        "filter": "manual/filter.yml",' Documentation~/docfx.json
+          elif [ -f Documentation~/manual/filter.yaml ]; then
+            sed -i '5i\        "filter": "manual/filter.yaml",' Documentation~/docfx.json
           fi
+
+      - name: Cache generated content
+        uses: actions/cache@v3
+        with: 
+          path: Documentation~/
+          key: generated-content
+
+  # Build the documentation
+  build:
+    needs: generate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Retrieve generated content
+        uses: actions/cache@v3
+        with: 
+          path: Documentation~/
+          key: generated-content
 
       - name: Dotnet Setup
         uses: actions/setup-dotnet@v3
