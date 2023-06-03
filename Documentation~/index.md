@@ -1,3 +1,0 @@
-# About Unity Clock
-
-LOALSODlAOIJ
