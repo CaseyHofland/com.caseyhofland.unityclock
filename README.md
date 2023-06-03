@@ -2,7 +2,7 @@
 
 ![Unity Clock Showcase](https://github.com/CaseyHofland/com.caseyhofland.unityclock/assets/27729987/9d9b4c43-1f8c-4777-a387-d9a0e3a6c42b)
 
-Unity Clock is a time-of-day system that allows full creative flexibility with a non-destructive workflow. The core philosophy is centered around the utilization of [Animation Clips](https://docs.unity3d.com/Manual/AnimationClips.html). [Animation Clips](https://docs.unity3d.com/Manual/AnimationClips.html) allow full creative flexibility in how an object should change over time, and they can be previewed in the editor without triggering scene changes, which makes it play nice with version control systems like [git](https://git-scm.com/) and [plastic](https://www.plasticscm.com/).
+Unity Clock is a time-of-day system that allows full creative flexibility with a non-destructive workflow. The core philosophy is centered around the utilization of [Animation Clips](https://docs.unity3d.com/Manual/AnimationClips.html) to allow full creative flexibility in how an object should change over time. They can also be previewed in the editor without triggering scene changes, which is a huge benefit when you're working with version control systems like [git](https://git-scm.com/) and [plastic](https://www.plasticscm.com/).
 
 ## Installing Unity Clock
 
