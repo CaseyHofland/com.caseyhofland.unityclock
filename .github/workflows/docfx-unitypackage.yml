@@ -77,10 +77,6 @@ jobs:
             echo '  homepage: changelog/CHANGELOG.md' >> Documentation~/toc.yml
           fi
 
-      #         echo '- name: Changelog
-      # href: changelog/
-      # homepage: changelog/CHANGELOG.md' >> Documentation~/toc.yml
-
       - name: Generate license page
         run: |
           if [ -f LICENSE ] && [ ! -f LICENSE.md ]; then
@@ -94,9 +90,9 @@ jobs:
               cp 'Third Party Notices.md' 'Documentation~/license/Third Party Notices.md'
               sed -i '1i# [Third Party Notices](Third Party Notices.md)' Documentation~/license/toc.md
             fi
-            echo '- name: License
-              href: license/
-              homepage: license/LICENSE.md' >> Documentation~/toc.yml
+            echo '- name: License' >> Documentation~/toc.yml
+            echo '  href: license/' >> Documentation~/toc.yml
+            echo '  homepage: license/LICENSE.md' >> Documentation~/toc.yml
           fi
 
       - name: Read package.json
