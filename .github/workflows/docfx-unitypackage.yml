@@ -81,6 +81,9 @@ jobs:
       - name: Generate license page
         run: |
           mkdir -p Documentation~/license
+          if [ ! -f LICENSE.md ]; then
+            mv -v LICENSE LICENSE.md
+          fi
           cp LICENSE.md Documentation~/license/LICENSE.md
           echo '# [License](LICENSE.md)' > Documentation~/license/toc.md
           if [ -f 'Third Party Notices.md' ]; then
