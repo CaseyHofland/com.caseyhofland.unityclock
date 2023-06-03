@@ -72,11 +72,9 @@ jobs:
             mkdir -p Documentation~/changelog
             cp CHANGELOG.md Documentation~/changelog/CHANGELOG.md
             echo '# [Changes](CHANGELOG.md)' > Documentation~/changelog/toc.md
-            cat <<EOT >> Documentation~/toc.yml
-            - name: Changelog
-              href: changelog/
-              homepage: changelog/CHANGELOG.md
-            EOT
+            echo '- name: Changelog' >> Documentation~/toc.yml
+            echo '  href: changelog/' >> Documentation~/toc.yml
+            echo '  homepage: changelog/CHANGELOG.md' >> Documentation~/toc.yml
           fi
 
       #         echo '- name: Changelog
