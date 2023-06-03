@@ -128,7 +128,7 @@ jobs:
                       {"src": "manual", "files": ["*.md"], "dest": "manual"}
                   ],
                   "resource": [{"files": ["manual/images/*"]}],
-                  "template": ["default"],
+                  "template": ["default", "modern"],
                   "sitemap": {"baseUrl": "'$url'"},
                   "xref": ["'$url'"],
                   "xrefService": ["https://xref.docs.microsoft.com/query?uid={uid}"],
