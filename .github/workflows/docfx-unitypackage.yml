@@ -172,7 +172,7 @@ jobs:
         uses: actions/cache@v3
         with: 
           path: Documentation~/
-          key: generated-content
+          key: ${{ runner.os }}-generated-content-${{ secrets.CACHE_VERSION }}-${{ hashFiles(...) }}
 
   # Build the documentation
   build:
@@ -188,7 +188,7 @@ jobs:
         uses: actions/cache@v3
         with: 
           path: Documentation~/
-          key: generated-content
+          key: ${{ runner.os }}-generated-content-${{ secrets.CACHE_VERSION }}-${{ hashFiles(...) }}
 
       - name: Dotnet Setup
         uses: actions/setup-dotnet@v3
