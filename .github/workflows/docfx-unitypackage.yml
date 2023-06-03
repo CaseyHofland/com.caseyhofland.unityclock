@@ -121,6 +121,7 @@ jobs:
                       "_appFooter": "<span>Made by <a href=\"https://github.com/'$GITHUB_REPOSITORY_OWNER'\" target=\"_blank\">'$GITHUB_REPOSITORY_OWNER'</a> using <a href=\"https://dotnet.github.io/docfx\" target=\"_blank\">DocFX</a></span>",
                       "_enableSearch": true,
                       "_enableNewTab": false,
+                      "_disableNewTab": true,
                       "_disableContribution": true,
                       "_disableNextArticle": true
                   },
@@ -146,8 +147,8 @@ jobs:
       - name: Disable toc if not exists
         run: |
           if [ ! -f Documentation~/manual/toc.md ]; then
-            sed -i '19i\            "_disableToc": {"manual/**/*.md": false},' Documentation~/docfx.json
-            sed -i '19i\            "_layout": {"manual/**/*.md": "landing"},'  Documentation~/docfx.json
+            sed -i '20i\            "_disableToc": {"manual/**/*.md": false},' Documentation~/docfx.json
+            sed -i '20i\            "_disableTocFilter": {"manual/**/*.md": false},'  Documentation~/docfx.json
           fi
       
       - name: Set favicon if exists
