@@ -147,8 +147,8 @@ jobs:
       - name: Disable toc if not exists
         run: |
           if [ ! -f Documentation~/manual/toc.md ]; then
-            sed -i '20i\            "_disableToc": {"manual/**/*.md": false},' Documentation~/docfx.json
-            sed -i '20i\            "_disableTocFilter": {"manual/**/*.md": false},'  Documentation~/docfx.json
+            sed -i '20i\            "_disableToc": {"manual/**/*.md": true},' Documentation~/docfx.json
+            sed -i '20i\            "_disableTocFilter": {"manual/**/*.md": true},'  Documentation~/docfx.json
           fi
       
       - name: Set favicon if exists
