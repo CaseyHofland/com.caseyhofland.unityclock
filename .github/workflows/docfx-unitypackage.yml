@@ -18,6 +18,7 @@ jobs:
       # This step needs to happen before anything else!
       - name: Move everything inside the manual/ folder.
         run: |
+          mkdir -p Documentation~
           mkdir -p manual
           if [ -f Documentation~/* ]; then
             mv -v Documentation~/* manual/
