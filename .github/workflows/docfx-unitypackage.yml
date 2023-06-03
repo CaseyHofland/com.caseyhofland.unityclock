@@ -7,7 +7,7 @@ on:
 
 jobs:
   # Generate pages, tables of contents, the docfx.json and anything the docfx needs.
-  generate:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -168,27 +168,27 @@ jobs:
             sed -i '5i\        "filter": "manual/filter.yaml",' Documentation~/docfx.json
           fi
 
-      - name: Upload generated content
-        uses: actions/upload-artifact@v3
-        with:
-          name: generated-content
-          path: Documentation~
+  #     - name: Upload generated content
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: generated-content
+  #         path: Documentation~
 
-  # Build the documentation
-  build:
-    needs: generate
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          submodules: true
+  # # Build the documentation
+  # build:
+  #   needs: generate
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v3
+  #       with:
+  #         submodules: true
 
-      - name: Download generated content
-        uses: actions/download-artifact@v3
-        with:
-          name: generated-content
-          path: Documentation~
+  #     - name: Download generated content
+  #       uses: actions/download-artifact@v3
+  #       with:
+  #         name: generated-content
+  #         path: Documentation~
 
       - name: Dotnet Setup
         uses: actions/setup-dotnet@v3
