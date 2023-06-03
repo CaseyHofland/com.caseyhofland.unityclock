@@ -168,14 +168,14 @@ jobs:
             sed -i '5i\        "filter": "manual/filter.yaml",' Documentation~/docfx.json
           fi
 
-      - name: Cache generated content
-        uses: actions/cache@v3
-        with: 
-          path: Documentation~/
-          key: ${{ runner.os }}-generated-content-${{ secrets.CACHE_VERSION }}
-          restore-keys: |
-            ${{ runner.os }}-generated-content-
-            ${{ runner.os }}-
+      # - name: Cache generated content
+      #   uses: actions/cache@v3
+      #   with: 
+      #     path: Documentation~/
+      #     key: ${{ runner.os }}-generated-content-${{ secrets.CACHE_VERSION }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-generated-content-
+      #       ${{ runner.os }}-
 
   # Build the documentation
   build:
@@ -187,14 +187,14 @@ jobs:
         with:
           submodules: true
 
-      - name: Retrieve generated content
-        uses: actions/cache@v3
-        with: 
-          path: Documentation~/
-          key: ${{ runner.os }}-generated-content-${{ secrets.CACHE_VERSION }}
-          restore-keys: |
-            ${{ runner.os }}-generated-content-
-            ${{ runner.os }}-
+      # - name: Retrieve generated content
+      #   uses: actions/cache@v3
+      #   with: 
+      #     path: Documentation~/
+      #     key: ${{ runner.os }}-generated-content-${{ secrets.CACHE_VERSION }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-generated-content-
+      #       ${{ runner.os }}-
 
       - name: Dotnet Setup
         uses: actions/setup-dotnet@v3
