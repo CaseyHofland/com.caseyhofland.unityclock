@@ -169,7 +169,7 @@ jobs:
           fi
 
       - name: Upload generated content
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: generated-content
           path: Documentation~
@@ -203,7 +203,7 @@ jobs:
       #       ${{ runner.os }}-
 
       - name: Download generated content
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v3
         with:
           name: generated-content
 
