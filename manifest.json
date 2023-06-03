@@ -297,6 +297,16 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "manual/images/showcase.gif",
+      "output": {
+        "resource": {
+          "relative_path": "manual/images/showcase.gif"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "manual/index.md",
       "output": {
