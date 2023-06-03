@@ -37,13 +37,7 @@ jobs:
             homepage: manual/index.md
           - name: Scripting API
             href: api/
-            homepage: api/index.md
-          - name: Changelog
-            href: changelog/
-            homepage: changelog/CHANGELOG.md
-          - name: License
-            href: license/
-            homepage: license/LICENSE.md' > Documentation~/toc.yml
+            homepage: api/index.md' > Documentation~/toc.yml
 
       - name: Generate manual Table of Contents
         # Replace * and 5 consecutive spaces with # in the Table of Contents to convert Unity's format to DocFX's format.
@@ -74,21 +68,31 @@ jobs:
 
       - name: Generate changelog page
         run: |
-          mkdir -p Documentation~/changelog
-          cp CHANGELOG.md Documentation~/changelog/CHANGELOG.md
-          echo '# [Changes](CHANGELOG.md)' > Documentation~/changelog/toc.md
+          if [ -f CHANGELOG.md ]; then
+            mkdir -p Documentation~/changelog
+            cp CHANGELOG.md Documentation~/changelog/CHANGELOG.md
+            echo '# [Changes](CHANGELOG.md)' > Documentation~/changelog/toc.md
+            echo '- name: Changelog
+              href: changelog/
+              homepage: changelog/CHANGELOG.md' >> Documentation~/toc.yml
+          fi
 
       - name: Generate license page
         run: |
-          mkdir -p Documentation~/license
-          if [ ! -f LICENSE.md ]; then
+          if [ -f LICENSE ] && [ ! -f LICENSE.md ]; then
             mv -v LICENSE LICENSE.md
           fi
-          cp LICENSE.md Documentation~/license/LICENSE.md
-          echo '# [License](LICENSE.md)' > Documentation~/license/toc.md
-          if [ -f 'Third Party Notices.md' ]; then
-            cp 'Third Party Notices.md' 'Documentation~/license/Third Party Notices.md'
-            sed -i '1i# [Third Party Notices](Third Party Notices.md)' Documentation~/license/toc.md
+          if [ -f LICENSE.md ]; then
+            mkdir -p Documentation~/license
+            cp LICENSE.md Documentation~/license/LICENSE.md
+            echo '# [License](LICENSE.md)' > Documentation~/license/toc.md
+            if [ -f 'Third Party Notices.md' ]; then
+              cp 'Third Party Notices.md' 'Documentation~/license/Third Party Notices.md'
+              sed -i '1i# [Third Party Notices](Third Party Notices.md)' Documentation~/license/toc.md
+            fi
+            echo '- name: License
+              href: license/
+              homepage: license/LICENSE.md' >> Documentation~/toc.yml
           fi
 
       - name: Read package.json
