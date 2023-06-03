@@ -1,20 +1,25 @@
-# Unity Clock
-Unity Clock is a time-of-day system for Unity that allows full creative flexibility with a non-destructive workflow.
+# About Unity Clock
 
-## Animation Clips
-The main concept behind Unity Clock is its utilization of the Animation System. Unity Clock isn't like most time systems that provide components for things like rotating the sun, changing the color of the light, or any other hard-coded solution to your time-of-day needs. Instead, simply add a TemporalAnimation component to anything you want to animate with time and provide it with an animation clip. By using animation clips, it gives you full creative flexibility of when you want to change what and how you want to do it.
+![Unity Clock Showcase](https://github.com/CaseyHofland/com.caseyhofland.unityclock/assets/27729987/9d9b4c43-1f8c-4777-a387-d9a0e3a6c42b)
 
-## Version Control
-But the most important part of using animations is version control. Changing time will not mark your scene dirty in the editor, leaving you free to create and experiment without the fear of breaking someone elses project.
+Unity Clock is a time-of-day system that allows full creative flexibility with a non-destructive workflow. The core philosophy is centered around the utilization of [Animation Clips](https://docs.unity3d.com/Manual/AnimationClips.html). [Animation Clips](https://docs.unity3d.com/Manual/AnimationClips.html) allow full creative flexibility in how an object should change over time, and they can be previewed in the editor without triggering scene changes, which makes it play nice with version control systems like [git](https://git-scm.com/) and [plastic](https://www.plasticscm.com/).
 
-## Previewing
-You can also preview time and time lapses without entering playmode! In the scene view, open the Overlay Menu and expose the Clock Tools. There you will find the tools required to preview how your scene will look during any time of day.
+## Installing Unity Clock
 
-## Clock Volume
-To change time in your scene, you can either set it using the Clock.time variable, or the much preferred method: using the Clock Volume. Unity's volume component allows you to blend between post processing, but this asset repurposes it as a means to blend between time. The great benefit of time blending is so that you can specify parts in your game where the time HAS to be 22:35, so you just put a volume there with some blend distance and everything will work as expected.
+To install this package, follow the instructions on the [Package Manager documentation](https://docs.unity3d.com/Manual/upm-ui-giturl.html).
 
-## Shader Variables
-If you want to create shaders that listen to the time of day, there are 3 values exposed: _UnityClock_Time, _UnityClock_Interpolant and _UnityClock_PingPong. _UnityClock_Time is an int4 which holds time in a 23:59:59.999 format and will in most cases be useless to you. _UnityClock_Interpolant is a value from 0 to 1 between midnight and midnight. _UnityClock_PingPong is a value from 0 to 1 between midnight and midday. These 2 are on average much more useful.
+## Requirements
 
-## API Ease of Use
-The API uses System.TimeSpan and System.TimeOnly for maximum comfort around coding. Any API that uses float for specifying time can take a hike! `Clock` holds the current time of day, as well as some handy time-related methods. If you want to draw the inspector for Timespan and TimeOnly, use `[TimeSpan] public long time;` and `[TimeOnly] public long timeSpan;` respectively.
+This version of Unity Clock is compatible with the following versions of the Unity Editor:
+
+* 2022.2 and later (recommended)
+
+## Known limitations
+
+Unity Clock version 0.1.0-exp includes the following known limitations:
+
+* Depends on the render-pipeline.core for setting time. This dependency will be removed in the future.
+* Code is subject to (a lot) of change.
+* Performance for a large amount of objects using Temporal Animations is untested.
+* Temporal Animations are still very rigid in their use. This workflow needs to be improved.
+* Animation events are unlikely to trigger (this will be fixed in the future).
