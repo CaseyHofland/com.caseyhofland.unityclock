@@ -6,7 +6,6 @@ on:
       - main
 
 jobs:
-  # Generate pages, tables of contents, the docfx.json and anything the docfx needs.
   build:
     runs-on: ubuntu-latest
     steps:
@@ -18,12 +17,15 @@ jobs:
       # This step needs to happen before anything else!
       - name: Move everything inside the manual/ folder.
         run: |
-          mkdir -p Documentation~
           mkdir -p manual
-          if [ -f Documentation~/* ]; then
+          if [ -d Documentation~ ] && [ "$(ls -A Documentation~)" ]; then
             mv -v Documentation~/* manual/
+          else
+            mkdir -p Documentation~
           fi
           mv -v manual Documentation~/manual
+
+      # Generate pages, tables of contents, the docfx.json and anything the docfx needs.
 
       - name: Generate index page
         run: echo 'This page redirects to the [manual](manual/).' > Documentation~/index.md
@@ -168,27 +170,7 @@ jobs:
             sed -i '5i\        "filter": "manual/filter.yaml",' Documentation~/docfx.json
           fi
 
-  #     - name: Upload generated content
-  #       uses: actions/upload-artifact@v3
-  #       with:
-  #         name: generated-content
-  #         path: Documentation~
-
-  # # Build the documentation
-  # build:
-  #   needs: generate
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v3
-  #       with:
-  #         submodules: true
-
-  #     - name: Download generated content
-  #       uses: actions/download-artifact@v3
-  #       with:
-  #         name: generated-content
-  #         path: Documentation~
+      # Build docfx site through the Documentation~ folder
 
       - name: Dotnet Setup
         uses: actions/setup-dotnet@v3
