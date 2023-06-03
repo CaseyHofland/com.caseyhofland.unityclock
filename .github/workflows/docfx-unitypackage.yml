@@ -206,6 +206,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: generated-content
+          path: Documentation~
 
       - name: Dotnet Setup
         uses: actions/setup-dotnet@v3
