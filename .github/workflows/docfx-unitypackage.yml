@@ -168,6 +168,12 @@ jobs:
             sed -i '5i\        "filter": "manual/filter.yaml",' Documentation~/docfx.json
           fi
 
+      - name: Upload generated content
+        uses: actions/upload-artifact@v1
+        with:
+          name: generated-content
+          path: Documentation~/
+
       # - name: Cache generated content
       #   uses: actions/cache@v3
       #   with: 
@@ -195,6 +201,11 @@ jobs:
       #     restore-keys: |
       #       ${{ runner.os }}-generated-content-
       #       ${{ runner.os }}-
+
+      - name: Download generated content
+        uses: actions/download-artifact@v1
+        with:
+          name: generated-content
 
       - name: Dotnet Setup
         uses: actions/setup-dotnet@v3
