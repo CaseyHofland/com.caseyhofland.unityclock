@@ -172,7 +172,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: generated-content
-          path: Documentation~/
+          path: Documentation~
 
       # - name: Cache generated content
       #   uses: actions/cache@v3
