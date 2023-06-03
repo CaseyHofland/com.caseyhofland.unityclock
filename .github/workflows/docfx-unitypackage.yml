@@ -174,15 +174,6 @@ jobs:
           name: generated-content
           path: Documentation~
 
-      # - name: Cache generated content
-      #   uses: actions/cache@v3
-      #   with: 
-      #     path: Documentation~/
-      #     key: ${{ runner.os }}-generated-content-${{ secrets.CACHE_VERSION }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-generated-content-
-      #       ${{ runner.os }}-
-
   # Build the documentation
   build:
     needs: generate
@@ -192,15 +183,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: true
-
-      # - name: Retrieve generated content
-      #   uses: actions/cache@v3
-      #   with: 
-      #     path: Documentation~/
-      #     key: ${{ runner.os }}-generated-content-${{ secrets.CACHE_VERSION }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-generated-content-
-      #       ${{ runner.os }}-
 
       - name: Download generated content
         uses: actions/download-artifact@v3
