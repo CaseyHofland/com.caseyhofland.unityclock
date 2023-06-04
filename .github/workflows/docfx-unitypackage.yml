@@ -1,0 +1,15 @@
+name: docfx-unitypackage
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  docfx-unitypackage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: docfx-unitypackage
+        # uses: CaseyHofland/docfx-unitypackage@4fbfb0bc4b4c8515672315f7918a503479547b5f
+        uses: CaseyHofland/docfx-unitypackage@1.0.0-pre
