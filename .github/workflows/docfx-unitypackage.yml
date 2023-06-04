@@ -171,8 +171,8 @@ jobs:
             echo 'package<<EOF' >> $GITHUB_ENV
             echo $content >> $GITHUB_ENV
             echo 'EOF' >> $GITHUB_ENV
-            displayName=${{ fromJson(${content}).displayName }}
-            version=${{ fromJson(${content}).version }}
+            displayName="${{ fromJson("'${content}'").displayName }}"
+            version="${{ fromJson("'${content}'").version }}"
             sed -i '11i\            "_appTitle": "'${displayName}' | '${version}'",' Documentation~/docfx.json
           fi
 
