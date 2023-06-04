@@ -164,17 +164,20 @@ jobs:
             sed -i '12i\            "_appLogoPath": "'${relativeLogoPath}'",' Documentation~/docfx.json
           fi
 
-      - name: Set app title
+      - name: Read package.json
         run: |
           if [ -f package.json ]; then
             content=`cat package.json`
             echo 'package<<EOF' >> $GITHUB_ENV
             echo $content >> $GITHUB_ENV
             echo 'EOF' >> $GITHUB_ENV
-            displayName=${{ fromJson(env.package).displayName }}
-            version=${{ fromJson(env.package).version }}
-            sed -i '11i\            "_appTitle": "'${displayName}' | '${version}'",' Documentation~/docfx.json
           fi
+
+      - name: Set app title
+        run: |
+          displayName=${{ fromJson(env.package).displayName }}
+          version=${{ fromJson(env.package).version }}
+          sed -i '11i\            "_appTitle": "'${displayName}' | '${version}'",' Documentation~/docfx.json
 
       - name: Set filter if exists
         run: |
