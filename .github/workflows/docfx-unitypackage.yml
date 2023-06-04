@@ -96,6 +96,17 @@ jobs:
             echo '  homepage: license/LICENSE.md' >> Documentation~/toc.yml
           fi
 
+      - name: Read package.json
+        run: |
+          if [ -f package.json ]; then
+            content=`cat package.json`
+          else
+            content='{}'
+          fi
+          echo 'package<<EOF' >> $GITHUB_ENV
+          echo $content >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+
       - name: Generate docfx.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -111,6 +122,7 @@ jobs:
               "build": {
                   "globalMetadataFiles": ["manual/projectMetadata.json", "manual/config.json"],
                   "globalMetadata": {
+                      "_appTitle": "'${{ fromJson(env.package).displayName }}' | '${{ fromJson(env.package).version }}'"
                       "_appFooter": "<span>Made by <a href=\"https://github.com/'$GITHUB_REPOSITORY_OWNER'\" target=\"_blank\">'$GITHUB_REPOSITORY_OWNER'</a> using <a href=\"https://dotnet.github.io/docfx\" target=\"_blank\">DocFX</a></span>",
                       "_enableSearch": true,
                       "_enableNewTab": false,
@@ -140,8 +152,8 @@ jobs:
       - name: Disable toc if not exists
         run: |
           if [ ! -f Documentation~/manual/toc.md ]; then
-            sed -i '19i\            "_disableToc": {"manual/**/*.md": false},' Documentation~/docfx.json
-            sed -i '19i\            "_layout": {"manual/**/*.md": "landing"},'  Documentation~/docfx.json
+            sed -i '20i\            "_disableToc": {"manual/**/*.md": false},' Documentation~/docfx.json
+            sed -i '20i\            "_layout": {"manual/**/*.md": "landing"},'  Documentation~/docfx.json
           fi
       
       - name: Set favicon if exists
@@ -151,7 +163,7 @@ jobs:
             favicons=( $faviconPattern )
             faviconPath=${favicons[0]}
             relativeFaviconPath=${faviconPath:15}
-            sed -i '12i\            "_appFaviconPath": "'${relativeFaviconPath}'",' Documentation~/docfx.json
+            sed -i '13i\            "_appFaviconPath": "'${relativeFaviconPath}'",' Documentation~/docfx.json
           fi
 
       - name: Set logo if exists
@@ -161,25 +173,8 @@ jobs:
             logos=( $logoPattern )
             logoPath=${logos[0]}
             relativeLogoPath=${logoPath:15}
-            sed -i '12i\            "_appLogoPath": "'${relativeLogoPath}'",' Documentation~/docfx.json
+            sed -i '13i\            "_appLogoPath": "'${relativeLogoPath}'",' Documentation~/docfx.json
           fi
-
-      - name: Read package.json
-        run: |
-          if [ -f package.json ]; then
-            content=`cat package.json`
-          else
-            content='{}'
-          fi
-          echo 'package<<EOF' >> $GITHUB_ENV
-          echo $content >> $GITHUB_ENV
-          echo 'EOF' >> $GITHUB_ENV
-
-      - name: Set app title
-        run: |
-          displayName='${{ fromJson(env.package).displayName }}'
-          version='${{ fromJson(env.package).version }}'
-          sed -i '11i\            "_appTitle": "'${displayName}' | '${version}'",' Documentation~/docfx.json
 
       - name: Set filter if exists
         run: |
