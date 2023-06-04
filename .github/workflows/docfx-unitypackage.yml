@@ -52,7 +52,7 @@ jobs:
 
       - name: Generate manual index page
         run: |
-          if [ ! -f Documentation~/manual/index.md ]; then
+          if [ ! -f Documentation~/manual/index.md ] && [ -f README.md ]; then
             cp README.md Documentation~/manual/index.md
           fi
 
