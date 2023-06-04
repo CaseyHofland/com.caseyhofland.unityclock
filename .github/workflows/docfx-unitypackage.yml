@@ -175,9 +175,11 @@ jobs:
 
       - name: Set app title
         run: |
-          displayName=${{ fromJson(env.package).displayName }}
-          version=${{ fromJson(env.package).version }}
-          sed -i '11i\            "_appTitle": "'${displayName}' | '${version}'",' Documentation~/docfx.json
+          if [ -f package.json ]; then
+            displayName=${{ fromJson(env.package).displayName }}
+            version=${{ fromJson(env.package).version }}
+            sed -i '11i\            "_appTitle": "'${displayName}' | '${version}'",' Documentation~/docfx.json
+          fi
 
       - name: Set filter if exists
         run: |
