@@ -2,26 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title> |  |  </title>
+      <title>About Unity Clock |  |  </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content=" |  |  ">
+      <meta name="title" content="About Unity Clock |  |  ">
       
-      <link rel="icon" href="favicon.ico">
-      <link rel="stylesheet" href="public/docfx.min.css">
-      <link rel="stylesheet" href="public/main.css">
-      <meta name="docfx:navrel" content="toc.html">
-      <meta name="docfx:tocrel" content="toc.html">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
       
-      <meta name="docfx:rel" content="">
+      <meta name="docfx:rel" content="../">
       <meta name="docfx:disablenewtab" content="true">
       
-      <meta name="docfx:docurl" content="https://github.com/CaseyHofland/com.caseyhofland.unityclock/blob/main/Documentation~/index.md/#L1">
-      <meta http-equiv="refresh" content="0;URL=https://caseyhofland.github.io/com.caseyhofland.unityclock/manual/">
+      <meta name="docfx:docurl" content="https://github.com/CaseyHofland/com.caseyhofland.unityclock/blob/main/Documentation~/manual/index.md/#L1">
   </head>
 
   <script type="module">
-    import options from './public/main.js'
-    import { init } from './public/docfx.min.js'
+    import options from './../public/main.js'
+    import { init } from './../public/docfx.min.js'
     init(options)
   </script>
 
@@ -31,12 +30,12 @@
   </script>
 
 
-  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+  <body class="tex2jax_ignore" data-layout="landing" data-yaml-mime="">
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="index.html">
-            <img id="logo" class="svg" src="logo.svg" alt="">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
             
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,10 +76,31 @@
         </div>
 
         <article data-uid="">
+<h1 id="about-unity-clock">About Unity Clock</h1>
 
-<p>This page redirects to the <a href="manual/">manual</a>.</p>
+<p><img src="https://github.com/CaseyHofland/com.caseyhofland.unityclock/assets/27729987/9d9b4c43-1f8c-4777-a387-d9a0e3a6c42b" alt="Unity Clock Showcase"></p>
+<p>Unity Clock is a time-of-day system that allows full creative flexibility with a non-destructive workflow. The core philosophy is centered around the utilization of <a href="https://docs.unity3d.com/Manual/AnimationClips.html">Animation Clips</a> to allow full creative flexibility in how an object should change over time. They can also be previewed in the editor without triggering scene changes, which is a huge benefit when you're working with version control systems like <a href="https://git-scm.com/">git</a> and <a href="https://www.plasticscm.com/">plastic</a>.</p>
+<h2 id="installing-unity-clock">Installing Unity Clock</h2>
+<p>To install this package, follow the instructions on the <a href="https://docs.unity3d.com/Manual/upm-ui-giturl.html">Package Manager documentation</a>.</p>
+<h2 id="requirements">Requirements</h2>
+<p>This version of Unity Clock is compatible with the following versions of the Unity Editor:</p>
+<ul>
+<li>2022.2 and later (recommended)</li>
+</ul>
+<h2 id="known-limitations">Known limitations</h2>
+<p>Unity Clock version 0.1.0-exp includes the following known limitations:</p>
+<ul>
+<li>Depends on the render-pipeline.core for setting time. This dependency will be removed in the future.</li>
+<li>Code is subject to (a lot) of change.</li>
+<li>Performance for a large amount of objects using Temporal Animations is untested.</li>
+<li>Temporal Animations are still very rigid in their use. This workflow needs to be improved.</li>
+<li>Animation events are unlikely to trigger (this will be fixed in the future).</li>
+</ul>
 </article>
 
+        <div class="contribution d-print-none">
+          <a href="https://github.com/CaseyHofland/com.caseyhofland.unityclock/blob/main/Documentation~/manual/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
 
         
       </div>
