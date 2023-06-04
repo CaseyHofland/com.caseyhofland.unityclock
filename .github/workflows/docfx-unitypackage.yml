@@ -7,9 +7,22 @@ on:
       - main
 
 jobs:
-  docfx-unitypackage:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: docfx-unitypackage
-        # uses: CaseyHofland/docfx-unitypackage@4fbfb0bc4b4c8515672315f7918a503479547b5f
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Build
         uses: CaseyHofland/docfx-unitypackage@1.0.0-pre
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ inputs.github_token }}
+          publish_branch: gh-pages
+          publish_dir: _site
