@@ -168,18 +168,18 @@ jobs:
         run: |
           if [ -f package.json ]; then
             content=`cat package.json`
-            echo 'package<<EOF' >> $GITHUB_ENV
-            echo $content >> $GITHUB_ENV
-            echo 'EOF' >> $GITHUB_ENV
+          else
+            content='{}'
           fi
+          echo 'package<<EOF' >> $GITHUB_ENV
+          echo $content >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
 
       - name: Set app title
         run: |
-          if [ -f package.json ]; then
-            displayName="${{ fromJson(env.package).displayName }}"
-            version="${{ fromJson(env.package).version }}"
-            sed -i '11i\            "_appTitle": "'${displayName}' | '${version}'",' Documentation~/docfx.json
-          fi
+          displayName='${{ fromJson(env.package).displayName }}'
+          version='${{ fromJson(env.package).version }}'
+          sed -i '11i\            "_appTitle": "'${displayName}' | '${version}'",' Documentation~/docfx.json
 
       - name: Set filter if exists
         run: |
