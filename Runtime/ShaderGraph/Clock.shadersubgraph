@@ -117,10 +117,10 @@
             "m_Id": "60b354dcaf15477087dd20f4e49ff95f"
         },
         {
-            "m_Id": "23501c232b154f1e98da5aaf6029452d"
+            "m_Id": "99fa069e780141cf91bd941df095ee2e"
         },
         {
-            "m_Id": "1ada3750274d499fadc43454d5eb8511"
+            "m_Id": "792edabf98b34a388126b6b5682896d3"
         }
     ],
     "synonyms": [],
@@ -132,21 +132,6 @@
         "m_SerializableColors": []
     },
     "IsFirstSlotValid": true
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "1ada3750274d499fadc43454d5eb8511",
-    "m_Id": 2,
-    "m_DisplayName": "PingPong",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "PingPong",
-    "m_StageCapability": 3,
-    "m_Value": 0.0,
-    "m_DefaultValue": 0.0,
-    "m_Labels": []
 }
 
 {
@@ -171,36 +156,6 @@
         "z": 0.0,
         "w": 0.0
     },
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "23501c232b154f1e98da5aaf6029452d",
-    "m_Id": 1,
-    "m_DisplayName": "Interpolant",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Interpolant",
-    "m_StageCapability": 3,
-    "m_Value": 0.0,
-    "m_DefaultValue": 0.0,
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "50861011128c45adbd79d41b9418c309",
-    "m_Id": 0,
-    "m_DisplayName": "Interpolant",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Interpolant",
-    "m_StageCapability": 3,
-    "m_Value": 0.0,
-    "m_DefaultValue": 0.0,
     "m_Labels": []
 }
 
@@ -231,25 +186,70 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.CategoryData",
-    "m_ObjectId": "cf2ac14ac0cb4b308b8004d22c4d0c4d",
-    "m_Name": "",
-    "m_ChildObjectList": []
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "755e09a705734787a4868999ca0c263c",
+    "m_Id": 0,
+    "m_DisplayName": "Day",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Day",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
 }
 
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "e38163d5e64f4c9c8231cb78e509c036",
-    "m_Id": 1,
-    "m_DisplayName": "PingPong",
-    "m_SlotType": 1,
+    "m_ObjectId": "792edabf98b34a388126b6b5682896d3",
+    "m_Id": 2,
+    "m_DisplayName": "Midday",
+    "m_SlotType": 0,
     "m_Hidden": false,
-    "m_ShaderOutputName": "PingPong",
+    "m_ShaderOutputName": "Midday",
     "m_StageCapability": 3,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "99fa069e780141cf91bd941df095ee2e",
+    "m_Id": 1,
+    "m_DisplayName": "Day",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Day",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "c0a270dc5fe244de815aa9ea56925086",
+    "m_Id": 1,
+    "m_DisplayName": "Midday",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Midday",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.CategoryData",
+    "m_ObjectId": "cf2ac14ac0cb4b308b8004d22c4d0c4d",
+    "m_Name": "",
+    "m_ChildObjectList": []
 }
 
 {
@@ -266,8 +266,8 @@
             "serializedVersion": "2",
             "x": -352.0,
             "y": 0.0,
-            "width": 208.0,
-            "height": 246.0
+            "width": 225.0,
+            "height": 142.0
         }
     },
     "m_Slots": [
@@ -275,10 +275,10 @@
             "m_Id": "201e84b1e1c44278ad5ac1c0284161c7"
         },
         {
-            "m_Id": "50861011128c45adbd79d41b9418c309"
+            "m_Id": "755e09a705734787a4868999ca0c263c"
         },
         {
-            "m_Id": "e38163d5e64f4c9c8231cb78e509c036"
+            "m_Id": "c0a270dc5fe244de815aa9ea56925086"
         }
     ],
     "synonyms": [

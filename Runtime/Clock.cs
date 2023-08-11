@@ -10,10 +10,10 @@ namespace UnityClock
         private static TimeOnly _time;
 
         public const float dayMultiplier = 1f / TimeSpan.TicksPerDay;
-        private const float pingPongMultiplier = dayMultiplier * 2f;
+        private const float middayMultiplier = dayMultiplier * 2f;
         private static readonly int _UnityClock_Time = Shader.PropertyToID(nameof(_UnityClock_Time));
-        private static readonly int _UnityClock_Interpolant = Shader.PropertyToID(nameof(_UnityClock_Interpolant));
-        private static readonly int _UnityClock_PingPong = Shader.PropertyToID(nameof(_UnityClock_PingPong));
+        private static readonly int _UnityClock_Day = Shader.PropertyToID(nameof(_UnityClock_Day));
+        private static readonly int _UnityClock_Midday = Shader.PropertyToID(nameof(_UnityClock_Midday));
 
         /// <summary>
         /// The elapsed time for a day span since the start of the game.
@@ -35,8 +35,8 @@ namespace UnityClock
                 var ticks = value.Ticks;
                 {
                     Shader.SetGlobalVector(_UnityClock_Time, new Vector4(value.Hour, value.Minute, value.Second, value.Millisecond));
-                    Shader.SetGlobalFloat(_UnityClock_Interpolant, ticks * dayMultiplier);
-                    Shader.SetGlobalFloat(_UnityClock_PingPong, PingPong(ticks));
+                    Shader.SetGlobalFloat(_UnityClock_Day, day);
+                    Shader.SetGlobalFloat(_UnityClock_Midday, Midday_Internal(ticks));
                 }
                 timeChanged?.Invoke(value);
             }
@@ -88,9 +88,15 @@ namespace UnityClock
         public static float InverseLerp(TimeSpan start, TimeSpan end, TimeSpan span) => Mathf.InverseLerp(start.Ticks, end.Ticks, span.Ticks);
 
         /// <summary>
+        /// Returns a value between 1 and 0 (exclusive) where 1 is 24:00:00 (never reached) and 0 is 0:00:00.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)] public static float Day(TimeOnly time) => Day_Internal(time.Ticks);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)] internal static float Day_Internal(long ticks) => ticks * dayMultiplier;
+
+        /// <summary>
         /// Returns a value between 1 and 0 where 1 is midday and 0 is midnight.
         /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)] public static float PingPong(TimeOnly time) => PingPong(time.Ticks);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)] internal static float PingPong(long ticks) => 1f - Mathf.Abs(ticks * pingPongMultiplier - 1f);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)] public static float Midday(TimeOnly time) => Midday_Internal(time.Ticks);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)] internal static float Midday_Internal(long ticks) => 1f - Mathf.Abs(ticks * middayMultiplier - 1f);
     }
 }
