@@ -11,7 +11,7 @@ namespace UnityClock
     [Serializable]
     public sealed class TimeOnlyParameter : VolumeParameter<TimeOnly>
     {
-        [SerializeField, TimeOnly(true, true, true, true, true)] private new long m_Value;
+        [SerializeField, TimeOnly] private new long m_Value;
 
         public override TimeOnly value 
         { 
@@ -35,7 +35,7 @@ namespace UnityClock
     [Serializable]
     public sealed class TimeSpanParameter : VolumeParameter<TimeSpan>
     {
-        [SerializeField, TimeSpan(true, true, true, true, true)] private new long m_Value;
+        [SerializeField, TimeSpan] private new long m_Value;
 
         public override TimeSpan value 
         { 

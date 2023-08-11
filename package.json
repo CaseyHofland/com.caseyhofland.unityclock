@@ -10,7 +10,6 @@
   "hideInEditor": false,
   "type": "library",
   "dependencies": {
-    "com.unity.render-pipelines.core": "14.0.4",
     "com.unity.modules.animation": "1.0.0",
     "com.unity.2d.common": "9.0.0"
   },

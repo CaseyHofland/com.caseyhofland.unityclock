@@ -1,0 +1,26 @@
+{
+    "name": "CaseyHofland.UnityClock.RenderPipelines.Core",
+    "rootNamespace": "UnityClock",
+    "references": [
+        "GUID:cf6fffcdede3a194aa429de8f8a0d207",
+        "GUID:1c5a6e682be2cf64b9749af182c5c2fa",
+        "GUID:df380645f10b7bc4b97d4f5eb6303d95"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_RENDERPIPELINES_CORE_14"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.render-pipelines.core",
+            "expression": "14",
+            "define": "UNITY_RENDERPIPELINES_CORE_14"
+        }
+    ],
+    "noEngineReferences": false
+}
