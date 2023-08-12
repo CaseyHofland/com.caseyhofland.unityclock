@@ -1,10 +1,14 @@
-﻿#nullable enable
+﻿// AnimationWindowControl Reference: https://github.com/Unity-Technologies/UnityCsReference/blob/7765d52c6cc13c363796ca00437f1a3209943991/Editor/Mono/Animation/AnimationWindow/AnimationWindowControl.cs#L512
+
+#nullable enable
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Profiling;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Animations;
+using UnityEngine.Playables;
 using Object = UnityEngine.Object;
 
 namespace UnityClock.Editor
@@ -51,10 +55,18 @@ namespace UnityClock.Editor
         public TimeOnly time
         {
             get => _time;
-            set => ResampleAnimation(_time = value);
+            set
+            {
+                timePassed = TimeSpan.Zero;
+                ResampleAnimation(_time = value);
+            }
         }
 
-        private Lookup<GameObject, AnimationClip>? _graph;
+        [field: SerializeField] public TimeSpan daySpan;
+
+        private TimeSpan timePassed;
+
+        private IEnumerable<ICycleSource> cycleSources = Enumerable.Empty<ICycleSource>();
 
         public void OnCreate()
         {
@@ -87,9 +99,15 @@ namespace UnityClock.Editor
                 return;
             }
 
+            cycleSources = Object.FindObjectsByType<Object>(FindObjectsSortMode.None).OfType<ICycleSource>();
+            foreach (var cycleSource in cycleSources)
+            {
+                cycleSource.Create(Clock.playableGraph);
+                cycleSource.OnPlay();
+            }
+
             AnimationMode.StartAnimationMode(driver);
-            DestroyGraph();
-            ResampleAnimation(time);
+            EditorApplication.update += UpdateTime;
         }
 
         public void StopPreview()
@@ -99,32 +117,34 @@ namespace UnityClock.Editor
                 return;
             }
 
-            DestroyGraph();
+            EditorApplication.update -= UpdateTime;
             AnimationMode.StopAnimationMode(driver);
-        }
 
-        private void DestroyGraph()
-        {
-            _graph = null;
-
-            //if (!_graph.IsValid())
-            //    return;
-
-            //_graph.Destroy();
-            //_graphRoot = Playable.Null;
-        }
-
-        private void RebuildGraph()
-        {
-            Dictionary<GameObject, IEnumerable<AnimationClip>> clipsByGameObjects = new();
-            foreach (var clipSource in Object.FindObjectsOfType<MonoBehaviour>().OfType<ITemporal>().OfType<IAnimationClipSource>())
+            foreach (var cycleSource in cycleSources)
             {
-                var clips = new List<AnimationClip>(1);
-                var gameObject = ((MonoBehaviour)clipSource).gameObject;
-                clipSource.GetAnimationClips(clips);
-                clipsByGameObjects.Add(gameObject, clips);
+                cycleSource.OnStop();
+                cycleSource.Destroy();
             }
-            _graph = (Lookup<GameObject, AnimationClip>)clipsByGameObjects.SelectMany(clipsByGameObject => clipsByGameObject.Value.Select(clip => new KeyValuePair<GameObject, AnimationClip>(clipsByGameObject.Key, clip))).ToLookup(pair => pair.Key, pair => pair.Value);
+            cycleSources = Enumerable.Empty<ICycleSource>();
+        }
+
+        private double realtimeSinceStartPreviewAsDouble;
+
+        private void UpdateTime()
+        {
+            if (!previewing)
+            {
+                EditorApplication.update -= UpdateTime;
+                return;
+            }
+
+            var deltaTimeAsDouble = Time.realtimeSinceStartupAsDouble - realtimeSinceStartPreviewAsDouble;
+            if (daySpan != TimeSpan.Zero)
+            {
+                timePassed += TimeSpan.FromSeconds(deltaTimeAsDouble / daySpan.TotalDays);
+                ResampleAnimation(time.Add(timePassed));
+            }
+            realtimeSinceStartPreviewAsDouble = Time.realtimeSinceStartupAsDouble;
         }
 
         private void ResampleAnimation(TimeOnly time)
@@ -134,29 +154,20 @@ namespace UnityClock.Editor
                 return;
             }
 
-            Clock.time = time;
-
             _resampleAnimationMarker.Begin();
 
-            if (_graph == null)
-            {
-                RebuildGraph();
-            }
-
             AnimationMode.BeginSampling();
-            //Undo.FlushUndoRecordObjects();
+            Undo.FlushUndoRecordObjects();
 
-            var sampleTime = time.Ticks * Clock.dayMultiplier;
-            foreach (var clipsByGameObject in _graph!)
+            for (int i = 1; i < Clock.playableGraph.GetOutputCount(); i++)
             {
-                foreach (var clip in clipsByGameObject)
+                if (((AnimationPlayableOutput)Clock.playableGraph.GetOutput(i)).IsOutputValid())
                 {
-                    AnimationMode.SampleAnimationClip(clipsByGameObject.Key, clip, sampleTime * clip.length);
+                    AnimationMode.SamplePlayableGraph(Clock.playableGraph, i, Clock.Day(time));
                 }
             }
 
             AnimationMode.EndSampling();
-
             SceneView.RepaintAll();
 
             _resampleAnimationMarker.End();
