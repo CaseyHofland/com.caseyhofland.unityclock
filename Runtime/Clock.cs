@@ -1,13 +1,30 @@
 #nullable enable
 using System;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using UnityEngine;
+using UnityEngine.Playables;
 
 namespace UnityClock
 {
-    public class Clock
+    public static class Clock
     {
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void SubsystemRegistration()
+        {
+            _time = default;
+            _daySpan = default;
+
+            if (playableGraph.IsValid())
+            {
+                playableGraph.Destroy();
+            }
+            playableGraph = CreatePlayableGraph();
+            CancelSafe();
+        }
+
         private static TimeOnly _time;
+        private static TimeSpan _daySpan;
 
         public const float dayMultiplier = 1f / TimeSpan.TicksPerDay;
         private const float middayMultiplier = dayMultiplier * 2f;
@@ -15,13 +32,7 @@ namespace UnityClock
         private static readonly int _UnityClock_Day = Shader.PropertyToID(nameof(_UnityClock_Day));
         private static readonly int _UnityClock_Midday = Shader.PropertyToID(nameof(_UnityClock_Midday));
 
-        /// <summary>
-        /// The elapsed time for a day span since the start of the game.
-        /// </summary>
-        /// <param name="daySpan">The time it takes for the clock to progress 24 hours.</param>
-        public static TimeSpan ElapsedTime(TimeSpan daySpan) => !Application.isPlaying || daySpan == TimeSpan.Zero
-            ? TimeSpan.Zero
-            : TimeSpan.FromSeconds(Time.timeAsDouble / daySpan.TotalDays);
+        private static CancellationTokenSource? updateCancellationTokenSource;
         
         /// <summary>
         /// The current time on the clock.
@@ -31,21 +42,83 @@ namespace UnityClock
             get => _time;
             set
             {
-                _time = value;
                 var ticks = value.Ticks;
+                var day = Day_Internal(ticks);
+                var deltaTime = (float)(value - _time).TotalDays; // Always returns positive.
+
+                playableGraph.Evaluate(deltaTime); 
+
                 {
                     Shader.SetGlobalVector(_UnityClock_Time, new Vector4(value.Hour, value.Minute, value.Second, value.Millisecond));
                     Shader.SetGlobalFloat(_UnityClock_Day, day);
                     Shader.SetGlobalFloat(_UnityClock_Midday, Midday_Internal(ticks));
                 }
-                timeChanged?.Invoke(value);
+
+                SetTimeWithoutNotify(value);
             }
         }
 
-        /// <summary>
-        /// Invoked whenever the time changes.
-        /// </summary>
-        [Obsolete] public static event Action<TimeOnly>? timeChanged;
+        public static TimeSpan daySpan
+        {
+            get => _daySpan;
+            set
+            {
+                _daySpan = value;
+
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return;
+                }
+#endif
+
+                if (_daySpan == TimeSpan.Zero)
+                {
+                    playableGraph.Stop();
+                    CancelSafe();
+                }
+                else if (!playableGraph.IsPlaying())
+                {
+                    playableGraph.Play();
+                    UpdateTimeAsync((updateCancellationTokenSource = new()).Token);
+                }
+
+                static async void UpdateTimeAsync(CancellationToken cancellationToken = default)
+                {
+                    try
+                    {
+                        await Awaitable.NextFrameAsync(cancellationToken);
+                        var elapsedTime = TimeSpan.FromSeconds(Time.deltaTime / daySpan.TotalDays);
+                        time = time.Add(elapsedTime);
+                        UpdateTimeAsync(cancellationToken);
+                    }
+                    catch (OperationCanceledException) { }
+                }
+            }
+        }
+
+        public static PlayableGraph playableGraph { get; private set; } = CreatePlayableGraph();
+
+        private static PlayableGraph CreatePlayableGraph()
+        {
+            var playableGraph = PlayableGraph.Create($"{nameof(Clock)}Graph");
+            playableGraph.SetTimeUpdateMode(DirectorUpdateMode.Manual);
+
+            ScriptPlayableOutput cycleDurationOutput = ScriptPlayableOutput.Create(playableGraph, nameof(cycleDurationOutput));
+            var cycleDurationPlayable = ScriptPlayable<CycleDurationBehaviour>.Create(playableGraph);
+            cycleDurationOutput.SetSourcePlayable(cycleDurationPlayable);
+
+            return playableGraph;
+        }
+
+        private static void CancelSafe()
+        {
+            updateCancellationTokenSource?.Cancel();
+            updateCancellationTokenSource?.Dispose();
+            updateCancellationTokenSource = null;
+        }
+
+        public static void SetTimeWithoutNotify(TimeOnly time) => _time = time;
 
         public static TimeOnly Lerp(TimeOnly start, TimeOnly end, float t) => LerpUnclamped(start, end, Mathf.Clamp01(t));
         public static TimeOnly LerpUnclamped(TimeOnly start, TimeOnly end, float t) => start.Add((end - start) * t);
