@@ -16,10 +16,7 @@ This version of Unity Clock is compatible with the following versions of the Uni
 
 ## Known limitations
 
-Unity Clock version 0.1.0-exp includes the following known limitations:
+Unity Clock version 0.9.0-pre includes the following known limitations:
 
-* Depends on the render-pipeline.core for setting time. This dependency will be removed in the future.
-* Code is subject to (a lot) of change.
-* Performance for a large amount of objects using Temporal Animations is untested.
-* Temporal Animations are still very rigid in their use. This workflow needs to be improved.
-* Animation events are unlikely to trigger (this will be fixed in the future).
+* Performance remains untested.
+* Required Unity version remains untested and may be much lower.

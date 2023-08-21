@@ -1,14 +1,11 @@
 {
-    "name": "CaseyHofland.UnityClock.Editor",
-    "rootNamespace": "UnityClock.Editor",
+    "name": "CaseyHofland.UnityClock.UIElements",
+    "rootNamespace": "UnityClock.UIElements",
     "references": [
-        "GUID:cf6fffcdede3a194aa429de8f8a0d207",
         "GUID:1c5a6e682be2cf64b9749af182c5c2fa",
-        "GUID:1758bfc4799277d438252f1ab4c95713"
+        "GUID:e4b228dab700203488a7c7d474a25838"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
