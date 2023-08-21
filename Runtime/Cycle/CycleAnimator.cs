@@ -211,6 +211,8 @@ namespace UnityClock
                     playable.SyncCycle();
                 }
             }
+
+            mixer.GetGraph().Evaluate();
         }
 
         private void OnDisable()

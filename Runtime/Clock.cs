@@ -74,12 +74,10 @@ namespace UnityClock
 
                 if (_daySpan == TimeSpan.Zero)
                 {
-                    playableGraph.Stop();
                     CancelSafe();
                 }
-                else if (!playableGraph.IsPlaying())
+                else if (updateCancellationTokenSource == null)
                 {
-                    playableGraph.Play();
                     UpdateTimeAsync((updateCancellationTokenSource = new()).Token);
                 }
 
