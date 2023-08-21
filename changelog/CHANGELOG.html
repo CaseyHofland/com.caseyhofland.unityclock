@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Changelog | Unity Clock | 0.1.0-exp </title>
+      <title>Changelog | Something Really Stupid </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Changelog | Unity Clock | 0.1.0-exp ">
+      <meta name="title" content="Changelog | Something Really Stupid ">
       
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
@@ -12,7 +12,7 @@
       <meta name="docfx:navrel" content="../toc.html">
       <meta name="docfx:tocrel" content="toc.html">
       
-      <meta name="docfx:rel" content="../">
+      
       <meta name="docfx:disablenewtab" content="true">
       
       <meta name="docfx:docurl" content="https://github.com/CaseyHofland/com.caseyhofland.unityclock/blob/main/Documentation~/changelog/CHANGELOG.md/#L1">
@@ -43,10 +43,6 @@
           </button>
           <div class="collapse navbar-collapse" id="navpanel">
             <div id="navbar">
-              <form class="search" role="search" id="search">
-                <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
-              </form>
             </div>
           </div>
         </div>
@@ -81,6 +77,31 @@
 <p>All notable changes to this package will be documented in this file.</p>
 <p>The format is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>
 and this project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<h2 id="090-pre---2023-08-21">[0.9.0-pre] - 2023-08-21</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Add <code>TimeOnlyField</code> and <code>TimeSpanField</code>, proper implementations for <code>TimeOnly</code> and <code>TimeSpan</code> in the inspector. These fields can be dragged while still allowing for string inputs.</li>
+<li>Add <code>Clock.Day()</code> to return a normalized <code>float</code> corresponding to the time of day. e.g. <code>12:00 = 0.5</code>, <code>18:00 = 0.75</code>, etc.</li>
+<li>Add <code>ClockInstance</code> as a component that can easily be added to a scene to set your <code>Clock</code> in a simple, lightweight manner.</li>
+<li>Add <code>Clock.playableGraph</code> in order to connect animations, sounds and functionality to the <code>Clock</code> via <code>Playables</code>. This is much more scaleable and memory efficient.</li>
+<li>Add <code>CycleAnimator</code> to replace <code>TemporalAnimation</code>. This connects to <code>Clock.playableGraph</code> in order to be more scaleable and memory efficient.</li>
+<li>Add <code>ICycle</code> and <code>CyclePlayableExtensions</code> in order to set up <code>Playables</code> as <code>Cycles</code>. It is pretty hacky, however the <code>Playables</code> API is sealed tight, so this was a good compromise.</li>
+<li>Add <code>AnimationClipCycle</code> in order to set up a <code>AnimationClipPlayable</code> as an <code>AnimationClipCycle</code>.</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li><code>TimeOnlyAttribute</code> and <code>TimeSpanAttribute</code> no longer take additional parameters as the improved inspector implementation doesn't need them.</li>
+<li><code>_UnityClock_Interpolant</code> has been renamed to <code>_UnityClock_Day</code>.</li>
+<li><code>_UnityClock_PingPong</code> has been renamed to <code>_UnityClock_Midday</code>.</li>
+<li><code>Clock.PingPong()</code> has been renamed to <code>Clock.Midday()</code>.</li>
+<li>Changed the Clock Tools to use one window combining the new <code>TimeOnlyField</code> and <code>TimeSpanField</code>.</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li><code>TemporalAnimation</code> in favor of <code>CycleAnimator</code>.</li>
+<li>Experimental <code>TimeRange</code>, <code>ITemporal</code> &amp; <code>TemporalAnimationProcessor</code>.</li>
+<li>Experimental <code>ClockVolume</code>. A different solution is required in order to blend time based on position.</li>
+</ul>
 <h2 id="010-exp---2023-05-15">[0.1.0-exp] - 2023-05-15</h2>
 <h3 id="this-is-the-first-release-of-unity-clock">This is the first release of <em>Unity Clock</em>.</h3>
 <p>Unity Clock is a time-of-day system for Unity that allows full creative flexibility with a non-destructive workflow.</p>
@@ -95,7 +116,6 @@ and this project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semanti
       </div>
     </main>
 
-    <div class="container-xxl search-results" id="search-results"></div>
 
     <footer class="border-top">
       <div class="container-xxl">

@@ -36,6 +36,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.AnimationClipCycle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.AnimationClipCycle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/UnityClock.Clock.yml",
       "output": {
         ".html": {
@@ -46,10 +56,30 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/UnityClock.ClockVolume.yml",
+      "source_relative_path": "api/UnityClock.ClockInstance.yml",
       "output": {
         ".html": {
-          "relative_path": "api/UnityClock.ClockVolume.html"
+          "relative_path": "api/UnityClock.ClockInstance.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.CycleAnimator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.CycleAnimator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.CyclePlayableExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.CyclePlayableExtensions.html"
         }
       },
       "version": ""
@@ -76,30 +106,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/UnityClock.Editor.PreviewTimeElement.yml",
+      "source_relative_path": "api/UnityClock.Editor.SceneClockElement.yml",
       "output": {
         ".html": {
-          "relative_path": "api/UnityClock.Editor.PreviewTimeElement.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/UnityClock.Editor.PreviewTimeLapseElement.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/UnityClock.Editor.PreviewTimeLapseElement.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/UnityClock.Editor.TemporalAnimationProcessor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/UnityClock.Editor.TemporalAnimationProcessor.html"
+          "relative_path": "api/UnityClock.Editor.SceneClockElement.html"
         }
       },
       "version": ""
@@ -136,20 +146,30 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/UnityClock.ITemporal.yml",
+      "source_relative_path": "api/UnityClock.ICycle.yml",
       "output": {
         ".html": {
-          "relative_path": "api/UnityClock.ITemporal.html"
+          "relative_path": "api/UnityClock.ICycle.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/UnityClock.TemporalAnimation.yml",
+      "source_relative_path": "api/UnityClock.ICycleSource.yml",
       "output": {
         ".html": {
-          "relative_path": "api/UnityClock.TemporalAnimation.html"
+          "relative_path": "api/UnityClock.ICycleSource.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.Instance-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.Instance-1.html"
         }
       },
       "version": ""
@@ -166,26 +186,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/UnityClock.TimeOnlyParameter.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/UnityClock.TimeOnlyParameter.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/UnityClock.TimeRange.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/UnityClock.TimeRange.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/UnityClock.TimeSpanAttribute.yml",
       "output": {
         ".html": {
@@ -196,10 +196,30 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/UnityClock.TimeSpanParameter.yml",
+      "source_relative_path": "api/UnityClock.UIElements.TimeOnlyField.yml",
       "output": {
         ".html": {
-          "relative_path": "api/UnityClock.TimeSpanParameter.html"
+          "relative_path": "api/UnityClock.UIElements.TimeOnlyField.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.UIElements.TimeSpanField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.UIElements.TimeSpanField.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityClock.UIElements.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityClock.UIElements.html"
         }
       },
       "version": ""
